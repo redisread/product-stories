@@ -1,0 +1,55 @@
+[
+  {
+    "slug": "design-system/introducing-tokens",
+    "title": "Design Tokens 实践：从混乱到统一",
+    "description": "如何通过 Design Tokens 实现跨平台设计一致性，并大幅提升开发效率",
+    "url": "/stories/design-system/introducing-tokens",
+    "date": "2025-02-15T00:00:00.000Z",
+    "products": [
+      "Design System",
+      "Web Platform"
+    ],
+    "tags": [
+      "design-system",
+      "tokens",
+      "css"
+    ],
+    "author": "张明"
+  },
+  {
+    "slug": "platform/cross-team-collaboration",
+    "title": "跨团队协作：如何对齐多端产品体验",
+    "description": "三个团队如何在六周内完成一次复杂功能的多端同步上线",
+    "url": "/stories/platform/cross-team-collaboration",
+    "date": "2025-02-05T00:00:00.000Z",
+    "products": [
+      "Web Platform",
+      "Mobile App",
+      "Design System"
+    ],
+    "tags": [
+      "collaboration",
+      "process",
+      "sync"
+    ],
+    "author": "王芳"
+  },
+  {
+    "slug": "mobile-app/launch-journey",
+    "title": "App 3.0 发布之旅：一次彻底的重构",
+    "description": "从架构设计到用户反馈，全面回顾 App 3.0 的开发历程",
+    "url": "/stories/mobile-app/launch-journey",
+    "date": "2025-01-28T00:00:00.000Z",
+    "products": [
+      "Mobile App",
+      "iOS",
+      "Android"
+    ],
+    "tags": [
+      "mobile",
+      "release",
+      "architecture"
+    ],
+    "author": "李华"
+  }
+]

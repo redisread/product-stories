@@ -1,0 +1,11 @@
+id: mobile-app
+name: Mobile App
+description: iOS 和 Android 原生应用，为用户提供便捷的移动体验
+color: "#10b981"
+icon: Smartphone
+order: 3
+links:
+  - title: App Store
+    url: https://apps.apple.com/app
+  - title: Google Play
+    url: https://play.google.com/store

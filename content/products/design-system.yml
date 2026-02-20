@@ -1,0 +1,11 @@
+id: design-system
+name: Design System
+description: 统一的设计语言和组件库，支撑全平台产品体验一致
+color: "#8b5cf6"
+icon: Palette
+order: 1
+links:
+  - title: Figma
+    url: https://figma.com/design-system
+  - title: Storybook
+    url: https://storybook.example.com

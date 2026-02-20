@@ -1,0 +1,99 @@
+---
+title: "Design Tokens 实践：从混乱到统一"
+date: 2025-02-15
+products: ["Design System", "Web Platform"]
+cover: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80"
+readingTime: "12 min read"
+description: "如何通过 Design Tokens 实现跨平台设计一致性，并大幅提升开发效率"
+author: "张明"
+tags: ["design-system", "tokens", "css"]
+featured: true
+---
+
+# Design Tokens 实践：从混乱到统一
+
+在我们的产品生态中，曾经面临一个严重的问题：**设计不一致**。不同的产品、不同的平台，甚至同一个产品的不同页面，都可能使用略有差异的颜色、间距或字体大小。
+
+## 问题的起源
+
+随着产品线的扩展，我们的设计债务逐渐累积：
+
+- **颜色混乱**：蓝色有 15 种不同的变体
+- **间距不统一**：8px、10px、12px、16px 混用
+- **字体层级模糊**：标题大小随心所欲
+
+> "设计一致性不是限制创意，而是让创意有更好的表达基础。" —— 设计总监
+
+## 解决方案：Design Tokens
+
+我们决定引入 Design Tokens 来系统化解决这个问题。
+
+### 什么是 Design Tokens？
+
+Design Tokens 是设计系统中的**原子化变量**，它们存储了视觉设计的底层值：
+
+```css
+/* Primitive Tokens */
+--color-blue-500: #3b82f6;
+--color-blue-600: #2563eb;
+
+/* Semantic Tokens */
+--color-primary: var(--color-blue-500);
+--color-primary-hover: var(--color-blue-600);
+```
+
+### 实施步骤
+
+#### 1. 定义 Primitive 层
+
+首先，我们定义了最基础的设计原子：
+
+- **颜色板**：从 50 到 950 的完整色阶
+- **间距系统**：4px 为基础单位的 spacing scale
+- **字体大小**：遵循 type scale 的字号系统
+
+#### 2. 建立 Semantic 层
+
+将这些原子映射到有语义的变量：
+
+| Token | 值 | 用途 |
+|-------|-----|------|
+| `--color-surface` | white | 背景色 |
+| `--color-surface-elevated` | gray-50 | 卡片背景 |
+| `--color-text-primary` | gray-900 | 主要文字 |
+
+#### 3. 组件层应用
+
+最后，在组件中使用这些语义化变量：
+
+```tsx
+// Button.tsx
+<button
+  className="
+    bg-[var(--color-primary)]
+    text-[var(--color-on-primary)]
+    px-[var(--spacing-md)]
+    rounded-[var(--radius-md)]
+  "
+>
+  点击按钮
+</button>
+```
+
+## 成果与收益
+
+实施三个月后，我们看到了显著的改进：
+
+1. **设计一致性提升**：跨产品的视觉体验更加统一
+2. **开发效率提高**：开发者不再需要猜测设计值
+3. **主题切换简单**：暗色模式只需切换 token 值
+
+## 下一步计划
+
+- 将 Tokens 同步到移动端（iOS/Android）
+- 建立 Token 的自动化测试
+- 探索 Figma Variables 的双向同步
+
+---
+
+*这篇故事记录了我们在设计系统建设过程中的一个重要里程碑。*

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Product Stories - 产品故事集</title>
+    <link>https://product-stories.pages.dev</link>
+    <description>探索产品背后的故事，从设计决策到用户旅程的完整记录</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 20 Feb 2026 07:57:14 GMT</lastBuildDate>
+    <atom:link href="https://product-stories.pages.dev/feed.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title><![CDATA[Design Tokens 实践：从混乱到统一]]></title>
+      <link>https://product-stories.pages.dev/stories/design-system/introducing-tokens</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/design-system/introducing-tokens</guid>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 GMT</pubDate>
+      <author>张明</author>
+      <category>Design System, Web Platform</category>
+      <description><![CDATA[如何通过 Design Tokens 实现跨平台设计一致性，并大幅提升开发效率]]></description>
+    </item>
+    <item>
+      <title><![CDATA[跨团队协作：如何对齐多端产品体验]]></title>
+      <link>https://product-stories.pages.dev/stories/platform/cross-team-collaboration</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/platform/cross-team-collaboration</guid>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 GMT</pubDate>
+      <author>王芳</author>
+      <category>Web Platform, Mobile App, Design System</category>
+      <description><![CDATA[三个团队如何在六周内完成一次复杂功能的多端同步上线]]></description>
+    </item>
+    <item>
+      <title><![CDATA[App 3.0 发布之旅：一次彻底的重构]]></title>
+      <link>https://product-stories.pages.dev/stories/mobile-app/launch-journey</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/mobile-app/launch-journey</guid>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 GMT</pubDate>
+      <author>李华</author>
+      <category>Mobile App, iOS, Android</category>
+      <description><![CDATA[从架构设计到用户反馈，全面回顾 App 3.0 的开发历程]]></description>
+    </item>
+  </channel>
+</rss>

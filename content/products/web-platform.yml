@@ -1,0 +1,9 @@
+id: web-platform
+name: Web Platform
+description: 面向桌面和移动端的现代化 Web 应用平台，服务数百万用户
+color: "#3b82f6"
+icon: Globe
+order: 2
+links:
+  - title: 访问网站
+    url: https://platform.example.com

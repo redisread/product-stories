@@ -47,6 +47,8 @@ export interface Product {
   icon?: string;
   /** 产品颜色 */
   color?: string;
+  /** 产品排序 */
+  order?: number;
   /** 故事数量 */
   storyCount?: number;
 }

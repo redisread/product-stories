@@ -1,8 +1,21 @@
 'use client';
 
-import { useQueryState, parseAsArrayOf, parseAsString } from 'nuqs';
+import { useQueryState, parseAsArrayOf, parseAsString, createParser } from 'nuqs';
 import { useMemo, useTransition } from 'react';
 import type { StoryPage, SortOption } from '@/types/story';
+
+// 自定义排序选项解析器
+const parseAsSortOption = createParser<SortOption>({
+  parse(value) {
+    if (value === 'newest' || value === 'oldest') {
+      return value;
+    }
+    return null;
+  },
+  serialize(value) {
+    return value;
+  },
+});
 
 interface UseStoryFiltersResult {
   // 筛选状态
@@ -48,9 +61,9 @@ export function useStoryFilters(
     parseAsString.withDefault('')
   );
 
-  const [sortBy, setSortBy] = useQueryState<SortOption>(
+  const [sortBy, setSortBy] = useQueryState(
     'sort',
-    parseAsString.withDefault('newest')
+    parseAsSortOption.withDefault('newest')
   );
 
   // 切换产品选择

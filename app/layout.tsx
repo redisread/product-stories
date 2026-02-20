@@ -1,18 +1,7 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import { RootProvider } from 'fumadocs-ui/provider';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import './globals.css';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
   title: {
@@ -28,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Product Stories',
     images: [
       {
-        url: '/og',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Product Stories',
@@ -53,7 +42,7 @@ export default function Layout({
   return (
     <html
       lang="zh-CN"
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      className="font-sans"
       suppressHydrationWarning
     >
       <body className="flex flex-col min-h-screen antialiased">

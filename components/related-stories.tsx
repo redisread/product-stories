@@ -56,7 +56,7 @@ export async function RelatedStories({ currentSlug }: RelatedStoriesProps) {
                 </p>
               )}
               <div className="mt-2 flex items-center gap-2 text-xs text-fd-muted-foreground">
-                <time dateTime={story.data.date}>
+                <time dateTime={new Date(story.data.date).toISOString()}>
                   {formatDateShort(story.data.date)}
                 </time>
                 {story.data.products && story.data.products.length > 0 && (

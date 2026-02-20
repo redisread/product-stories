@@ -2,6 +2,11 @@
 @import "fumadocs-ui/css/preset.css";
 @import "fumadocs-ui/css/style.css";
 
+/* System font stack */
+.font-sans {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 /* Custom CSS Variables for Product Stories */
 :root {
   --story-card-radius: 0.75rem;

@@ -118,7 +118,7 @@ export function StoryCard({
         <div className="mt-auto pt-4 flex items-center gap-4 text-xs text-fd-muted-foreground">
           <div className="flex items-center gap-1.5">
             <Calendar className="w-3.5 h-3.5" />
-            <time dateTime={story.data.date} title={formatDateShort(story.data.date)}>
+            <time dateTime={new Date(story.data.date).toISOString()} title={formatDateShort(story.data.date)}>
               {getRelativeTime(story.data.date)}
             </time>
           </div>

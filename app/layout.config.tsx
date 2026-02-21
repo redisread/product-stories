@@ -25,5 +25,5 @@ export const baseOptions: BaseLayoutProps = {
       active: 'nested-url',
     },
   ],
-  githubUrl: 'https://github.com/your-org/product-stories',
+  githubUrl: 'https://github.com/redisread/product-stories',
 };

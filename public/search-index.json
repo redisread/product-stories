@@ -1,53 +1,53 @@
 [
   {
-    "slug": "apple/design-philosophy",
-    "title": "苹果的设计哲学：简洁背后的极致追求",
-    "description": "探索苹果产品设计中「少即是多」的理念，以及如何通过极致的细节打磨创造令人惊艳的用户体验",
-    "url": "/stories/apple/design-philosophy",
+    "slug": "slack/from-game-to-workplace",
+    "title": "Slack 的绝境重生：一个游戏公司的意外转型",
+    "description": "当游戏公司 Tiny Speck 濒临破产时，他们意外发现内部工具的价值，最终成就了市值百亿的 Slack。",
+    "url": "/stories/slack/from-game-to-workplace",
+    "date": "2025-02-21T00:00:00.000Z",
+    "products": [
+      "Slack"
+    ],
+    "tags": [
+      "Slack",
+      "转型",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "instagram/x-pro-ii-filter-secret",
+    "title": "Instagram X-Pro II 滤镜的诞生：一次意外的色彩实验",
+    "description": "Instagram 最受欢迎的滤镜之一 X-Pro II，竟源于一位工程师的咖啡渍意外。",
+    "url": "/stories/instagram/x-pro-ii-filter-secret",
     "date": "2025-02-20T00:00:00.000Z",
     "products": [
-      "Apple"
+      "Instagram"
     ],
     "tags": [
-      "苹果",
-      "设计",
-      "用户体验",
-      "简洁"
+      "Instagram",
+      "滤镜",
+      "设计轶事",
+      "幕后故事"
     ],
-    "author": "李明"
+    "author": "Claude"
   },
   {
-    "slug": "google/data-driven-culture",
-    "title": "谷歌的数据驱动文化：从直觉到证据",
-    "description": "深入了解谷歌如何通过数据驱动决策，将 A/B 测试和用户研究融入产品开发的每一个环节",
-    "url": "/stories/google/data-driven-culture",
-    "date": "2025-02-18T00:00:00.000Z",
+    "slug": "airbnb/cereal-entrepreneur",
+    "title": "麦片救 Airbnb：创始人的绝境创意",
+    "description": "2008年金融危机中，Airbnb 创始人靠卖麦片筹集资金，用创意和坚持度过了创业最艰难的时刻。",
+    "url": "/stories/airbnb/cereal-entrepreneur",
+    "date": "2025-02-19T00:00:00.000Z",
     "products": [
-      "Google"
+      "Airbnb"
     ],
     "tags": [
-      "谷歌",
-      "数据驱动",
-      "A/B测试",
-      "产品决策"
+      "Airbnb",
+      "创始人故事",
+      "创业",
+      "创意营销"
     ],
-    "author": "王芳"
-  },
-  {
-    "slug": "notion/second-brain-revolution",
-    "title": "Notion 的第二大脑革命：重塑知识管理",
-    "description": "探索 Notion 如何通过灵活的块编辑器和数据库功能，帮助用户构建个人知识管理系统",
-    "url": "/stories/notion/second-brain-revolution",
-    "date": "2025-02-15T00:00:00.000Z",
-    "products": [
-      "Notion"
-    ],
-    "tags": [
-      "Notion",
-      "知识管理",
-      "效率工具",
-      "第二大脑"
-    ],
-    "author": "张伟"
+    "author": "Claude"
   }
 ]

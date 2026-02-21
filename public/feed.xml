@@ -5,35 +5,35 @@
     <link>https://product-stories.pages.dev</link>
     <description>探索产品背后的故事，从设计决策到用户旅程的完整记录</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 21 Feb 2026 12:00:08 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 21 Feb 2026 12:20:30 GMT</lastBuildDate>
     <atom:link href="https://product-stories.pages.dev/feed.xml" rel="self" type="application/rss+xml"/>
     
     <item>
-      <title><![CDATA[苹果的设计哲学：简洁背后的极致追求]]></title>
-      <link>https://product-stories.pages.dev/stories/apple/design-philosophy</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/apple/design-philosophy</guid>
+      <title><![CDATA[Slack 的绝境重生：一个游戏公司的意外转型]]></title>
+      <link>https://product-stories.pages.dev/stories/slack/from-game-to-workplace</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/slack/from-game-to-workplace</guid>
+      <pubDate>Fri, 21 Feb 2025 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Slack</category>
+      <description><![CDATA[当游戏公司 Tiny Speck 濒临破产时，他们意外发现内部工具的价值，最终成就了市值百亿的 Slack。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Instagram X-Pro II 滤镜的诞生：一次意外的色彩实验]]></title>
+      <link>https://product-stories.pages.dev/stories/instagram/x-pro-ii-filter-secret</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/instagram/x-pro-ii-filter-secret</guid>
       <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
-      <author>李明</author>
-      <category>Apple</category>
-      <description><![CDATA[探索苹果产品设计中「少即是多」的理念，以及如何通过极致的细节打磨创造令人惊艳的用户体验]]></description>
+      <author>Claude</author>
+      <category>Instagram</category>
+      <description><![CDATA[Instagram 最受欢迎的滤镜之一 X-Pro II，竟源于一位工程师的咖啡渍意外。]]></description>
     </item>
     <item>
-      <title><![CDATA[谷歌的数据驱动文化：从直觉到证据]]></title>
-      <link>https://product-stories.pages.dev/stories/google/data-driven-culture</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/google/data-driven-culture</guid>
-      <pubDate>Tue, 18 Feb 2025 00:00:00 GMT</pubDate>
-      <author>王芳</author>
-      <category>Google</category>
-      <description><![CDATA[深入了解谷歌如何通过数据驱动决策，将 A/B 测试和用户研究融入产品开发的每一个环节]]></description>
-    </item>
-    <item>
-      <title><![CDATA[Notion 的第二大脑革命：重塑知识管理]]></title>
-      <link>https://product-stories.pages.dev/stories/notion/second-brain-revolution</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/notion/second-brain-revolution</guid>
-      <pubDate>Sat, 15 Feb 2025 00:00:00 GMT</pubDate>
-      <author>张伟</author>
-      <category>Notion</category>
-      <description><![CDATA[探索 Notion 如何通过灵活的块编辑器和数据库功能，帮助用户构建个人知识管理系统]]></description>
+      <title><![CDATA[麦片救 Airbnb：创始人的绝境创意]]></title>
+      <link>https://product-stories.pages.dev/stories/airbnb/cereal-entrepreneur</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/airbnb/cereal-entrepreneur</guid>
+      <pubDate>Wed, 19 Feb 2025 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Airbnb</category>
+      <description><![CDATA[2008年金融危机中，Airbnb 创始人靠卖麦片筹集资金，用创意和坚持度过了创业最艰难的时刻。]]></description>
     </item>
   </channel>
 </rss>

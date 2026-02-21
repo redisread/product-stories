@@ -1,6 +1,6 @@
 'use client';
 
-import { FileText, Package, Star, Users } from 'lucide-react';
+import { FileText, Tag, Star, Users } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { StoriesStats } from '@/types/story';
 
@@ -22,9 +22,9 @@ export function StoryStats({ stats, className }: StoryStatsProps) {
       bgColor: 'bg-blue-500/10',
     },
     {
-      label: '产品覆盖',
-      value: stats.totalProducts,
-      icon: Package,
+      label: '标签数量',
+      value: stats.totalTags,
+      icon: Tag,
       color: 'text-violet-500',
       bgColor: 'bg-violet-500/10',
     },

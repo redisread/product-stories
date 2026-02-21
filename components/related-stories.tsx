@@ -59,11 +59,11 @@ export async function RelatedStories({ currentSlug }: RelatedStoriesProps) {
                 <time dateTime={new Date(story.data.date).toISOString()}>
                   {formatDateShort(story.data.date)}
                 </time>
-                {story.data.products && story.data.products.length > 0 && (
+                {story.data.tags && story.data.tags.length > 0 && (
                   <>
                     <span>·</span>
                     <span className="line-clamp-1">
-                      {story.data.products.join(', ')}
+                      {story.data.tags.slice(0, 3).map(t => `#${t}`).join(' ')}
                     </span>
                   </>
                 )}

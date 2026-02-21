@@ -5,35 +5,35 @@
     <link>https://product-stories.pages.dev</link>
     <description>探索产品背后的故事，从设计决策到用户旅程的完整记录</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 21 Feb 2026 07:14:58 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 21 Feb 2026 12:00:08 GMT</lastBuildDate>
     <atom:link href="https://product-stories.pages.dev/feed.xml" rel="self" type="application/rss+xml"/>
     
     <item>
-      <title><![CDATA[Design Tokens 实践：从混乱到统一]]></title>
-      <link>https://product-stories.pages.dev/stories/design-system/introducing-tokens</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/design-system/introducing-tokens</guid>
-      <pubDate>Sat, 15 Feb 2025 00:00:00 GMT</pubDate>
-      <author>张明</author>
-      <category>Design System, Web Platform</category>
-      <description><![CDATA[如何通过 Design Tokens 实现跨平台设计一致性，并大幅提升开发效率]]></description>
+      <title><![CDATA[苹果的设计哲学：简洁背后的极致追求]]></title>
+      <link>https://product-stories.pages.dev/stories/apple/design-philosophy</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/apple/design-philosophy</guid>
+      <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
+      <author>李明</author>
+      <category>Apple</category>
+      <description><![CDATA[探索苹果产品设计中「少即是多」的理念，以及如何通过极致的细节打磨创造令人惊艳的用户体验]]></description>
     </item>
     <item>
-      <title><![CDATA[跨团队协作：如何对齐多端产品体验]]></title>
-      <link>https://product-stories.pages.dev/stories/platform/cross-team-collaboration</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/platform/cross-team-collaboration</guid>
-      <pubDate>Wed, 05 Feb 2025 00:00:00 GMT</pubDate>
+      <title><![CDATA[谷歌的数据驱动文化：从直觉到证据]]></title>
+      <link>https://product-stories.pages.dev/stories/google/data-driven-culture</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/google/data-driven-culture</guid>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 GMT</pubDate>
       <author>王芳</author>
-      <category>Web Platform, Mobile App, Design System</category>
-      <description><![CDATA[三个团队如何在六周内完成一次复杂功能的多端同步上线]]></description>
+      <category>Google</category>
+      <description><![CDATA[深入了解谷歌如何通过数据驱动决策，将 A/B 测试和用户研究融入产品开发的每一个环节]]></description>
     </item>
     <item>
-      <title><![CDATA[App 3.0 发布之旅：一次彻底的重构]]></title>
-      <link>https://product-stories.pages.dev/stories/mobile-app/launch-journey</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/mobile-app/launch-journey</guid>
-      <pubDate>Tue, 28 Jan 2025 00:00:00 GMT</pubDate>
-      <author>李华</author>
-      <category>Mobile App, iOS, Android</category>
-      <description><![CDATA[从架构设计到用户反馈，全面回顾 App 3.0 的开发历程]]></description>
+      <title><![CDATA[Notion 的第二大脑革命：重塑知识管理]]></title>
+      <link>https://product-stories.pages.dev/stories/notion/second-brain-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/notion/second-brain-revolution</guid>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 GMT</pubDate>
+      <author>张伟</author>
+      <category>Notion</category>
+      <description><![CDATA[探索 Notion 如何通过灵活的块编辑器和数据库功能，帮助用户构建个人知识管理系统]]></description>
     </item>
   </channel>
 </rss>

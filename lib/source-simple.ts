@@ -75,15 +75,15 @@ export async function getAllStories(): Promise<StoryPage[]> {
 }
 
 /**
- * 获取所有产品
+ * 获取所有标签
  */
-export async function getAllProducts(): Promise<string[]> {
+export async function getAllTags(): Promise<string[]> {
   const stories = await getAllStories();
-  const productsSet = new Set<string>();
+  const tagsSet = new Set<string>();
   stories.forEach((story) => {
-    story.data.products?.forEach((p) => productsSet.add(p));
+    story.data.tags?.forEach((t) => tagsSet.add(t));
   });
-  return Array.from(productsSet).sort();
+  return Array.from(tagsSet).sort();
 }
 
 /**
@@ -95,11 +95,11 @@ export async function getFeaturedStories(limit = 3): Promise<StoryPage[]> {
 }
 
 /**
- * 按产品筛选
+ * 按标签筛选
  */
-export async function getStoriesByProduct(product: string): Promise<StoryPage[]> {
+export async function getStoriesByTag(tag: string): Promise<StoryPage[]> {
   const stories = await getAllStories();
-  return stories.filter((s) => s.data.products?.includes(product));
+  return stories.filter((s) => s.data.tags?.includes(tag));
 }
 
 /**
@@ -123,13 +123,13 @@ export async function searchStories(query: string): Promise<StoryPage[]> {
  */
 export async function getStoriesStats(): Promise<StoriesStats> {
   const stories = await getAllStories();
-  const products = await getAllProducts();
+  const tags = await getAllTags();
   const featured = stories.filter((s) => s.data.featured);
   const authors = new Set(stories.map((s) => s.data.author).filter(Boolean));
 
   return {
     totalStories: stories.length,
-    totalProducts: products.length,
+    totalTags: tags.length,
     featuredStories: featured.length,
     authors: Array.from(authors) as string[],
   };
@@ -158,7 +158,7 @@ export async function getRelatedStories(
     .filter(
       (s) =>
         s.slug !== currentSlug &&
-        s.data.products?.some((p) => current.data.products?.includes(p))
+        s.data.tags?.some((t) => current.data.tags?.includes(t))
     )
     .slice(0, limit);
 }

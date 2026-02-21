@@ -63,7 +63,7 @@ export default async function StoryPage({ params }: PageProps) {
 
   const { story: page, content } = result;
   const { title, data } = page;
-  const { description, date, readingTime, author, products, cover, tags } = data;
+  const { description, date, readingTime, author, cover, tags } = data;
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
@@ -80,18 +80,16 @@ export default async function StoryPage({ params }: PageProps) {
 
       {/* 文章头部 */}
       <header className="mb-10">
-        {/* 产品标签 */}
-        {products && products.length > 0 && (
+        {/* 标签 */}
+        {tags && tags.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">
-            {products.map((product: string) => (
+            {tags.slice(0, 5).map((tag: string) => (
               <Link
-                key={product}
-                href={`/stories?products=${encodeURIComponent(
-                  product.toLowerCase().replace(/\s+/g, '-')
-                )}`}
+                key={tag}
+                href={`/stories?tag=${encodeURIComponent(tag)}`}
                 className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-fd-primary/10 text-fd-primary hover:bg-fd-primary/20 transition-colors"
               >
-                {product}
+                #{tag}
               </Link>
             ))}
           </div>

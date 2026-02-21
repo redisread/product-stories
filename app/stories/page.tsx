@@ -2,11 +2,11 @@ import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { StoriesContent } from './stories-content';
 import { StoriesSkeleton } from './stories-skeleton';
-import { getAllStories, getAllProducts, getStoriesStats } from '@/lib/source';
+import { getAllStories, getAllTags, getStoriesStats } from '@/lib/source';
 
 export const metadata: Metadata = {
   title: '全部故事',
-  description: '浏览所有产品故事，按产品筛选、搜索关键词、按时间排序',
+  description: '浏览所有产品故事，按标签筛选、搜索关键词、按时间排序',
 };
 
 /**
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
  */
 export default async function StoriesPage() {
   const stories = await getAllStories();
-  const products = await getAllProducts();
+  const tags = await getAllTags();
   const stats = await getStoriesStats();
 
   return (
@@ -27,7 +27,7 @@ export default async function StoriesPage() {
               全部故事
             </h1>
             <p className="text-fd-muted-foreground text-lg">
-              共 {stats.totalStories} 个产品故事，涵盖 {stats.totalProducts} 个产品线的案例研究、用户故事和幕后花絮
+              共 {stats.totalStories} 个产品故事，按标签筛选你感兴趣的内容
             </p>
           </div>
         </div>
@@ -38,7 +38,7 @@ export default async function StoriesPage() {
         <Suspense fallback={<StoriesSkeleton />}>
           <StoriesContent
             stories={stories}
-            products={products}
+            tags={tags}
             totalCount={stats.totalStories}
           />
         </Suspense>

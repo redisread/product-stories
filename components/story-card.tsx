@@ -68,20 +68,20 @@ export function StoryCard({
             </div>
           )}
 
-          {/* 产品标签 */}
-          {story.data.products && story.data.products.length > 0 && (
+          {/* 标签 */}
+          {story.data.tags && story.data.tags.length > 0 && (
             <div className="absolute top-3 right-3 flex flex-wrap gap-1 justify-end max-w-[60%]">
-              {story.data.products.slice(0, 2).map((product) => (
+              {story.data.tags.slice(0, 2).map((tag) => (
                 <span
-                  key={product}
+                  key={tag}
                   className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-black/60 text-white backdrop-blur-sm"
                 >
-                  {product}
+                  #{tag}
                 </span>
               ))}
-              {story.data.products.length > 2 && (
+              {story.data.tags.length > 2 && (
                 <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-black/60 text-white backdrop-blur-sm">
-                  +{story.data.products.length - 2}
+                  +{story.data.tags.length - 2}
                 </span>
               )}
             </div>
@@ -137,15 +137,15 @@ export function StoryCard({
           )}
         </div>
 
-        {/* 紧凑模式的产品标签 */}
-        {isCompact && story.data.products && story.data.products.length > 0 && (
+        {/* 紧凑模式的标签 */}
+        {isCompact && story.data.tags && story.data.tags.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-1">
-            {story.data.products.slice(0, 3).map((product) => (
+            {story.data.tags.slice(0, 3).map((tag) => (
               <span
-                key={product}
+                key={tag}
                 className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-fd-muted text-fd-muted-foreground"
               >
-                {product}
+                #{tag}
               </span>
             ))}
           </div>

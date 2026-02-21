@@ -1,55 +1,53 @@
 [
   {
-    "slug": "design-system/introducing-tokens",
-    "title": "Design Tokens 实践：从混乱到统一",
-    "description": "如何通过 Design Tokens 实现跨平台设计一致性，并大幅提升开发效率",
-    "url": "/stories/design-system/introducing-tokens",
-    "date": "2025-02-15T00:00:00.000Z",
+    "slug": "apple/design-philosophy",
+    "title": "苹果的设计哲学：简洁背后的极致追求",
+    "description": "探索苹果产品设计中「少即是多」的理念，以及如何通过极致的细节打磨创造令人惊艳的用户体验",
+    "url": "/stories/apple/design-philosophy",
+    "date": "2025-02-20T00:00:00.000Z",
     "products": [
-      "Design System",
-      "Web Platform"
+      "Apple"
     ],
     "tags": [
-      "design-system",
-      "tokens",
-      "css"
+      "苹果",
+      "设计",
+      "用户体验",
+      "简洁"
     ],
-    "author": "张明"
+    "author": "李明"
   },
   {
-    "slug": "platform/cross-team-collaboration",
-    "title": "跨团队协作：如何对齐多端产品体验",
-    "description": "三个团队如何在六周内完成一次复杂功能的多端同步上线",
-    "url": "/stories/platform/cross-team-collaboration",
-    "date": "2025-02-05T00:00:00.000Z",
+    "slug": "google/data-driven-culture",
+    "title": "谷歌的数据驱动文化：从直觉到证据",
+    "description": "深入了解谷歌如何通过数据驱动决策，将 A/B 测试和用户研究融入产品开发的每一个环节",
+    "url": "/stories/google/data-driven-culture",
+    "date": "2025-02-18T00:00:00.000Z",
     "products": [
-      "Web Platform",
-      "Mobile App",
-      "Design System"
+      "Google"
     ],
     "tags": [
-      "collaboration",
-      "process",
-      "sync"
+      "谷歌",
+      "数据驱动",
+      "A/B测试",
+      "产品决策"
     ],
     "author": "王芳"
   },
   {
-    "slug": "mobile-app/launch-journey",
-    "title": "App 3.0 发布之旅：一次彻底的重构",
-    "description": "从架构设计到用户反馈，全面回顾 App 3.0 的开发历程",
-    "url": "/stories/mobile-app/launch-journey",
-    "date": "2025-01-28T00:00:00.000Z",
+    "slug": "notion/second-brain-revolution",
+    "title": "Notion 的第二大脑革命：重塑知识管理",
+    "description": "探索 Notion 如何通过灵活的块编辑器和数据库功能，帮助用户构建个人知识管理系统",
+    "url": "/stories/notion/second-brain-revolution",
+    "date": "2025-02-15T00:00:00.000Z",
     "products": [
-      "Mobile App",
-      "iOS",
-      "Android"
+      "Notion"
     ],
     "tags": [
-      "mobile",
-      "release",
-      "architecture"
+      "Notion",
+      "知识管理",
+      "效率工具",
+      "第二大脑"
     ],
-    "author": "李华"
+    "author": "张伟"
   }
 ]

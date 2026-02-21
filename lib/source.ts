@@ -3,6 +3,7 @@ import { readFile, readdir } from 'fs/promises';
 import { join } from 'path';
 import matter from 'gray-matter';
 import { compileMDX } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 import type { StoriesStats, StoryPage } from '@/types/story';
 import { cn } from '@/lib/utils';
 
@@ -115,11 +116,11 @@ export async function getFeaturedStories(limit = 3): Promise<StoryPage[]> {
 }
 
 /**
- * 按产品筛选
+ * 按标签筛选
  */
-export async function getStoriesByProduct(product: string): Promise<StoryPage[]> {
+export async function getStoriesByTag(tag: string): Promise<StoryPage[]> {
   const stories = await getAllStories();
-  return stories.filter((s) => s.data.products?.includes(product));
+  return stories.filter((s) => s.data.tags?.includes(tag));
 }
 
 /**
@@ -143,13 +144,13 @@ export async function searchStories(query: string): Promise<StoryPage[]> {
  */
 export async function getStoriesStats(): Promise<StoriesStats> {
   const stories = await getAllStories();
-  const products = await getAllProducts();
+  const tags = await getAllTags();
   const featured = stories.filter((s) => s.data.featured);
   const authors = new Set(stories.map((s) => s.data.author).filter(Boolean));
 
   return {
     totalStories: stories.length,
-    totalProducts: products.length,
+    totalTags: tags.length,
     featuredStories: featured.length,
     authors: Array.from(authors) as string[],
   };
@@ -178,7 +179,7 @@ export async function getRelatedStories(
     .filter(
       (s) =>
         s.slug !== currentSlug &&
-        s.data.products?.some((p) => current.data.products?.includes(p))
+        s.data.tags?.some((t) => current.data.tags?.includes(t))
     )
     .slice(0, limit);
 }
@@ -257,24 +258,41 @@ const mdxComponents: Record<string, React.FC<any>> = {
     return React.createElement('hr', { className: cn('my-8 border-fd-border', className), ...props });
   },
   table: ({ className, ...props }: React.TableHTMLAttributes<HTMLTableElement>) => {
-    return React.createElement('div', { className: 'my-6 w-full overflow-y-auto' },
-      React.createElement('table', { className: cn('w-full border-collapse text-sm', className), ...props })
+    return React.createElement('div', { className: 'my-6 w-full overflow-x-auto' },
+      React.createElement('table', { className: cn('w-full border-collapse text-sm border border-[#e5e5e5] dark:border-[#333]', className), ...props })
     );
   },
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => {
-    return React.createElement('tr', { className: cn('border-b border-fd-border transition-colors hover:bg-fd-muted/50', className), ...props });
+    return React.createElement('tr', { className: cn('border-b border-[#e5e5e5] dark:border-[#333] transition-colors hover:bg-[#f5f5f5] dark:hover:bg-[#1a1a1a]', className), ...props });
   },
   th: ({ className, ...props }: React.ThHTMLAttributes<HTMLTableHeaderCellElement>) => {
-    return React.createElement('th', { className: cn('border-b border-fd-border px-4 py-2 text-left font-semibold text-fd-foreground', className), ...props });
+    return React.createElement('th', { className: cn('border-b border-[#e5e5e5] dark:border-[#333] px-4 py-3 text-left font-semibold bg-[#f5f5f5] dark:bg-[#1a1a1a] text-[#333] dark:text-[#e5e5e5]', className), ...props });
   },
   td: ({ className, ...props }: React.TdHTMLAttributes<HTMLTableDataCellElement>) => {
-    return React.createElement('td', { className: cn('px-4 py-2 text-fd-foreground', className), ...props });
+    return React.createElement('td', { className: cn('border-b border-[#e5e5e5] dark:border-[#333] px-4 py-3 text-[#333] dark:text-[#e5e5e5]', className), ...props });
   },
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => {
-    return React.createElement('code', { className: cn('rounded bg-fd-muted px-1.5 py-0.5 font-mono text-sm text-fd-foreground', className), ...props });
+    return React.createElement('code', {
+      className: cn(
+        'rounded px-1.5 py-0.5 font-mono text-[0.85em]',
+        'bg-[#e8e8e8] dark:bg-[#2a2a2a]',
+        'text-[#333] dark:text-[#e5e5e5]',
+        className
+      ),
+      ...props
+    });
   },
-  pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => {
-    return React.createElement('pre', { className: cn('mb-4 mt-6 overflow-x-auto rounded-xl bg-fd-muted p-4 font-mono text-sm', className), ...props });
+  pre: ({ className, children, ...props }: React.HTMLAttributes<HTMLPreElement>) => {
+    return React.createElement('pre', {
+      className: cn(
+        'my-6 p-4 overflow-x-auto rounded-lg',
+        'bg-[#f5f5f5] dark:bg-[#1a1a1a]',
+        'font-mono text-[13px] leading-relaxed',
+        'text-[#333] dark:text-[#e5e5e5]',
+        className
+      ),
+      ...props
+    }, children);
   },
 };
 
@@ -299,6 +317,9 @@ export async function getStoryContent(slug: string): Promise<{
       source: mdxSource,
       options: {
         parseFrontmatter: false,
+        mdxOptions: {
+          remarkPlugins: [remarkGfm],
+        },
       },
       components: mdxComponents,
     });

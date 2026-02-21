@@ -96,7 +96,7 @@ export interface SearchResult {
 // 统计信息
 export interface StoriesStats {
   totalStories: number;
-  totalProducts: number;
+  totalTags: number;
   featuredStories: number;
   authors: string[];
 }

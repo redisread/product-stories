@@ -144,7 +144,7 @@ const components = {
   code: ({ className, ...props }: ComponentPropsWithoutRef<'code'>) => (
     <code
       className={cn(
-        'rounded bg-fd-muted px-1.5 py-0.5 font-mono text-sm text-fd-foreground',
+        'rounded px-1.5 py-0.5 font-mono text-[13px] text-[#333] dark:text-[#e5e5e5]',
         className
       )}
       {...props}
@@ -153,7 +153,7 @@ const components = {
   pre: ({ className, ...props }: ComponentPropsWithoutRef<'pre'>) => (
     <pre
       className={cn(
-        'mb-4 mt-6 overflow-x-auto rounded-xl bg-fd-muted p-4 font-mono text-sm',
+        'my-6 overflow-x-auto rounded-lg bg-[#f5f5f5] p-4 font-mono text-[13px] leading-relaxed dark:bg-[#1a1a1a]',
         className
       )}
       {...props}

@@ -138,14 +138,27 @@
   @apply bg-transparent p-0;
 }
 
+/* Table styles override */
 .prose table {
-  @apply w-full text-sm;
+  @apply w-full text-sm border border-[#e5e5e5] dark:border-[#333] border-collapse;
+}
+
+.prose thead {
+  @apply bg-[#f5f5f5] dark:bg-[#1a1a1a];
 }
 
 .prose th {
-  @apply font-semibold text-fd-foreground;
+  @apply font-semibold text-[#333] dark:text-[#e5e5e5] border-b border-[#e5e5e5] dark:border-[#333] px-4 py-3 text-left;
 }
 
 .prose td {
-  @apply text-fd-foreground;
+  @apply text-[#333] dark:text-[#e5e5e5] border-b border-[#e5e5e5] dark:border-[#333] px-4 py-3;
+}
+
+.prose tr:last-child td {
+  @apply border-b-0;
+}
+
+.prose tbody tr {
+  @apply transition-colors hover:bg-[#fafafa] dark:hover:bg-[#1f1f1f];
 }

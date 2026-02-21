@@ -1,7 +1,7 @@
 'use client';
 
 import { StoryCard } from '@/components/story-card';
-import { ProductFilter } from '@/components/product-filter';
+import { TagFilter } from '@/components/tag-filter';
 import { StorySearch } from '@/components/story-search';
 import { StorySort } from '@/components/story-sort';
 import { EmptyState } from '@/components/empty-state';
@@ -14,7 +14,7 @@ import { useState } from 'react';
 
 interface StoriesContentProps {
   stories: StoryPage[];
-  products: string[];
+  tags: string[];
   totalCount: number;
 }
 
@@ -26,18 +26,18 @@ type ViewMode = 'grid' | 'compact';
  */
 export function StoriesContent({
   stories,
-  products,
+  tags,
   totalCount,
 }: StoriesContentProps) {
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
 
   const {
-    selectedProducts,
+    selectedTags,
     searchQuery,
     sortBy,
     setSearchQuery,
     setSortBy,
-    toggleProduct,
+    toggleTag,
     clearFilters,
     filteredStories,
     isPending,
@@ -60,11 +60,11 @@ export function StoriesContent({
 
           {/* Filters Row */}
           <div className="flex flex-wrap items-center gap-3">
-            {/* Product Filter */}
-            <ProductFilter
-              products={products}
-              selectedProducts={selectedProducts}
-              onToggle={toggleProduct}
+            {/* Tag Filter */}
+            <TagFilter
+              tags={tags}
+              selectedTags={selectedTags}
+              onToggle={toggleTag}
               onClear={clearFilters}
             />
 

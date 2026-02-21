@@ -19,15 +19,15 @@ const parseAsSortOption = createParser<SortOption>({
 
 interface UseStoryFiltersResult {
   // 筛选状态
-  selectedProducts: string[];
+  selectedTags: string[];
   searchQuery: string;
   sortBy: SortOption;
 
   // 操作函数
-  setSelectedProducts: (products: string[]) => void;
+  setSelectedTags: (tags: string[]) => void;
   setSearchQuery: (query: string) => void;
   setSortBy: (sort: SortOption) => void;
-  toggleProduct: (product: string) => void;
+  toggleTag: (tag: string) => void;
   clearFilters: () => void;
 
   // 过滤后的结果
@@ -51,8 +51,8 @@ export function useStoryFilters(
   const [isPending, startTransition] = useTransition();
 
   // URL 状态管理
-  const [selectedProducts, setSelectedProducts] = useQueryState(
-    'products',
+  const [selectedTags, setSelectedTags] = useQueryState(
+    'tag',
     parseAsArrayOf(parseAsString).withDefault([])
   );
 
@@ -66,15 +66,14 @@ export function useStoryFilters(
     parseAsSortOption.withDefault('newest')
   );
 
-  // 切换产品选择
-  const toggleProduct = (product: string) => {
+  // 切换标签选择
+  const toggleTag = (tag: string) => {
     startTransition(() => {
-      setSelectedProducts((prev) => {
-        const normalized = product.toLowerCase().replace(/\s+/g, '-');
-        if (prev.includes(normalized)) {
-          return prev.filter((p) => p !== normalized);
+      setSelectedTags((prev) => {
+        if (prev.includes(tag)) {
+          return prev.filter((t) => t !== tag);
         }
-        return [...prev, normalized];
+        return [...prev, tag];
       });
     });
   };
@@ -82,7 +81,7 @@ export function useStoryFilters(
   // 清除所有筛选
   const clearFilters = () => {
     startTransition(() => {
-      setSelectedProducts([]);
+      setSelectedTags([]);
       setSearchQuery('');
       setSortBy('newest');
     });
@@ -92,13 +91,10 @@ export function useStoryFilters(
   const filteredStories = useMemo(() => {
     let result = [...stories];
 
-    // 产品筛选
-    if (selectedProducts.length > 0) {
+    // 标签筛选
+    if (selectedTags.length > 0) {
       result = result.filter((story) =>
-        story.data.products?.some((p) => {
-          const normalized = p.toLowerCase().replace(/\s+/g, '-');
-          return selectedProducts.includes(normalized);
-        })
+        story.data.tags?.some((t) => selectedTags.includes(t))
       );
     }
 
@@ -121,20 +117,20 @@ export function useStoryFilters(
     });
 
     return result;
-  }, [stories, selectedProducts, searchQuery, sortBy]);
+  }, [stories, selectedTags, searchQuery, sortBy]);
 
   // 是否有活跃的筛选条件
   const hasActiveFilters =
-    selectedProducts.length > 0 || searchQuery.length > 0 || sortBy !== 'newest';
+    selectedTags.length > 0 || searchQuery.length > 0 || sortBy !== 'newest';
 
   return {
-    selectedProducts,
+    selectedTags,
     searchQuery,
     sortBy,
-    setSelectedProducts,
+    setSelectedTags,
     setSearchQuery,
     setSortBy,
-    toggleProduct,
+    toggleTag,
     clearFilters,
     filteredStories,
     isPending,

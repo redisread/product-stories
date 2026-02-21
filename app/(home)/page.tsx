@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { StoryCard } from '@/components/story-card';
 import { StoryStats } from '@/components/story-stats';
@@ -7,7 +7,7 @@ import {
   getAllStories,
   getFeaturedStories,
   getStoriesStats,
-  getAllProducts,
+  getAllTags,
 } from '@/lib/source';
 import { cn } from '@/lib/utils';
 
@@ -15,41 +15,11 @@ export default async function HomePage() {
   const stories = await getAllStories();
   const featuredStories = await getFeaturedStories(3);
   const stats = await getStoriesStats();
-  const products = await getAllProducts();
+  const tags = await getAllTags();
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-fd-border">
-        <div className="absolute inset-0 bg-gradient-to-br from-fd-primary/5 via-transparent to-fd-accent/5" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="py-20 md:py-32 text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-fd-primary/10 text-fd-primary text-sm font-medium mb-8">
-              <Sparkles className="w-4 h-4" />
-              <span>探索产品背后的故事</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-fd-foreground mb-6">
-              Product Stories
-            </h1>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button asChild size="lg" className="gap-2">
-                <Link href="/stories">
-                  <BookOpen className="w-4 h-4" />
-                  浏览全部故事
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="gap-2">
-                <Link href="/stories">
-                  按产品筛选
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Stories - 移到 Hero 后面 */}
+      {/* Featured Stories - 最顶端 */}
       {featuredStories.length > 0 && (
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,21 +60,21 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Products Grid */}
-      {products.length > 0 && (
+      {/* Tags Grid */}
+      {tags.length > 0 && (
         <section className="py-16 md:py-24 bg-fd-muted/30 border-y border-fd-border">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold text-fd-foreground mb-4">
-                按产品浏览
+                按标签浏览
               </h2>
               <p className="text-fd-muted-foreground max-w-2xl mx-auto">
-                选择你感兴趣的产品，探索与之相关的所有故事
+                选择你感兴趣的标签，探索与之相关的所有故事
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {products.map((product) => (
-                <ProductCard key={product} name={product} />
+              {tags.map((tag) => (
+                <TagCard key={tag} name={tag} />
               ))}
             </div>
           </div>
@@ -169,24 +139,29 @@ export default async function HomePage() {
 }
 
 /**
- * 产品卡片组件
+ * 标签卡片组件
  */
-function ProductCard({ name }: { name: string }) {
-  const productColors: Record<string, string> = {
-    'design-system': 'from-violet-500/20 to-purple-500/20 border-violet-200',
-    'web-platform': 'from-blue-500/20 to-cyan-500/20 border-blue-200',
-    'mobile-app': 'from-emerald-500/20 to-teal-500/20 border-emerald-200',
-    'api-service': 'from-amber-500/20 to-orange-500/20 border-amber-200',
-    ios: 'from-indigo-500/20 to-blue-500/20 border-indigo-200',
-    android: 'from-green-500/20 to-emerald-500/20 border-green-200',
+function TagCard({ name }: { name: string }) {
+  const tagColors: Record<string, string> = {
+    '苹果': 'from-gray-500/20 to-slate-500/20 border-gray-200',
+    '设计': 'from-violet-500/20 to-purple-500/20 border-violet-200',
+    '用户体验': 'from-blue-500/20 to-cyan-500/20 border-blue-200',
+    '简洁': 'from-emerald-500/20 to-teal-500/20 border-emerald-200',
+    '谷歌': 'from-blue-600/20 to-indigo-500/20 border-blue-300',
+    '数据驱动': 'from-amber-500/20 to-orange-500/20 border-amber-200',
+    'ab测试': 'from-red-500/20 to-pink-500/20 border-red-200',
+    '产品决策': 'from-cyan-500/20 to-blue-500/20 border-cyan-200',
+    'notion': 'from-gray-600/20 to-slate-400/20 border-gray-300',
+    '知识管理': 'from-green-500/20 to-emerald-500/20 border-green-200',
+    '效率工具': 'from-yellow-500/20 to-amber-500/20 border-yellow-200',
+    '第二大脑': 'from-indigo-500/20 to-purple-500/20 border-indigo-200',
   };
 
-  const normalized = name.toLowerCase().replace(/\s+/g, '-');
-  const gradient = productColors[normalized] || 'from-gray-500/20 to-slate-500/20 border-gray-200';
+  const gradient = tagColors[name] || 'from-gray-500/20 to-slate-500/20 border-gray-200';
 
   return (
     <Link
-      href={`/stories?products=${encodeURIComponent(normalized)}`}
+      href={`/stories?tag=${encodeURIComponent(name)}`}
       className={cn(
         'group block p-6 rounded-xl border bg-gradient-to-br',
         'transition-all duration-300',
@@ -195,7 +170,7 @@ function ProductCard({ name }: { name: string }) {
       )}
     >
       <h3 className="font-semibold text-fd-foreground group-hover:text-fd-primary transition-colors">
-        {name}
+        #{name}
       </h3>
       <p className="mt-2 text-sm text-fd-muted-foreground">
         查看相关故事

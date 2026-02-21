@@ -31,10 +31,6 @@ export default async function HomePage() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-fd-foreground mb-6">
               Product Stories
             </h1>
-            <p className="text-lg md:text-xl text-fd-muted-foreground mb-10 leading-relaxed">
-              从设计决策到用户旅程，记录产品成长的每一个重要时刻。
-              发现案例研究、用户故事和幕后开发花絮。
-            </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild size="lg" className="gap-2">
                 <Link href="/stories">
@@ -53,14 +49,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-fd-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <StoryStats stats={stats} />
-        </div>
-      </section>
-
-      {/* Featured Stories */}
+      {/* Featured Stories - 移到 Hero 后面 */}
       {featuredStories.length > 0 && (
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,6 +82,13 @@ export default async function HomePage() {
           </div>
         </section>
       )}
+
+      {/* Stats Section */}
+      <section className="py-12 bg-fd-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <StoryStats stats={stats} />
+        </div>
+      </section>
 
       {/* Products Grid */}
       {products.length > 0 && (
@@ -142,12 +138,16 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - 移到底端，包含描述文字 */}
       <section className="py-20 bg-fd-primary text-fd-primary-foreground">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            准备好探索更多了吗？
+            阅读更多产品故事
           </h2>
+          <p className="text-fd-primary-foreground/80 max-w-2xl mx-auto mb-6">
+            从设计决策到用户旅程，记录产品成长的每一个重要时刻。
+            发现案例研究、用户故事和幕后开发花絮。
+          </p>
           <p className="text-fd-primary-foreground/80 max-w-2xl mx-auto mb-8">
             浏览全部 {stories.length} 个产品故事，按产品、标签或日期筛选你感兴趣的内容
           </p>

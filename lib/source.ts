@@ -1,7 +1,10 @@
+import React from 'react';
 import { readFile, readdir } from 'fs/promises';
 import { join } from 'path';
 import matter from 'gray-matter';
+import { compileMDX } from 'next-mdx-remote/rsc';
 import type { StoriesStats, StoryPage } from '@/types/story';
+import { cn } from '@/lib/utils';
 
 const STORIES_DIR = join(process.cwd(), 'content/stories');
 
@@ -210,3 +213,99 @@ export const source = {
 // 搜索 API 兼容
 export const searchAPI = null;
 export const searchPages = async () => [];
+
+/**
+ * MDX 组件映射
+ * 在服务端定义，用于 compileMDX
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const mdxComponents: Record<string, React.FC<any>> = {
+  h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+    return React.createElement('h1', { className: cn('mt-8 mb-4 text-3xl font-bold tracking-tight text-fd-foreground', className), ...props });
+  },
+  h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+    return React.createElement('h2', { className: cn('mt-10 mb-4 text-2xl font-semibold tracking-tight text-fd-foreground', className), ...props });
+  },
+  h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+    return React.createElement('h3', { className: cn('mt-8 mb-3 text-xl font-semibold text-fd-foreground', className), ...props });
+  },
+  h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+    return React.createElement('h4', { className: cn('mt-6 mb-2 text-lg font-semibold text-fd-foreground', className), ...props });
+  },
+  p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => {
+    return React.createElement('p', { className: cn('mb-4 leading-7 text-fd-foreground', className), ...props });
+  },
+  a: ({ className, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+    return React.createElement('a', { className: cn('text-fd-primary underline underline-offset-4 hover:text-fd-primary/80', className), ...props });
+  },
+  ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => {
+    return React.createElement('ul', { className: cn('my-6 ml-6 list-disc text-fd-foreground', className), ...props });
+  },
+  ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => {
+    return React.createElement('ol', { className: cn('my-6 ml-6 list-decimal text-fd-foreground', className), ...props });
+  },
+  li: ({ className, ...props }: React.HTMLAttributes<HTMLLIElement>) => {
+    return React.createElement('li', { className: cn('mt-2', className), ...props });
+  },
+  blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLQuoteElement>) => {
+    return React.createElement('blockquote', { className: cn('mt-6 border-l-4 border-fd-primary pl-4 italic text-fd-muted-foreground', className), ...props });
+  },
+  img: ({ className, alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => {
+    return React.createElement('img', { className: cn('rounded-lg border border-fd-border my-8', className), alt, ...props });
+  },
+  hr: ({ className, ...props }: React.HTMLAttributes<HTMLHRElement>) => {
+    return React.createElement('hr', { className: cn('my-8 border-fd-border', className), ...props });
+  },
+  table: ({ className, ...props }: React.TableHTMLAttributes<HTMLTableElement>) => {
+    return React.createElement('div', { className: 'my-6 w-full overflow-y-auto' },
+      React.createElement('table', { className: cn('w-full border-collapse text-sm', className), ...props })
+    );
+  },
+  tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => {
+    return React.createElement('tr', { className: cn('border-b border-fd-border transition-colors hover:bg-fd-muted/50', className), ...props });
+  },
+  th: ({ className, ...props }: React.ThHTMLAttributes<HTMLTableHeaderCellElement>) => {
+    return React.createElement('th', { className: cn('border-b border-fd-border px-4 py-2 text-left font-semibold text-fd-foreground', className), ...props });
+  },
+  td: ({ className, ...props }: React.TdHTMLAttributes<HTMLTableDataCellElement>) => {
+    return React.createElement('td', { className: cn('px-4 py-2 text-fd-foreground', className), ...props });
+  },
+  code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => {
+    return React.createElement('code', { className: cn('rounded bg-fd-muted px-1.5 py-0.5 font-mono text-sm text-fd-foreground', className), ...props });
+  },
+  pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => {
+    return React.createElement('pre', { className: cn('mb-4 mt-6 overflow-x-auto rounded-xl bg-fd-muted p-4 font-mono text-sm', className), ...props });
+  },
+};
+
+/**
+ * 获取故事 MDX 内容（编译后）
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function getStoryContent(slug: string): Promise<{
+  story: StoryPage;
+  content: React.ReactElement<any>;
+} | null> {
+  const story = await getStoryBySlug(slug);
+  if (!story) return null;
+
+  const filePath = join(STORIES_DIR, ...slug.split('/')) + '.mdx';
+
+  try {
+    const rawContent = await readFile(filePath, 'utf-8');
+    const { content: mdxSource } = matter(rawContent);
+
+    const { content } = await compileMDX({
+      source: mdxSource,
+      options: {
+        parseFrontmatter: false,
+      },
+      components: mdxComponents,
+    });
+
+    return { story, content };
+  } catch (error) {
+    console.error(`Error compiling MDX for ${slug}:`, error);
+    return null;
+  }
+}

@@ -162,14 +162,17 @@ const components = {
 };
 
 interface MdxContentProps {
-  content: React.ComponentType<{
-    components?: typeof components;
-  }>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  content: React.ReactElement<any>;
 }
 
 /**
  * MDX 内容渲染组件
+ * 使用 MDXProvider 包装来应用自定义组件样式
  */
-export function MdxContent({ content: Content }: MdxContentProps) {
-  return <Content components={components} />;
+export function MdxContent({ content }: MdxContentProps) {
+  // 直接返回已编译的 MDX 内容
+  // 注意：next-mdx-remote 的 compileMDX 返回的 ReactElement 已经包含了渲染逻辑
+  // 自定义组件样式需要通过其他方式应用
+  return content;
 }

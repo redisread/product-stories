@@ -21,6 +21,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
+    "estree-walker": "^2.0.2",
     "fast-glob": "^3.3.3",
     "fumadocs-core": "^15.0.0",
     "fumadocs-mdx": "^11.5.0",
@@ -31,6 +32,7 @@
     "js-yaml": "^4.1.0",
     "lucide-react": "^0.575.0",
     "next": "15.1.7",
+    "next-mdx-remote": "^6.0.0",
     "next-themes": "^0.4.4",
     "nuqs": "^2.3.2",
     "react": "^19.0.0",
@@ -52,5 +54,8 @@
     "tailwindcss": "^4.0.8",
     "tsx": "^4.7.0",
     "typescript": "^5.7.3"
+  },
+  "overrides": {
+    "estree-walker": "^2.0.2"
   }
 }

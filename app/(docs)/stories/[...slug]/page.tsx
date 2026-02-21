@@ -2,9 +2,10 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Calendar, Clock, User, ArrowLeft } from 'lucide-react';
-import { getStoryBySlug, getAllStories } from '@/lib/source';
+import { getStoryBySlug, getAllStories, getStoryContent } from '@/lib/source';
 import { formatDate } from '@/lib/utils';
 import { RelatedStories } from '@/components/related-stories';
+import { MdxContent } from '@/components/mdx-content';
 
 interface PageProps {
   params: Promise<{ slug: string[] }>;
@@ -54,12 +55,13 @@ export async function generateStaticParams(): Promise<{ slug: string[] }[]> {
  */
 export default async function StoryPage({ params }: PageProps) {
   const { slug } = await params;
-  const page = await getStoryBySlug(slug.join('/'));
+  const result = await getStoryContent(slug.join('/'));
 
-  if (!page) {
+  if (!result) {
     notFound();
   }
 
+  const { story: page, content } = result;
   const { title, data } = page;
   const { description, date, readingTime, author, products, cover, tags } = data;
 
@@ -144,9 +146,7 @@ export default async function StoryPage({ params }: PageProps) {
 
       {/* 文章内容 */}
       <article className="prose prose-slate dark:prose-invert max-w-none">
-        <p className="text-fd-muted-foreground italic">
-          （文章内容渲染需要配置 MDX 处理器 - 详见 README）
-        </p>
+        <MdxContent content={content} />
       </article>
 
       {/* 文章底部 */}

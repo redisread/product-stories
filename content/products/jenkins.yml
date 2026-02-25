@@ -1,0 +1,6 @@
+id: jenkins
+name: Jenkins
+description: 从 Hudson 到开源 CI 革命，持续集成的代名词
+color: "#d24939"
+icon: Settings
+order: 25

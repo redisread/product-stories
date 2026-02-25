@@ -1,0 +1,6 @@
+id: aws
+name: AWS
+description: 全球最大的云计算平台，为初创企业到大型企业提供全面云服务
+color: "#ff9900"
+icon: Cloud
+order: 3

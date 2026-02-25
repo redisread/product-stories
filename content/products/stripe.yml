@@ -1,0 +1,6 @@
+id: stripe
+name: Stripe
+description: 让开发者轻松集成支付功能的金融基础设施平台
+color: "#635bff"
+icon: CreditCard
+order: 13

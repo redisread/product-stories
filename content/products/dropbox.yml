@@ -1,0 +1,6 @@
+id: dropbox
+name: Dropbox
+description: 简化文件同步与分享，开创了云存储时代
+color: "#0061ff"
+icon: Box
+order: 15

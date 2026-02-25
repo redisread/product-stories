@@ -1,0 +1,6 @@
+id: supabase
+name: Supabase
+description: 开源 Firebase 挑战者，为开发者提供开源后端即服务
+color: "#3ecf8e"
+icon: Database
+order: 30

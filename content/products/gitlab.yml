@@ -1,0 +1,6 @@
+id: gitlab
+name: GitLab
+description: 从个人副业项目到完整的 DevOps 平台
+color: "#fc6d26"
+icon: Gitlab
+order: 24

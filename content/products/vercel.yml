@@ -1,0 +1,6 @@
+id: vercel
+name: Vercel
+description: 前端开发者平台，让部署变得简单快速
+color: "#000000"
+icon: Globe
+order: 2

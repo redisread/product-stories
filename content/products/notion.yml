@@ -1,0 +1,6 @@
+id: notion
+name: Notion
+description: 集笔记、数据库、协作于一体的全能工作空间
+color: "#000000"
+icon: FileText
+order: 4

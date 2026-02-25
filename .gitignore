@@ -44,3 +44,8 @@ next-env.d.ts
 
 # Fumadocs
 .fumadocs
+
+# Generated files
+.source/
+public/feed.xml
+public/search-index.json

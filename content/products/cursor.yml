@@ -1,0 +1,6 @@
+id: cursor
+name: Cursor
+description: 从 CAD 工具转型为 AI 驱动的代码编辑器
+color: "#000000"
+icon: Code
+order: 32

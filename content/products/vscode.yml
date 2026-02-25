@@ -1,0 +1,6 @@
+id: vscode
+name: VS Code
+description: 从 Eclipse 的教训到微软开源编辑器的崛起
+color: "#007acc"
+icon: Code
+order: 34

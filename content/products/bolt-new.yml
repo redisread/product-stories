@@ -1,0 +1,6 @@
+id: bolt-new
+name: Bolt.new
+description: StackBlitz 打造的 AI 全栈开发平台，48小时诞生的革命性产品
+color: "#ff6b00"
+icon: Zap
+order: 16

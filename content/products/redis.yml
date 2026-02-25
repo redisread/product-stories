@@ -1,0 +1,6 @@
+id: redis
+name: Redis
+description: 意大利程序员的个人项目如何改变数据库世界
+color: "#dc382d"
+icon: Database
+order: 29

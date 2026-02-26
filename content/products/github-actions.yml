@@ -1,0 +1,6 @@
+id: github-actions
+name: GitHub Actions
+description: 自动化工作流平台，让CI/CD变得简单高效
+color: "#2088ff"
+icon: Workflow
+order: 36

@@ -1,0 +1,6 @@
+id: anthropic
+name: Anthropic
+description: AI安全研究公司，致力于构建可靠、可解释和可控制的AI系统
+color: "#d97757"
+icon: Brain
+order: 34

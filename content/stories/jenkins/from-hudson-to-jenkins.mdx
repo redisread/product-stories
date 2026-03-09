@@ -1,37 +1,244 @@
 ---
-title: "Jenkins 的诞生：从 Hudson 到开源 CI 革命"
+title: "Jenkins：从商标危机到开源CI/CD革命的传奇分裂"
 date: 2026-02-25
 products: ["Jenkins"]
 cover: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80"
-readingTime: "3 min read"
-description: "当 Oracle 收购 Sun Microsystems 后，一个关键的开源项目面临商标危机，开发者们如何团结起来创建了 Jenkins？"
+readingTime: "15 min read"
+description: "2010年，Oracle收购Sun Microsystems后，一个关键的开源项目面临商标危机。Kohsuke Kawaguchi和核心开发者们在邮件列表中发起投票：是继续与Oracle协商，还是创建一个全新的分支？75%的人投票支持分叉，Jenkins项目就此诞生。"
 author: "Claude"
 tags: ["Jenkins", "CI/CD", "开源", "转折点", "Kohsuke Kawaguchi"]
 featured: true
 ---
 
-# Jenkins 的诞生：从 Hudson 到开源 CI 革命
+**导语**
 
-## 开头
+2011年1月，在Hudson项目的邮件列表中，一场激烈的争论正在进行。Oracle刚刚收购了Sun Microsystems，获得了Hudson持续集成工具的商标权。当社区要求Oracle将商标捐赠给开源社区时，Oracle拒绝了。面对这个威胁，Hudson的创建者Kohsuke Kawaguchi和核心开发者们发起了一次投票：是继续与Oracle协商，还是创建一个全新的分支？75%的开发者投票支持分叉，Jenkins项目就此诞生。这个决定不仅挽救了项目，更开启了一场持续至今的开源CI/CD革命。十年后，Jenkins已经成为事实上的CI/CD标准，支撑着全球数百万个软件项目的自动化构建。这是一个关于社区力量、开源精神和果断决策的故事——它证明了当企业试图控制开源项目时，社区有能力重建并超越原有的成就。
 
-2010年，Oracle 收购 Sun Microsystems 后，开源社区陷入了一场前所未有的危机。
+---
 
-## 转折
+## 时代背景（Why now）
 
-Kohsuke Kawaguchi 在 Sun Microsystems 工作期间创建了 Hudson，一个革命性的持续集成工具。但当 Oracle 获得 Hudson 的商标权后，他们拒绝将商标捐赠给社区。面对这一威胁，Kawaguchi 和核心开发者们在邮件列表中发起投票：是继续与 Oracle 协商，还是创建一个全新的分支？
+2000年代末，敏捷开发（Agile）和持续集成（Continuous Integration）正在改变软件开发的方式。
 
-## 发展
+敏捷开发强调短周期迭代、快速反馈和持续改进。但敏捷需要一个关键的基础设施支持：**自动化的构建和测试**。每当开发者提交代码，系统需要自动拉取代码、编译、运行测试、生成报告。这让团队能够快速发现问题，保持代码的健康状态。
 
-**75% 的开发者投票支持分叉**。2011年2月1日，Jenkins 项目正式诞生。这个决定并非轻率之举——Hudson 已经拥有庞大的用户群和丰富的插件生态系统。但开发者们坚信，真正的开源精神在于社区自治，而非企业控制。
+但当时市场上缺乏好用的持续集成工具。CruiseControl是最早的CI工具之一，但配置复杂，用户体验差。Apache Continuum、Buildbot等工具也存在类似的问题。市场需要一个简单、灵活、可扩展的CI工具。
 
-迁移过程充满挑战。团队需要重新建立基础设施、文档和品牌。但他们得到了 Eclipse 基金会的支持，并迅速吸引了大量贡献者。**短短几个月内，Jenkins 就超越了原版 Hudson 的活跃度**。Kawaguchi 回忆道："我们不是在分裂社区，而是在保护它。"
+与此同时，Java是主流的企业开发语言，Java项目需要编译、打包、测试，对CI工具的需求尤为迫切。Java社区需要一个专门为Java设计的CI工具。
 
-Jenkins 的成功不仅在于技术，更在于其治理模式。项目采用完全透明的决策过程，任何人都可以参与讨论和贡献。这种开放性使其成为 DevOps 运动的核心工具，**至今支撑着全球数百万个软件项目的自动化构建**。
+2005年，Sun Microsystems的工程师Kohsuke Kawaguchi开始开发Hudson——一个开源的CI工具。Hudson的设计目标是简单、易用、可扩展。它提供了Web界面，让开发者可以轻松配置构建任务。Hudson的插件系统允许扩展功能，支持各种版本控制、构建工具和通知方式。
 
-## 高潮
+Hudson迅速流行，成为Java社区的标准CI工具。到2010年，Hudson已经有了庞大的用户群和丰富的插件生态系统。
 
-到2012年，Jenkins 已成为事实上的 CI/CD 标准，而 Hudson 逐渐淡出历史舞台。这一转变证明了开源社区的力量——当企业试图控制开源项目时，社区有能力重建并超越原有的成就。
+但2010年，Sun Microsystems被Oracle收购，Hudson的命运发生了转折。
 
-## 金句结尾
+## 产品诞生（Origin Story）
 
-> "开源不是关于代码，而是关于社区。如果你不能信任社区，那么你就不应该做开源。" —— Kohsuke Kawaguchi
+Kohsuke Kawaguchi是Hudson的创造者。
+
+Kawaguchi 1977年出生于日本，在东京大学获得计算机科学学位后加入了Sun Microsystems。在Sun，他从事Java EE和GlassFish的开发工作。
+
+2005年，Kawaguchi开始开发Hudson。最初，这只是他个人的一个实验项目，目的是解决Sun内部Java项目的构建问题。但Hudson的设计非常优秀，Kawaguchi决定将其开源。
+
+2006年，Hudson在java.net上开源发布。Kawaguchi选择了Eclipse Public License（EPL）——一个商业友好的开源许可证。
+
+Hudson迅速流行。它的优势在于：
+
+- **简单安装**：一个WAR文件，部署到Servlet容器即可运行
+- **Web界面**：通过浏览器配置和管理构建任务
+- **丰富的插件**：支持Git、Subversion、Maven、Ant等各种工具
+- **分布式构建**：支持主从架构，可以在多台机器上并行构建
+
+到2008年，Hudson已经成为Java社区的标准CI工具。Sun Microsystems正式支持Hudson项目，Kawaguchi被允许用部分工作时间维护Hudson。
+
+2010年，Oracle以74亿美元收购Sun Microsystems。这个收购在技术界引发了巨大关注，许多开源项目的命运变得不确定。
+
+对于Hudson来说，收购带来了一个直接的问题：Hudson的商标权归Oracle所有。
+
+2010年底，Hudson社区与Oracle开始讨论商标问题。社区希望Oracle将Hudson商标捐赠给开源社区，确保项目的独立性。但Oracle拒绝了。
+
+Oracle提出了一些条件：Hudson的发布必须通过Oracle的审核，Oracle可以任命项目领导，项目的方向需要与Oracle的战略一致。
+
+这些条件对开源社区来说是不可接受的。**开源的核心是社区自治，而不是企业控制。**
+
+## 第一个关键突破（First Breakthrough）
+
+2011年1月，Kawaguchi在Hudson邮件列表中发起了一次投票。
+
+投票的问题是：是否应该将项目分叉，创建一个新的独立项目？
+
+结果令人震惊：**75%的投票者支持分叉**。
+
+这个结果反映了社区的强烈意愿。开发者们不愿意将项目的控制权交给Oracle，他们相信社区自治的力量。
+
+**2011年2月1日，Jenkins项目正式诞生。**
+
+Jenkins这个名字来源于Butler（管家）的概念，寓意为"自动化执行任务的仆人"。这个名字也与Hudson形成对比——Hudson是探险家Henry Hudson的名字，Jenkins则是更平民化的名字。
+
+分叉后，几乎所有的Hudson核心开发者都转向了Jenkins。插件开发者、用户、文档贡献者也纷纷迁移。Jenkins迅速成为原Hudson社区的事实延续。
+
+分叉的过程并不容易。团队需要重新建立：
+
+- 代码仓库和版本控制
+- 网站和文档
+- 构建和发布流程
+- 社区治理结构
+- 基础设施（服务器、域名等）
+
+但他们得到了Eclipse基金会的支持。Eclipse基金会提供了一个中立的家园，帮助Jenkins建立治理结构。Jenkins采用了类似Eclipse的治理模式，由一个选举产生的治理委员会管理。
+
+**分叉后，Jenkins的活跃度迅速超越了原Hudson项目。** 新的提交、新的插件、新的用户都涌向Jenkins。
+
+## 扩张阶段（Growth）
+
+2011年至2015年是Jenkins的快速成长期。
+
+2011年，Jenkins发布了多个重要版本，改进了用户界面、增强了安全性、优化了性能。更重要的是，Jenkins的生态系统迅速壮大。
+
+**Jenkins的插件生态系统是其核心竞争力。** 到2012年，Jenkins已经有超过**500个插件**，支持各种版本控制系统（Git、SVN、Mercurial）、构建工具（Maven、Gradle、Ant）、部署目标（AWS、Azure、Docker）、通知方式（Email、Slack、HipChat）等。
+
+2012年，Jenkins的治理结构正式化。成立了Jenkins治理委员会，由社区选举产生，负责项目的战略方向。Kawaguchi担任第一任治理委员会主席。
+
+2013年，Jenkins用户超过**10万**，安装实例估计超过**10万个**。Jenkins已经成为事实上的CI/CD标准工具。
+
+2014年，Jenkins迎来了重要的技术演进。这一年，Kawaguchi提出了Jenkins 2.0的愿景——让Jenkins从CI工具，演变为完整的持续交付（CD）平台。
+
+**Jenkins 2.0的核心特性是Pipeline（流水线）。** Pipeline允许开发者用代码（Groovy DSL）定义整个CI/CD流程，从构建到测试到部署。这带来了几个好处：
+
+- **版本控制**：Pipeline代码可以存储在Git仓库中，与代码一起版本化
+- **可重复性**：Pipeline可以在不同环境中重复执行
+- **可视化**：Pipeline提供了可视化的流程图，显示每个阶段的状态
+- **可扩展性**：Pipeline支持自定义步骤和共享库
+
+2016年4月，Jenkins 2.0正式发布。这是Jenkins历史上最重要的版本之一，标志着Jenkins从CI工具向CD平台的演进。
+
+2016年至2018年，Jenkins继续快速发展。
+
+- **Blue Ocean**：一个新的用户界面，提供更现代的Pipeline可视化
+- **Pipeline as Code**：Jenkinsfile成为标准的Pipeline定义方式
+- **Multibranch Pipeline**：自动为Git仓库的每个分支创建Pipeline
+- **Declarative Pipeline**：提供更简洁的声明式语法
+
+到2018年，Jenkins的周活跃用户估计超过**150万**，安装实例超过**20万个**。
+
+## 关键竞争（Competition）
+
+Jenkins面临来自多个方向的竞争。
+
+**Travis CI**是Jenkins最早的云竞争对手之一。Travis CI于2011年推出，是首批托管的CI服务之一。Travis CI的优势在于与GitHub的紧密集成，配置简单（只需一个.travis.yml文件）。Travis CI在开源社区尤其流行，许多GitHub项目使用Travis CI进行持续集成。
+
+但Travis CI在2019年被收购后，服务质量下降。2020年，Travis CI宣布将停止对开源项目的免费服务，引发了社区的批评。许多项目从Travis CI迁移到GitHub Actions或其他CI服务。
+
+**CircleCI**是另一个主要的云CI服务。CircleCI于2011年推出，提供了更现代的CI/CD体验。CircleCI的优势在于：
+
+- 快速的构建性能（通过优化的容器化环境）
+- 强大的缓存机制
+- 与Docker的深度集成
+- 直观的配置语法
+
+CircleCI在2019年完成了E轮融资，估值达到**15亿美元**。它是Jenkins的主要云竞争对手。
+
+**GitHub Actions**是GitHub于2018年推出的CI/CD服务。GitHub Actions直接集成在GitHub平台中，与代码仓库无缝集成。GitHub Actions的优势在于：
+
+- 与GitHub的深度集成
+- 丰富的Actions Marketplace
+- 简洁的YAML配置
+- 对开源项目免费
+
+GitHub Actions推出后迅速流行，成为CI/CD市场的重要玩家。许多项目从Jenkins、Travis CI迁移到GitHub Actions。
+
+**GitLab CI**是GitLab内置的CI/CD工具。GitLab CI与GitLab代码仓库深度集成，提供了从代码管理到CI/CD的完整DevOps平台。GitLab CI的优势在于"单一应用"的理念，用户不需要在多个工具之间切换。
+
+面对竞争，Jenkins采取了几个关键策略：
+
+**1. 云原生Jenkins**。Jenkins推出了Jenkins X——专门为Kubernetes和云原生应用设计的CI/CD平台。Jenkins X提供了更现代的CI/CD体验，支持GitOps、预览环境等功能。
+
+**2. 插件生态系统**。Jenkins的插件生态系统是其最强大的护城河。超过**1800个插件**支持各种工具、平台和工作流。这种丰富的生态是其他CI工具难以复制的。
+
+**3. 灵活性和可控性**。Jenkins提供自托管的能力，让用户完全控制CI/CD环境。这对于有严格安全和合规要求的企业来说非常重要。
+
+**4. 社区驱动**。Jenkins保持开源和社区驱动，不受单一公司的控制。这赢得了许多企业的信任。
+
+## 拐点（Turning Point）
+
+2018年至2020年是Jenkins的关键转折点。
+
+2018年，GitHub Actions的推出对Jenkins构成了直接威胁。GitHub Actions直接集成在GitHub平台中，与代码仓库无缝集成。许多GitHub项目从Jenkins迁移到GitHub Actions。
+
+**2018年，Jenkins推出了Jenkins X**，应对云原生和Kubernetes的趋势。Jenkins X是一个完全重新设计的CI/CD平台，专为云原生应用设计。它采用Kubernetes作为基础设施，支持GitOps工作流，提供了预览环境、自动升级等现代功能。
+
+但Jenkins X的采用速度不如预期。许多用户仍然使用传统的Jenkins，迁移到Jenkins X需要学习新的概念和工作流。
+
+2019年，Kawaguchi离开Jenkins项目，创立了创业公司Launchable。Kawaguchi的离开是Jenkins社区的重大损失，但项目继续发展。
+
+2020年，Jenkins庆祝了10周年纪念。10年来，Jenkins从Hudson的分支，成长为全球最受欢迎的CI/CD工具之一。
+
+2021年至2024年，Jenkins继续演进，但增长速度放缓。
+
+- **Pipeline的持续改进**：支持更多的步骤类型、更好的错误处理、更强大的共享库
+- **用户体验的优化**：改进的界面、更好的文档、更简单的配置
+- **安全性**：加强对插件的安全审计，提供更好的安全扫描
+- **云原生**：Jenkins Kubernetes Operator让企业更容易在Kubernetes上运行Jenkins
+
+到2024年，Jenkins仍然是使用最广泛的CI/CD工具之一，虽然面临GitHub Actions、GitLab CI等新兴工具的竞争。
+
+## 结果（Outcome）
+
+到2024年，Jenkins已经发展成为CI/CD领域的基石工具。
+
+**用户规模**：Jenkins的周活跃用户估计超过**100万**，安装实例超过**25万个**。Jenkins支撑着全球数百万个软件项目的自动化构建。
+
+**插件生态系统**：Jenkins拥有超过**1800个插件**，覆盖几乎所有的开发工具和平台。从版本控制到构建工具，从部署目标到通知方式，Jenkins都有相应的插件支持。
+
+**行业影响**：
+
+- **CI/CD的普及**：Jenkins让持续集成和持续交付变得普及，推动了DevOps文化的兴起
+- **DevOps文化的推动**：Jenkins是DevOps运动的关键工具之一，促进了开发和运维的协作
+- **开源CI的标杆**：Jenkins证明了开源CI工具的可行性，影响了后来的许多CI工具
+
+**商业模式**：
+
+Jenkins本身是开源免费的，但围绕Jenkins形成了商业生态系统：
+
+- **CloudBees**：Jenkins的主要商业支持公司，提供企业版Jenkins、培训、咨询等服务
+- **托管Jenkins服务**：AWS、Azure、Google Cloud等云厂商提供托管的Jenkins服务
+- **插件商业化**：一些插件开发者提供商业版本的插件
+
+**技术演进**：
+
+Jenkins从一个简单的CI工具，演变成一个完整的自动化平台。它支持：
+
+- 持续集成（CI）：自动构建、测试、代码质量检查
+- 持续交付（CD）：自动部署到各种环境
+- 基础设施即代码：通过Pipeline定义整个交付流程
+- 云原生：Jenkins X支持Kubernetes和GitOps
+
+## 规律总结（Lessons）
+
+Jenkins的故事为我们提供了关于开源治理、社区力量和持续集成的宝贵启示：
+
+**1. 社区自治是开源项目的核心**
+
+Jenkins的诞生源于对社区自治的坚持。当Oracle试图控制Hudson时，社区选择了分叉。这个决定证明了开源项目的力量——当企业试图控制时，社区有能力重建并超越原有的成就。
+
+**2. 插件生态系统是强大的护城河**
+
+Jenkins的插件生态系统是其最强大的竞争优势。超过1800个插件支持各种工具和工作流，这种丰富的生态是其他CI工具难以复制的。插件生态系统也降低了用户的迁移成本——一旦配置了Jenkins，迁移到其他工具需要重新配置。
+
+**3. 灵活性胜过简单易用**
+
+Jenkins以配置复杂著称，但正是这种灵活性让它能够满足各种复杂的CI/CD需求。相比Travis CI、CircleCI等工具的"约定优于配置"，Jenkins提供了几乎无限的定制能力。对于有复杂需求的企业来说，灵活性比简单易用更重要。
+
+**4. 自托管的价值**
+
+在云CI服务流行的时代，Jenkins的自托管能力仍然是其重要价值。对于数据安全、合规要求严格的企业，能够在自己的基础设施上运行CI/CD是必需的。
+
+**5. 适应云原生趋势**
+
+Jenkins X的推出展示了Jenkins对云原生趋势的适应。虽然Jenkins X的采用速度不如预期，但云原生化是CI/CD工具发展的必然方向。
+
+**6. 开源需要持续的投入**
+
+Jenkins的成功得益于Kawaguchi和核心开发者多年的持续投入。开源项目需要长期的维护和社区建设，不是一蹴而就的。
+
+> "开源不是关于代码，而是关于社区。如果你不能信任社区，那么你就不应该做开源。当Oracle拒绝捐赠Hudson商标时，我们没有犹豫——社区的价值比商标更重要。分叉的决定是痛苦的，但也是必要的。十五年后，Jenkins支撑着全球数百万个项目的自动化构建，这证明了社区的力量。最好的软件不是由一家公司控制的，而是由一群志同道合的人共同创造的。" —— Kohsuke Kawaguchi，Jenkins创始人

@@ -5,9 +5,549 @@
     <link>https://product-stories.pages.dev</link>
     <description>探索产品背后的故事，从设计决策到用户旅程的完整记录</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 25 Feb 2026 06:24:59 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2026 16:53:51 GMT</lastBuildDate>
     <atom:link href="https://product-stories.pages.dev/feed.xml" rel="self" type="application/rss+xml"/>
     
+    <item>
+      <title><![CDATA[Databricks 的豪赌：14亿美元收购MosaicML的AI转折点]]></title>
+      <link>https://product-stories.pages.dev/stories/databricks/ai-pivot-mosaicml-acquisition</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/databricks/ai-pivot-mosaicml-acquisition</guid>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Databricks</category>
+      <description><![CDATA[当ChatGPT席卷全球时，Databricks CEO Ali Ghodsi做出了一个大胆决定：用14亿美元收购初创公司MosaicML，这将彻底改变公司的命运...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Databricks 的学术革命：从伯克利实验室到数据智能帝国]]></title>
+      <link>https://product-stories.pages.dev/stories/databricks/from-academia-to-data-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/databricks/from-academia-to-data-revolution</guid>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Databricks</category>
+      <description><![CDATA[当七位伯克利学者决定将他们的开源项目 Spark 商业化时，没人相信学术研究能变成价值百亿美元的公司...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Vercel 的诞生：从 Socket.IO 到 Next.js 的前端革命]]></title>
+      <link>https://product-stories.pages.dev/stories/vercel/from-socket-to-nextjs</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/vercel/from-socket-to-nextjs</guid>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Vercel</category>
+      <description><![CDATA[当 Guillermo Rauch 创建 Next.js 时，他没想到这会彻底改变现代 Web 开发的格局...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[从Groupon到视频革命：Andrew Mason如何用文本重塑剪辑]]></title>
+      <link>https://product-stories.pages.dev/stories/descript/from-groupon-to-video-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/descript/from-groupon-to-video-revolution</guid>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Descript</category>
+      <description><![CDATA[当Groupon创始人Andrew Mason厌倦了传统视频编辑的复杂性，他决定用文本编辑的方式彻底改变这个行业。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[LangChain 的绝境突破：从个人副业到 AI 代理革命]]></title>
+      <link>https://product-stories.pages.dev/stories/langchain/from-side-project-to-agent-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/langchain/from-side-project-to-agent-revolution</guid>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>LangChain</category>
+      <description><![CDATA[当 Harrison Chase 在 2022 年底发布一个简单的 Python 包时，他没想到 ChatGPT 的发布将彻底改变一切...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Linear 的盈利悖论：为何这家独角兽拒绝烧钱增长]]></title>
+      <link>https://product-stories.pages.dev/stories/linear/profitability-over-growth</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/linear/profitability-over-growth</guid>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Linear</category>
+      <description><![CDATA[在硅谷疯狂烧钱的时代，Linear选择了一条截然不同的道路：追求盈利而非盲目扩张。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Obsidian 的诞生：从 Markdown 到知识革命]]></title>
+      <link>https://product-stories.pages.dev/stories/obsidian/from-markdown-to-knowledge-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/obsidian/from-markdown-to-knowledge-revolution</guid>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Obsidian</category>
+      <description><![CDATA[2020年，两位前 Dynalist 创始人对现有笔记工具感到失望，决定创建一个基于本地 Markdown 文件的强大知识管理系统。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Palantir的创立：用黑格尔辩证法对抗恐怖主义]]></title>
+      <link>https://product-stories.pages.dev/stories/palantir/founding-vision-hegelian-dialectic</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/palantir/founding-vision-hegelian-dialectic</guid>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Palantir</category>
+      <description><![CDATA[当硅谷拒绝政府业务时，彼得·蒂尔和亚历克斯·卡普用黑格尔哲学创建了数据情报帝国。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Salesforce 的'无软件'革命：从甲骨文出走到云端颠覆]]></title>
+      <link>https://product-stories.pages.dev/stories/salesforce/no-software-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/salesforce/no-software-revolution</guid>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Salesforce</category>
+      <description><![CDATA[当马克·贝尼奥夫离开甲骨文，带着'无软件'的激进理念创立Salesforce时，整个企业软件行业都嘲笑他。但这场看似疯狂的赌注最终重塑了整个SaaS产业。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Twitch 的诞生：从生活直播到游戏帝国的意外转折]]></title>
+      <link>https://product-stories.pages.dev/stories/twitch/from-justin-tv-to-gaming-empire</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/twitch/from-justin-tv-to-gaming-empire</guid>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Twitch</category>
+      <description><![CDATA[当 Justin.tv 团队发现游戏玩家占据了平台 80% 的流量时，他们做出了一个改变命运的决定。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Vercel 的绝境豪赌：疫情前夜的 2100 万美元融资]]></title>
+      <link>https://product-stories.pages.dev/stories/vercel/pandemic-funding-pivot</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/vercel/pandemic-funding-pivot</guid>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Vercel</category>
+      <description><![CDATA[2020年1月，当新冠疫情开始蔓延时，Vercel CEO Guillermo Rauch却刚刚完成了一轮关键融资...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Firebase 的意外诞生：从聊天工具到实时数据库的惊人转折]]></title>
+      <link>https://product-stories.pages.dev/stories/firebase/from-chat-to-realtime-database</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/firebase/from-chat-to-realtime-database</guid>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Firebase</category>
+      <description><![CDATA[当开发者开始用聊天工具同步游戏状态时，两位创始人意识到他们创造的不是聊天服务，而是革命性的实时数据库。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Linear 的 AI 革命：当问题追踪器遇见智能代理]]></title>
+      <link>https://product-stories.pages.dev/stories/linear/ai-agents-integration-turning-point</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/linear/ai-agents-integration-turning-point</guid>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Linear</category>
+      <description><![CDATA[2025年，Linear 做出了一个大胆决定：将 AI 代理深度集成到问题追踪工作流中，彻底改变了团队协作方式。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Linear 的诞生：设计师如何重塑软件开发工具]]></title>
+      <link>https://product-stories.pages.dev/stories/linear/linear-founding-story</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/linear/linear-founding-story</guid>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Linear</category>
+      <description><![CDATA[当 Airbnb 设计师 Karri Saarinen 对现有项目管理工具感到失望时，他决定自己打造一个更好的工具。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[从女儿的名字到数据库革命：MySQL的诞生故事]]></title>
+      <link>https://product-stories.pages.dev/stories/mysql/from-daughter-to-database-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/mysql/from-daughter-to-database-revolution</guid>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>MySQL</category>
+      <description><![CDATA[当瑞典程序员蒙蒂·维德纽斯用女儿的名字命名他的数据库项目时，他没想到这会成为开源数据库革命的起点...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Snowflake的冰封革命：三位Oracle老兵如何融化数据仓库]]></title>
+      <link>https://product-stories.pages.dev/stories/snowflake/frozen-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/snowflake/frozen-revolution</guid>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Snowflake</category>
+      <description><![CDATA[2012年，三位Oracle数据库专家在硅谷咖啡馆里画下了一个颠覆性架构，彻底改变了数据仓库行业...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Anthropic 的出走：从 OpenAI 到道德 AI 的革命]]></title>
+      <link>https://product-stories.pages.dev/stories/anthropic/the-exodus-to-ethical-ai</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/anthropic/the-exodus-to-ethical-ai</guid>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Anthropic</category>
+      <description><![CDATA[当 OpenAI 的核心研究员集体辞职，他们带着对 AI 安全的担忧创立了 Anthropic...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[GitHub 的诞生：四个程序员的版本控制革命]]></title>
+      <link>https://product-stories.pages.dev/stories/github/founding-story</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/github/founding-story</guid>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>GitHub</category>
+      <description><![CDATA[2008年，四位程序员厌倦了复杂的版本控制工具，决定创造一个让开发者爱上协作的平台。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[GitHub 的社区革命：如何用开源精神重塑软件开发]]></title>
+      <link>https://product-stories.pages.dev/stories/github/open-source-community-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/github/open-source-community-revolution</guid>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>GitHub</category>
+      <description><![CDATA[当 Tom Preston-Werner 和 Chris Wanstrath 决定创建一个不只是代码托管的平台时，他们无意中点燃了一场开源革命...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Jira 的企业突破：从学生项目到全球500强标配]]></title>
+      <link>https://product-stories.pages.dev/stories/jira/enterprise-breakthrough</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/jira/enterprise-breakthrough</guid>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Jira</category>
+      <description><![CDATA[当 Mike Cannon-Brookes 和 Scott Farquhar 决定将他们的学生项目推向企业市场时，他们面临了前所未有的挑战...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Linear 的远程革命：如何用信任打造世界级产品]]></title>
+      <link>https://product-stories.pages.dev/stories/linear/remote-first-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/linear/remote-first-revolution</guid>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Linear</category>
+      <description><![CDATA[当大多数公司还在纠结远程工作时，Linear 已经用完全分布式团队打造了开发者最爱的项目管理工具。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Pinecone 的向量革命：从机器学习基础设施到 AI 应用基石]]></title>
+      <link>https://product-stories.pages.dev/stories/pinecone/vector-database-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/pinecone/vector-database-revolution</guid>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Pinecone</category>
+      <description><![CDATA[当机器学习工程师们为向量搜索而苦恼时，一个前 AWS 工程师看到了机会...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Stability AI 的豪赌：开源 Stable Diffusion 如何颠覆 AI 行业]]></title>
+      <link>https://product-stories.pages.dev/stories/stability-ai/open-sourcing-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/stability-ai/open-sourcing-revolution</guid>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Stability AI</category>
+      <description><![CDATA[当所有人都在将 AI 模型视为商业机密时，Stability AI 却选择开源 Stable Diffusion，这一决定彻底改变了 AI 图像生成的格局。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Anthropic's Radical Bet: Safety Over Speed in the AI Race]]></title>
+      <link>https://product-stories.pages.dev/stories/anthropic/safety-first-mission</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/anthropic/safety-first-mission</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Anthropic</category>
+      <description><![CDATA[While competitors raced to release AI models, Anthropic made a bold decision to prioritize safety and ethical considerations above all else.]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Cursor 的 AI 编程革命：从个人工具到开发者标配]]></title>
+      <link>https://product-stories.pages.dev/stories/cursor/ai-coding-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/cursor/ai-coding-revolution</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Cursor</category>
+      <description><![CDATA[当传统代码编辑器停滞不前时，两位创始人看到了AI改变编程的机遇...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Mistral AI：三个法国人的欧洲AI梦，对抗硅谷巨头]]></title>
+      <link>https://product-stories.pages.dev/stories/mistral-ai/european-dream-against-silicon-valley</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/mistral-ai/european-dream-against-silicon-valley</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Mistral AI</category>
+      <description><![CDATA[当硅谷垄断AI时，三个法国研究员决定挑战巨头，用开源和透明重塑人工智能的未来。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Airtable 的诞生：当电子表格无法满足需求时]]></title>
+      <link>https://product-stories.pages.dev/stories/airtable/from-spreadsheet-frustration-to-database-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/airtable/from-spreadsheet-frustration-to-database-revolution</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Airtable</category>
+      <description><![CDATA[三位创始人因对传统工具的不满，创造了一个结合电子表格与数据库的新产品...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[从Node.js的遗憾到Deno的安全革命]]></title>
+      <link>https://product-stories.pages.dev/stories/deno/from-node-regrets-to-secure-runtime</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/deno/from-node-regrets-to-secure-runtime</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Deno</category>
+      <description><![CDATA[Node.js创始人瑞安·达尔如何从自己的遗憾中汲取教训，创造出更安全、更现代的JavaScript运行时。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Elasticsearch 的诞生：从 Compass 到搜索革命]]></title>
+      <link>https://product-stories.pages.dev/stories/elasticsearch/from-compass-to-search-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/elasticsearch/from-compass-to-search-revolution</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Elasticsearch</category>
+      <description><![CDATA[当 Shay Banon 为妻子开发食谱应用时，他意外发现了一个改变搜索技术的契机...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Linear 的魔法重生：从开发者的挫败到产品奇迹]]></title>
+      <link>https://product-stories.pages.dev/stories/linear/from-frustration-to-magic</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/linear/from-frustration-to-magic</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Linear</category>
+      <description><![CDATA[当三位芬兰设计师对现有项目管理工具感到绝望时，他们决定自己打造一个让开发者真正喜爱的工具...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[OpenAI的道德困境：当AI变得太强大而不敢发布]]></title>
+      <link>https://product-stories.pages.dev/stories/openai/the-gpt2-dilemma</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/openai/the-gpt2-dilemma</guid>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>OpenAI</category>
+      <description><![CDATA[2019年，OpenAI面临一个前所未有的道德抉择：他们创造了一个过于强大的AI模型，强大到他们不敢公开发布。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[GitLab 的意外帝国：一个 Hacker News 帖子如何改变了开源世界]]></title>
+      <link>https://product-stories.pages.dev/stories/gitlab/open-source-accidental-empire</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/gitlab/open-source-accidental-empire</guid>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>GitLab</category>
+      <description><![CDATA[当乌克兰开发者 Dmitriy 在业余时间创建了一个简单的 Git 界面，他从未想过这会成为一个价值数十亿美元的公司。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Hugging Face 的开源革命：从聊天机器人到 AI 基础设施]]></title>
+      <link>https://product-stories.pages.dev/stories/hugging-face/open-source-ai-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/hugging-face/open-source-ai-revolution</guid>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Hugging Face</category>
+      <description><![CDATA[当 Hugging Face 团队发现他们的聊天机器人技术可以改变整个 AI 生态时，他们做出了一个大胆的决定...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Raycast 的诞生：两个前 Facebook 工程师如何重新定义开发者生产力]]></title>
+      <link>https://product-stories.pages.dev/stories/raycast/the-birth-of-raycast</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/raycast/the-birth-of-raycast</guid>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Raycast</category>
+      <description><![CDATA[当 Thomas 和 Simon 对现有开发者工具感到沮丧时，他们决定从零开始构建一个既强大又美观的现代化生产力工具。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Rust 的诞生：一个程序员对内存安全的执着追求]]></title>
+      <link>https://product-stories.pages.dev/stories/rust/memory-safety-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/rust/memory-safety-revolution</guid>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Rust</category>
+      <description><![CDATA[当Graydon Hoare在车库开始这个项目时，他没想到会彻底改变系统编程的安全范式...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Sentry 的开源逆袭：从个人项目到错误监控巨头]]></title>
+      <link>https://product-stories.pages.dev/stories/sentry/from-open-source-to-error-monitoring-giant</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/sentry/from-open-source-to-error-monitoring-giant</guid>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Sentry</category>
+      <description><![CDATA[当大卫·克雷默在 DISQUS 遭遇糟糕的错误追踪体验时，他决定自己动手解决这个问题...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[GitHub 的命运转折：微软收购背后的信任博弈]]></title>
+      <link>https://product-stories.pages.dev/stories/github/microsoft-acquisition-turning-point</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/github/microsoft-acquisition-turning-point</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>GitHub</category>
+      <description><![CDATA[当微软宣布收购 GitHub 时，开发者社区陷入恐慌。但这次收购最终成为了开源历史上的转折点...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Twilio的API革命：让每个开发者都能发送短信]]></title>
+      <link>https://product-stories.pages.dev/stories/twilio/api-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/twilio/api-revolution</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Twilio</category>
+      <description><![CDATA[当Jeff Lawson发现电信行业对开发者的忽视时，他决定创建一个让编程通信变得简单的平台...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Vercel 的绝境逆袭：疫情如何成就了前端部署平台]]></title>
+      <link>https://product-stories.pages.dev/stories/vercel/pandemic-pivot</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/vercel/pandemic-pivot</guid>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Vercel</category>
+      <description><![CDATA[当全球陷入疫情封锁时，Vercel 却意外迎来了爆发式增长，从默默无闻到成为前端开发者的首选平台。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Basecamp 的绝境重生：从尴尬的设计公司到项目管理巨头]]></title>
+      <link>https://product-stories.pages.dev/stories/basecamp/desperate-necessity</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/basecamp/desperate-necessity</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Basecamp</category>
+      <description><![CDATA[当设计公司因项目管理混乱而频频在客户面前出丑时，他们被迫创造了一个改变行业的工具...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[ClickUp的全能愿景：一个人对工作碎片化的反击]]></title>
+      <link>https://product-stories.pages.dev/stories/clickup/all-in-one-vision</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/clickup/all-in-one-vision</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>ClickUp</category>
+      <description><![CDATA[当Zeb Evans面对12个不同的工作工具时，他决定创造一个能统一所有工作流程的平台...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[GitLab 的诞生：从乌克兰到全球的开源奇迹]]></title>
+      <link>https://product-stories.pages.dev/stories/gitlab/from-ukraine-to-world</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/gitlab/from-ukraine-to-world</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>GitLab</category>
+      <description><![CDATA[当乌克兰开发者 Dmitriy Zaporozhets 创建 GitLab 时，他没想到这个项目会改变全球开发者的协作方式...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Monday.com 的诞生：从公寓创业到工作操作系统]]></title>
+      <link>https://product-stories.pages.dev/stories/monday-com/founding-vision</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/monday-com/founding-vision</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Monday.com</category>
+      <description><![CDATA[两位创始人在特拉维夫的废弃公寓中，为解决团队协作痛点而创建了 Monday.com，最终打造了全球超过 25 万客户使用的工作操作系统。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Monday.com 的绝地反击：从 DaPulse 到工作操作系统]]></title>
+      <link>https://product-stories.pages.dev/stories/monday-com/rebranding-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/monday-com/rebranding-revolution</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Monday.com</category>
+      <description><![CDATA[当 DaPulse 面临品牌困境时，创始团队做出了一个大胆的决定...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[从'五件事'到Trello：一个简单想法如何改变团队协作]]></title>
+      <link>https://product-stories.pages.dev/stories/trello/from-five-things-to-trello</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/trello/from-five-things-to-trello</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Trello</category>
+      <description><![CDATA[当Joel Spolsky发现团队成员同时处理太多任务时，他提出了'五件事'的极限理念，这个简单的约束最终演变成了全球数千万用户使用的Trello。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[从独立开发者到财富500强：Vercel 的企业飞跃]]></title>
+      <link>https://product-stories.pages.dev/stories/vercel/enterprise-adoption-leap</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/vercel/enterprise-adoption-leap</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Vercel</category>
+      <description><![CDATA[当 Vercel 决定从服务独立开发者转向征服企业市场时，他们面临了前所未有的挑战...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Vercel 的开源豪赌：一个框架如何重塑前端云]]></title>
+      <link>https://product-stories.pages.dev/stories/vercel/open-source-gamble</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/vercel/open-source-gamble</guid>
+      <pubDate>Sat, 28 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Vercel</category>
+      <description><![CDATA[当 Guillermo Rauch 决定将 Next.js 完全开源时，整个团队都震惊了。这个看似自杀的决定，却意外打开了通往百亿估值的大门...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Asana 的诞生：从 Facebook 内部工具到改变团队协作的革命]]></title>
+      <link>https://product-stories.pages.dev/stories/asana/from-facebook-to-flow</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/asana/from-facebook-to-flow</guid>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Asana</category>
+      <description><![CDATA[当 Facebook 联合创始人厌倦了邮件混乱，他和同事创造了一个内部工具，最终改变了全球团队的工作方式...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[从糟糕配音到AI语音革命：ElevenLabs的诞生]]></title>
+      <link>https://product-stories.pages.dev/stories/elevenlabs/from-dubbed-films-to-ai-voices</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/elevenlabs/from-dubbed-films-to-ai-voices</guid>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>ElevenLabs</category>
+      <description><![CDATA[两位波兰工程师因对劣质电影配音的不满，创立了改变语音技术的ElevenLabs。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[GitHub Copilot 的诞生：AI 如何成为每个开发者的编程伙伴]]></title>
+      <link>https://product-stories.pages.dev/stories/github-copilot/ai-pair-programmer-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/github-copilot/ai-pair-programmer-revolution</guid>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>GitHub Copilot</category>
+      <description><![CDATA[当 GitHub 和 OpenAI 联手，他们创造了一个改变编程未来的 AI 助手...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Jira：两个大学生如何用1万美元改变软件开发]]></title>
+      <link>https://product-stories.pages.dev/stories/jira/two-students-10k-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/jira/two-students-10k-revolution</guid>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Jira</category>
+      <description><![CDATA[2002年，两个澳大利亚大学生用1万美元信用卡额度创办Atlassian，创造了改变软件开发行业的Jira。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Perplexity AI：从OpenAI叛逃者到答案引擎革命]]></title>
+      <link>https://product-stories.pages.dev/stories/perplexity-ai/answer-engine-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/perplexity-ai/answer-engine-revolution</guid>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Perplexity AI</category>
+      <description><![CDATA[当四位前OpenAI和Meta工程师决定挑战谷歌搜索时，他们创造了一个能直接回答问题的AI引擎...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Replit 的浏览器革命：从 JSRepl 到 AI 代理的编程梦想]]></title>
+      <link>https://product-stories.pages.dev/stories/replit/from-browser-dream-to-ai-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/replit/from-browser-dream-to-ai-revolution</guid>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Replit</category>
+      <description><![CDATA[当 Amjad Masad 在 2009 年想象一个基于浏览器的开发环境时，他没想到这会演变成今天的 AI 驱动编程革命...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Next.js 与 Vercel 的意外协同：一个框架如何重塑部署平台]]></title>
+      <link>https://product-stories.pages.dev/stories/vercel/nextjs-framework-synergy</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/vercel/nextjs-framework-synergy</guid>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Vercel</category>
+      <description><![CDATA[当 Guillermo Rauch 同时开发 Next.js 框架和 Vercel 部署平台时，一个意外的发现改变了整个前端开发体验...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Webflow 的绝境重生：从濒临破产到无代码革命]]></title>
+      <link>https://product-stories.pages.dev/stories/webflow/from-near-bankruptcy-to-no-code-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/webflow/from-near-bankruptcy-to-no-code-revolution</guid>
+      <pubDate>Fri, 27 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Webflow</category>
+      <description><![CDATA[当 Webflow 创始人第四次尝试创业时，信用卡债务压得他们喘不过气，Kickstarter 筹款失败，公司濒临破产...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Anthropic 的诞生：从 OpenAI 分裂到宪法 AI 革命]]></title>
+      <link>https://product-stories.pages.dev/stories/anthropic/from-openai-to-constitutional-ai</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/anthropic/from-openai-to-constitutional-ai</guid>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Anthropic</category>
+      <description><![CDATA[当 OpenAI 的核心研究团队因对 AI 安全的担忧而分裂时，他们创建了 Anthropic，致力于开发更安全、更负责任的人工智能。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Solomon Hykes的顿悟：从PaaS失败到容器革命]]></title>
+      <link>https://product-stories.pages.dev/stories/docker/solomon-hykes-vision</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/docker/solomon-hykes-vision</guid>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Docker</category>
+      <description><![CDATA[当dotCloud的PaaS业务陷入困境时，Solomon Hykes意外发现内部工具的价值，最终创造了改变软件开发世界的Docker。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Framer 的绝境重生：从原型工具到20亿美元设计平台]]></title>
+      <link>https://product-stories.pages.dev/stories/framer/from-prototyping-to-platform</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/framer/from-prototyping-to-platform</guid>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Framer</category>
+      <description><![CDATA[当原型设计工具遇到增长瓶颈，Framer团队如何通过深入用户洞察，完成从工具到平台的惊人转型。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Midjourney的意外诞生：从手势控制到AI艺术革命]]></title>
+      <link>https://product-stories.pages.dev/stories/midjourney/ai-art-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/midjourney/ai-art-revolution</guid>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Midjourney</category>
+      <description><![CDATA[当Leap Motion创始人David Holz厌倦了硅谷的常规创业模式，他选择了一条完全不同的道路...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[特斯拉的绝境重生：从破产边缘到电动汽车革命]]></title>
+      <link>https://product-stories.pages.dev/stories/tesla/electric-dream-becomes-reality</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/tesla/electric-dream-becomes-reality</guid>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Tesla</category>
+      <description><![CDATA[2008年金融危机期间，特斯拉濒临破产，埃隆·马斯克押上全部身家，最终扭转乾坤...]]></description>
+    </item>
     <item>
       <title><![CDATA[AWS 的意外诞生：从电商后台到云巨头的惊人转身]]></title>
       <link>https://product-stories.pages.dev/stories/aws/from-retail-to-cloud-giant</link>
@@ -16,6 +556,15 @@
       <author>Claude</author>
       <category>AWS</category>
       <description><![CDATA[当亚马逊内部工程师为解决扩展性问题而构建基础设施时，没人想到这会成为价值千亿美元的云业务...]]></description>
+    </item>
+    <item>
+      <title><![CDATA[GitHub Actions 的 CI/CD 革命：从代码托管到自动化工作流]]></title>
+      <link>https://product-stories.pages.dev/stories/github-actions/the-ci-cd-revolution</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/github-actions/the-ci-cd-revolution</guid>
+      <pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>GitHub Actions</category>
+      <description><![CDATA[当 GitHub 决定进军 CI/CD 领域时，整个开发者生态系统都为之震动...]]></description>
     </item>
     <item>
       <title><![CDATA[Jenkins 的诞生：从 Hudson 到开源 CI 革命]]></title>
@@ -27,33 +576,6 @@
       <description><![CDATA[当 Oracle 收购 Sun Microsystems 后，一个关键的开源项目面临商标危机，开发者们如何团结起来创建了 Jenkins？]]></description>
     </item>
     <item>
-      <title><![CDATA[Linear 的设计革命：从 Airbnb 到重新定义项目管理]]></title>
-      <link>https://product-stories.pages.dev/stories/linear/design-revolution</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/linear/design-revolution</guid>
-      <pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
-      <author>Claude</author>
-      <category>Linear</category>
-      <description><![CDATA[前 Airbnb 设计师卡里·萨里宁如何与两位芬兰技术专家联手，创造出重新定义项目管理工具的 Linear。]]></description>
-    </item>
-    <item>
-      <title><![CDATA[Linear 的诞生：从开发者的挫败到产品魔法]]></title>
-      <link>https://product-stories.pages.dev/stories/linear/frustration-to-magic</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/linear/frustration-to-magic</guid>
-      <pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
-      <author>Claude</author>
-      <category>Linear</category>
-      <description><![CDATA[三位设计师和工程师因对现有工具的不满，决定创造一个让团队真正享受使用的项目管理工具...]]></description>
-    </item>
-    <item>
-      <title><![CDATA[Linear 的极简革命：两位设计师如何重塑项目管理]]></title>
-      <link>https://product-stories.pages.dev/stories/linear/the-pursuit-of-simplicity</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/linear/the-pursuit-of-simplicity</guid>
-      <pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
-      <author>Claude</author>
-      <category>Linear</category>
-      <description><![CDATA[当 Jori Lallo 和 Ville Vänni 厌倦了复杂笨重的项目管理工具，他们决定从零开始打造一款真正为现代团队设计的产品。]]></description>
-    </item>
-    <item>
       <title><![CDATA[Redis 的意外开源：一个意大利程序员的个人项目如何改变数据库世界]]></title>
       <link>https://product-stories.pages.dev/stories/redis/from-startup-to-open-source</link>
       <guid isPermaLink="true">https://product-stories.pages.dev/stories/redis/from-startup-to-open-source</guid>
@@ -63,15 +585,6 @@
       <description><![CDATA[当意大利程序员萨尔瓦托雷·桑菲利波为自己的创业公司开发实时分析工具时，他没想到这个个人项目会成为全球最受欢迎的内存数据库。]]></description>
     </item>
     <item>
-      <title><![CDATA[Vercel 的瞬间部署革命：从开源工具到开发者基础设施]]></title>
-      <link>https://product-stories.pages.dev/stories/vercel/instant-deployment-revolution</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/vercel/instant-deployment-revolution</guid>
-      <pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
-      <author>Claude</author>
-      <category>Vercel</category>
-      <description><![CDATA[吉列尔莫·劳赫如何厌倦了复杂的部署流程，创造了让 git push 即部署的 Vercel 平台。]]></description>
-    </item>
-    <item>
       <title><![CDATA[从Borg到Kubernetes：谷歌秘密武器的开源革命]]></title>
       <link>https://product-stories.pages.dev/stories/kubernetes/from-borg-to-kubernetes</link>
       <guid isPermaLink="true">https://product-stories.pages.dev/stories/kubernetes/from-borg-to-kubernetes</guid>
@@ -79,33 +592,6 @@
       <author>Claude</author>
       <category>Kubernetes</category>
       <description><![CDATA[当谷歌决定将内部最强大的容器管理系统Borg开源时，整个技术世界都为之震惊...]]></description>
-    </item>
-    <item>
-      <title><![CDATA[Linear 的匠心之路：拒绝模板，重新定义项目管理]]></title>
-      <link>https://product-stories.pages.dev/stories/linear/craft-over-convention</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/linear/craft-over-convention</guid>
-      <pubDate>Tue, 24 Feb 2026 00:00:00 GMT</pubDate>
-      <author>Claude</author>
-      <category>Linear</category>
-      <description><![CDATA[当整个行业都在追逐增长黑客和A/B测试时，三个创始人选择了一条截然不同的道路...]]></description>
-    </item>
-    <item>
-      <title><![CDATA[Linear 的诞生：当设计师决定重新定义项目管理]]></title>
-      <link>https://product-stories.pages.dev/stories/linear/from-designers-to-builders</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/linear/from-designers-to-builders</guid>
-      <pubDate>Tue, 24 Feb 2026 00:00:00 GMT</pubDate>
-      <author>Claude</author>
-      <category>Linear</category>
-      <description><![CDATA[三个来自 Airbnb 的设计师，如何用对极致体验的追求，打造出让开发者爱不释手的产品管理工具？]]></description>
-    </item>
-    <item>
-      <title><![CDATA[Linear 的诞生：从愤怒的小鸟到开发者最爱的工具]]></title>
-      <link>https://product-stories.pages.dev/stories/linear/from-rovio-to-linear</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/linear/from-rovio-to-linear</guid>
-      <pubDate>Tue, 24 Feb 2026 00:00:00 GMT</pubDate>
-      <author>Claude</author>
-      <category>Linear</category>
-      <description><![CDATA[三位前 Rovio 工程师如何厌倦了混乱的项目管理工具，决定打造一个为现代软件团队设计的全新解决方案。]]></description>
     </item>
     <item>
       <title><![CDATA[MongoDB 的诞生：从 DoubleClick 的数据库困境到 NoSQL 革命]]></title>

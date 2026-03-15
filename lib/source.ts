@@ -108,6 +108,24 @@ export async function getAllTags(): Promise<string[]> {
 }
 
 /**
+ * 获取所有标签及其故事数量
+ */
+export async function getTagsWithCounts(): Promise<{ name: string; count: number }[]> {
+  const stories = await getAllStories();
+  const tagCounts: Record<string, number> = {};
+
+  stories.forEach((story) => {
+    story.data.tags?.forEach((tag) => {
+      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+    });
+  });
+
+  return Object.entries(tagCounts)
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count);
+}
+
+/**
  * 获取精选故事
  */
 export async function getFeaturedStories(limit = 3): Promise<StoryPage[]> {

@@ -1,8 +1,1458 @@
 [
   {
+    "slug": "stripe/young-brothers-redefine-payments",
+    "title": "Stripe：19岁兄弟的支付革命",
+    "description": "一对爱尔兰兄弟19岁创业，如何用200行代码改变全球支付行业——从被投资人拒绝20次到估值950亿美元",
+    "url": "/stories/stripe/young-brothers-redefine-payments",
+    "date": "2026-03-15T00:00:00.000Z",
+    "products": [
+      "Stripe"
+    ],
+    "tags": [
+      "Stripe",
+      "支付",
+      "创业者",
+      "FinTech",
+      "兄弟创业"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "zettelkasten-second-brain",
+    "title": "卡片盒笔记法：构建你的第二大脑",
+    "description": "",
+    "url": "/stories/zettelkasten-second-brain",
+    "date": "2026-03-15T00:00:00.000Z",
+    "products": [
+      "notion",
+      "obsidian"
+    ],
+    "tags": [
+      "知识管理",
+      "笔记方法",
+      "生产力",
+      "第二大脑"
+    ],
+    "author": "Victor"
+  },
+  {
+    "slug": "linear/the-accidental-design-revolution",
+    "title": "Linear：一个被拒绝的设计如何意外改变了整个 Issue Tracking 行业",
+    "description": "2019年，设计师Jori Lallo被Notion拒绝后，意外创建了Linear——一个用设计思维重新定义Issue Tracking的工具，彻底改变了开发者的工作方式。",
+    "url": "/stories/linear/the-accidental-design-revolution",
+    "date": "2026-03-14T00:00:00.000Z",
+    "products": [
+      "Linear"
+    ],
+    "tags": [
+      "Linear",
+      "Issue Tracking",
+      "产品设计",
+      "开发者工具",
+      "设计思维",
+      "Jori Lallo",
+      "Ville Vänni"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "linear/the-zero-bug-revolution",
+    "title": "Linear：零缺陷革命如何重塑现代软件开发",
+    "description": "2020年，一家初创公司立下军令状：产品必须零缺陷。这看似疯狂的承诺，却意外催生了现代软件开发的新范式...",
+    "url": "/stories/linear/the-zero-bug-revolution",
+    "date": "2026-03-13T00:00:00.000Z",
+    "products": [
+      "Linear"
+    ],
+    "tags": [
+      "Linear",
+      "软件开发",
+      "零缺陷",
+      "项目管理",
+      "敏捷开发"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "notion/ivan-zhao-kyoto-epiphany",
+    "title": "Notion 创始人 Ivan Zhao：在京都寺庙的顿悟如何重塑生产力工具",
+    "description": "2016年，Notion创始人Ivan Zhao在京都一座古老寺庙中经历了改变产品命运的顿悟时刻，这个决定最终让Notion从众多笔记工具中脱颖而出。",
+    "url": "/stories/notion/ivan-zhao-kyoto-epiphany",
+    "date": "2026-03-12T00:00:00.000Z",
+    "products": [
+      "Notion"
+    ],
+    "tags": [
+      "Notion",
+      "Ivan Zhao",
+      "产品设计",
+      "创始人故事",
+      "京都",
+      "顿悟时刻",
+      "生产力工具"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "notion/kyoto-coding-rebirth",
+    "title": "Notion的京都重生：两个程序员如何在失败边缘打造协作工具革命",
+    "description": "2015年，Notion创始人Ivan Zhao的产品濒临死亡。他们搬到日本京都，在语言不通的环境中重新思考，最终打造出改变工作方式的协作平台。",
+    "url": "/stories/notion/kyoto-coding-rebirth",
+    "date": "2026-03-12T00:00:00.000Z",
+    "products": [
+      "Notion"
+    ],
+    "tags": [
+      "Notion",
+      "产品故事",
+      "创业",
+      "京都",
+      "协作工具",
+      "Ivan Zhao"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "notion/the-accidental-block-magic",
+    "title": "Notion：一个意外的代码块如何改变了产品命运",
+    "description": "2018年，Notion团队在修复一个看似微不足道的bug时，意外发现了一个改变产品命运的功能。这个偶然的发现不仅拯救了濒临失败的产品，还重新定义了现代笔记工具的标准。",
+    "url": "/stories/notion/the-accidental-block-magic",
+    "date": "2026-03-12T00:00:00.000Z",
+    "products": [
+      "Notion"
+    ],
+    "tags": [
+      "Notion",
+      "产品设计",
+      "意外发现",
+      "代码块",
+      "协作工具",
+      "SaaS"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "zoom/forty-nine-days-to-infinity",
+    "title": "Zoom的49天奇迹：从1000万到3亿用户的疯狂扩容",
+    "description": "2020年3月，Zoom日活用户从1000万暴涨到3亿，服务器濒临崩溃。工程师们在49天里完成了一次不可能的技术救赎，背后是一次深夜的豪赌和一行改变命运的代码。",
+    "url": "/stories/zoom/forty-nine-days-to-infinity",
+    "date": "2026-03-12T00:00:00.000Z",
+    "products": [
+      "Zoom"
+    ],
+    "tags": [
+      "Zoom",
+      "疫情",
+      "扩容",
+      "技术奇迹",
+      "幕后轶事"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "discord/game-voice-accident",
+    "title": "Discord：游戏语音意外诞生背后的创始人十年沉浮",
+    "description": "从连续创业失败到游戏帝国语音工具意外诞生，Jason Citron用十年时间证明了：最伟大的产品往往来自解决自己的痛点，而非追求宏大愿景。",
+    "url": "/stories/discord/game-voice-accident",
+    "date": "2026-03-11T00:00:00.000Z",
+    "products": [
+      "Discord"
+    ],
+    "tags": [
+      "Discord",
+      "游戏语音",
+      "创始人故事",
+      "Jason Citron",
+      "转型"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "anthropic/from-openai-to-constitutional-ai",
+    "title": "Anthropic：当OpenAI的顶级研究团队选择安全优先",
+    "description": "2021年，一群来自OpenAI的顶尖AI研究者因为对人类安全的担忧而集体出走，创建了Anthropic。他们用Constitutional AI理念重新定义了AI的发展路径，证明了安全与性能可以兼得。",
+    "url": "/stories/anthropic/from-openai-to-constitutional-ai",
+    "date": "2026-03-10T00:00:00.000Z",
+    "products": [
+      "Anthropic"
+    ],
+    "tags": [
+      "Anthropic",
+      "AI安全",
+      "创业",
+      "转折点",
+      "宪法AI"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "elevenlabs/from-dubbed-films-to-ai-voices",
+    "title": "ElevenLabs：两位波兰工程师如何用AI重建人类与技术的情感连接",
+    "description": "2022年，波兰华沙的一间公寓里，Piotr Dąbkowski和Mati Staniszewski正为一部好莱坞电影的糟糕配音而皱眉。作为前Google机器学习工程师和Palantir部署策略师，他们意识到语音合成技术远不能满足真实情感表达的需求。他们决定从零开始，创造能真正理解并表达人类情感的AI语音。这个决定最终催生了ElevenLabs——AI语音领域的独角兽，估值超过30亿美元。",
+    "url": "/stories/elevenlabs/from-dubbed-films-to-ai-voices",
+    "date": "2026-03-10T00:00:00.000Z",
+    "products": [
+      "ElevenLabs"
+    ],
+    "tags": [
+      "ElevenLabs",
+      "AI语音",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "hugging-face/open-source-ai-revolution",
+    "title": "Hugging Face：从濒临倒闭的聊天机器人到AI基础设施帝国",
+    "description": "2016年，Clément Delangue和他的团队正在为一个失败的聊天机器人应用而挣扎。当他们决定放弃原有业务、全面投入开源AI工具时，投资者和朋友都认为他们疯了。但这个看似疯狂的决定，最终催生了AI时代最重要的基础设施平台。",
+    "url": "/stories/hugging-face/open-source-ai-revolution",
+    "date": "2026-03-10T00:00:00.000Z",
+    "products": [
+      "Hugging Face"
+    ],
+    "tags": [
+      "Hugging Face",
+      "开源",
+      "AI",
+      "转折点",
+      "机器学习"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "langchain/from-side-project-to-agent-revolution",
+    "title": "LangChain：一个副业如何引爆AI代理革命",
+    "description": "2022年10月，Harrison Chase只是想在GitHub上分享一个自己用的Python工具。三个月后，ChatGPT的爆发让这个简单的开源项目成为全球开发者追捧的对象。在没有融资、没有团队、没有商业计划的情况下，他抓住了一个改变AI开发范式的历史性机遇。",
+    "url": "/stories/langchain/from-side-project-to-agent-revolution",
+    "date": "2026-03-10T00:00:00.000Z",
+    "products": [
+      "LangChain"
+    ],
+    "tags": [
+      "LangChain",
+      "AI",
+      "创业",
+      "转折点",
+      "开源"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "midjourney/ai-art-revolution",
+    "title": "Midjourney：一位连续创业者的艺术救赎",
+    "description": "当Leap Motion创始人David Holz厌倦了硅谷'快速扩张、快速退出'的创业模式，他选择了一条完全不同的道路。在没有融资、没有传统营销的情况下，他创造了Midjourney——一个改变创意产业的AI艺术平台。",
+    "url": "/stories/midjourney/ai-art-revolution",
+    "date": "2026-03-10T00:00:00.000Z",
+    "products": [
+      "Midjourney"
+    ],
+    "tags": [
+      "Midjourney",
+      "AI艺术",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "mistral-ai/european-dream-against-silicon-valley",
+    "title": "Mistral AI：三个法国人的欧洲AI梦，如何用开源挑战硅谷巨头",
+    "description": "2023年4月，巴黎一间小公寓里，三个法国人做出了一个疯狂决定。Arthur Mensch刚从Google DeepMind离职，Guillaume Lample和Timothée Lacroix则离开了Meta。三人曾在École Polytechnique同窗，如今重聚，要挑战他们刚刚离开的巨头们。60天后，他们获得了1.05亿欧元的融资；6个月后，他们用BitTorrent发布了一个70亿参数的开源模型，在多个基准测试中击败了GPT-3.5。",
+    "url": "/stories/mistral-ai/european-dream-against-silicon-valley",
+    "date": "2026-03-10T00:00:00.000Z",
+    "products": [
+      "Mistral AI"
+    ],
+    "tags": [
+      "Mistral AI",
+      "人工智能",
+      "欧洲科技",
+      "创始人故事",
+      "开源"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "openai/the-birth-of-a-mission",
+    "title": "OpenAI：一场关于人类命运的深夜赌注",
+    "description": "2015年，一群科技领袖在硅谷做出一个疯狂决定：投入10亿美元创建一个非营利AI研究实验室，确保通用人工智能属于全人类。十年后，这家实验室推出了ChatGPT，改变了整个世界。",
+    "url": "/stories/openai/the-birth-of-a-mission",
+    "date": "2026-03-10T00:00:00.000Z",
+    "products": [
+      "OpenAI"
+    ],
+    "tags": [
+      "OpenAI",
+      "人工智能",
+      "AGI",
+      "创始人故事",
+      "Sam Altman"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "perplexity-ai/answer-engine-revolution",
+    "title": "Perplexity AI：四位OpenAI叛逃者如何挑战谷歌搜索帝国",
+    "description": "2022年，四位来自OpenAI和Meta的顶尖工程师秘密聚首，决定颠覆存在了25年的搜索范式。他们没有选择做另一个搜索引擎，而是要创造一个能够直接回答问题的AI答案引擎。面对谷歌这个市值万亿美元的巨头，他们的挑战看似不可能成功，但他们相信——搜索的未来不是链接，而是答案。",
+    "url": "/stories/perplexity-ai/answer-engine-revolution",
+    "date": "2026-03-10T00:00:00.000Z",
+    "products": [
+      "Perplexity AI"
+    ],
+    "tags": [
+      "Perplexity AI",
+      "AI搜索",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "stability-ai/open-sourcing-revolution",
+    "title": "Stability AI：用开源豪赌重塑AI产业规则",
+    "description": "当所有人都将AI模型视为商业机密时，Emad Mostaque却选择将价值数亿美元的Stable Diffusion完全开源。这个看似疯狂的赌博，最终颠覆了AI产业的格局，证明开放可以是最强大的护城河。",
+    "url": "/stories/stability-ai/open-sourcing-revolution",
+    "date": "2026-03-10T00:00:00.000Z",
+    "products": [
+      "Stability AI"
+    ],
+    "tags": [
+      "Stability AI",
+      "Stable Diffusion",
+      "开源",
+      "AI",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "spotify/discover-weekly-revolution",
+    "title": "Spotify 的「每周发现」革命：如何用算法读懂你的音乐品味",
+    "description": "当工程师们发现用户只是在播放已有的播放列表时，他们决定用机器学习为每个人创造独一无二的音乐体验。",
+    "url": "/stories/spotify/discover-weekly-revolution",
+    "date": "2026-03-09T00:00:00.000Z",
+    "products": [
+      "Spotify"
+    ],
+    "tags": [
+      "Spotify",
+      "算法",
+      "机器学习",
+      "产品创新",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "databricks/from-academia-to-data-revolution",
+    "title": "Databricks 的学术革命：从伯克利实验室到数据智能帝国",
+    "description": "当七位伯克利学者决定将他们的开源项目 Spark 商业化时，没人相信学术研究能变成价值百亿美元的公司...",
+    "url": "/stories/databricks/from-academia-to-data-revolution",
+    "date": "2026-03-08T00:00:00.000Z",
+    "products": [
+      "Databricks"
+    ],
+    "tags": [
+      "Databricks",
+      "创始人故事",
+      "学术创业",
+      "数据科学",
+      "Apache Spark"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "linear/zero-bugs-policy",
+    "title": "Linear：Airbnb三剑客如何用设计重塑项目管理",
+    "description": "三位Airbnb工程师厌倦了Jira的臃肿，离职打造了一款让开发者爱上使用的项目管理工具。Linear的故事是关于设计优先、零缺陷哲学和极致产品体验的经典案例。",
+    "url": "/stories/linear/zero-bugs-policy",
+    "date": "2026-03-08T00:00:00.000Z",
+    "products": [
+      "Linear"
+    ],
+    "tags": [
+      "Linear",
+      "项目管理",
+      "开发者工具",
+      "设计优先",
+      "零缺陷",
+      "SaaS"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "descript/from-groupon-to-video-revolution",
+    "title": "Descript：Groupon创始人如何用文本编辑重塑视频行业",
+    "description": "2018年，前Groupon CEO Andrew Mason厌倦了传统视频编辑的复杂性，决定用文本编辑的方式彻底改变这个行业。1亿美元投资，从3人扩展到50人，一年内10万创作者放弃传统剪辑软件——这个'反直觉却直观'的新范式，如何用AI重塑视频创作？",
+    "url": "/stories/descript/from-groupon-to-video-revolution",
+    "date": "2026-03-07T00:00:00.000Z",
+    "products": [
+      "Descript"
+    ],
+    "tags": [
+      "Descript",
+      "视频编辑",
+      "Andrew Mason",
+      "AI工具",
+      "文本编辑"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "obsidian/from-markdown-to-knowledge-revolution",
+    "title": "Obsidian 的诞生：从 Markdown 到知识革命",
+    "description": "2020年，两位前 Dynalist 创始人对现有笔记工具感到失望，决定创建一个基于本地 Markdown 文件的强大知识管理系统。",
+    "url": "/stories/obsidian/from-markdown-to-knowledge-revolution",
+    "date": "2026-03-07T00:00:00.000Z",
+    "products": [
+      "Obsidian"
+    ],
+    "tags": [
+      "Obsidian",
+      "知识管理",
+      "Markdown",
+      "创始人故事"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "palantir/founding-vision-hegelian-dialectic",
+    "title": "Palantir的创立：用黑格尔辩证法对抗恐怖主义",
+    "description": "当硅谷拒绝政府业务时，彼得·蒂尔和亚历克斯·卡普用黑格尔哲学创建了数据情报帝国。",
+    "url": "/stories/palantir/founding-vision-hegelian-dialectic",
+    "date": "2026-03-07T00:00:00.000Z",
+    "products": [
+      "Palantir"
+    ],
+    "tags": [
+      "Palantir",
+      "创始人故事",
+      "创业",
+      "数据分析",
+      "政府科技"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "salesforce/no-software-revolution",
+    "title": "Salesforce：甲骨文的叛徒如何用'无软件'颠覆软件产业",
+    "description": "1999年，马克·贝尼奥夫在夏威夷海滩写下'软件的终结'六个字，离开甲骨文的舒适生活，用'无软件'的激进理念创立Salesforce。从被行业嘲笑到重塑整个SaaS产业，这场革命最终让他与昔日老板拉里·埃里森平起平坐。",
+    "url": "/stories/salesforce/no-software-revolution",
+    "date": "2026-03-07T00:00:00.000Z",
+    "products": [
+      "Salesforce"
+    ],
+    "tags": [
+      "Salesforce",
+      "SaaS",
+      "云计算",
+      "马克贝尼奥夫",
+      "甲骨文"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "twitch/from-justin-tv-to-gaming-empire",
+    "title": "Twitch：当80%的数据揭示了一个隐藏帝国",
+    "description": "2011年，Justin.tv团队盯着后台数据发现了震惊事实：游戏直播占据了平台80%的流量。这个意外的发现，最终催生了全球最大的游戏直播平台，并被亚马逊以9.7亿美元收购。",
+    "url": "/stories/twitch/from-justin-tv-to-gaming-empire",
+    "date": "2026-03-07T00:00:00.000Z",
+    "products": [
+      "Twitch"
+    ],
+    "tags": [
+      "Twitch",
+      "游戏直播",
+      "Justin.tv",
+      "流媒体",
+      "电子竞技"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "firebase/from-chat-to-realtime-database",
+    "title": "Firebase 的意外诞生：从聊天工具到实时数据库的惊人转折",
+    "description": "当开发者开始用聊天工具同步游戏状态时，两位创始人意识到他们创造的不是聊天服务，而是革命性的实时数据库。",
+    "url": "/stories/firebase/from-chat-to-realtime-database",
+    "date": "2026-03-06T00:00:00.000Z",
+    "products": [
+      "Firebase"
+    ],
+    "tags": [
+      "Firebase",
+      "创业",
+      "转折点",
+      "Google",
+      "实时数据库"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "mysql/from-daughter-to-database-revolution",
+    "title": "从女儿的名字到数据库革命：MySQL的诞生故事",
+    "description": "当瑞典程序员蒙蒂·维德纽斯用女儿的名字命名他的数据库项目时，他没想到这会成为开源数据库革命的起点...",
+    "url": "/stories/mysql/from-daughter-to-database-revolution",
+    "date": "2026-03-06T00:00:00.000Z",
+    "products": [
+      "MySQL"
+    ],
+    "tags": [
+      "MySQL",
+      "数据库",
+      "开源",
+      "创始人故事"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "snowflake/frozen-revolution",
+    "title": "Snowflake的冰封革命：三位Oracle老兵如何融化数据仓库",
+    "description": "2012年，三位Oracle数据库专家在硅谷咖啡馆里画下了一个颠覆性架构，彻底改变了数据仓库行业...",
+    "url": "/stories/snowflake/frozen-revolution",
+    "date": "2026-03-06T00:00:00.000Z",
+    "products": [
+      "Snowflake"
+    ],
+    "tags": [
+      "Snowflake",
+      "数据库",
+      "云计算",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "github/founding-story",
+    "title": "GitHub：从四个程序员的周末项目到1亿开发者的代码宇宙",
+    "description": "2008年，四个来自旧金山的程序员厌倦了复杂的版本控制工具，决定用Ruby on Rails打造一个让开发者爱上协作的平台。他们从未想过，这个周末项目会成为改变软件开发方式的全球基础设施。",
+    "url": "/stories/github/founding-story",
+    "date": "2026-03-05T00:00:00.000Z",
+    "products": [
+      "GitHub"
+    ],
+    "tags": [
+      "GitHub",
+      "创始人故事",
+      "创业",
+      "开源",
+      "Git"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "pinecone/vector-database-revolution",
+    "title": "Pinecone 的向量革命：从机器学习基础设施到 AI 应用基石",
+    "description": "当机器学习工程师们为向量搜索而苦恼时，一个前 AWS 工程师看到了机会...",
+    "url": "/stories/pinecone/vector-database-revolution",
+    "date": "2026-03-05T00:00:00.000Z",
+    "products": [
+      "Pinecone"
+    ],
+    "tags": [
+      "Pinecone",
+      "向量数据库",
+      "AI基础设施",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "airtable/from-spreadsheet-frustration-to-database-revolution",
+    "title": "Airtable 的诞生：当电子表格无法满足需求时",
+    "description": "三位创始人因对传统工具的不满，创造了一个结合电子表格与数据库的新产品...",
+    "url": "/stories/airtable/from-spreadsheet-frustration-to-database-revolution",
+    "date": "2026-03-03T00:00:00.000Z",
+    "products": [
+      "Airtable"
+    ],
+    "tags": [
+      "Airtable",
+      "数据库",
+      "创业",
+      "转折点",
+      "创始人故事"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "deno/from-node-regrets-to-secure-runtime",
+    "title": "Deno：Node.js之父如何用十年遗憾创造更安全运行时",
+    "description": "2018年，Node.js创始人瑞安·达尔站在JSConf EU舞台上，向世界承认自己最大的技术遗憾。就在同一场演讲中，他宣布Deno——一个全新的项目，旨在解决所有这些问题。用Rust和V8从头构建，默认安全的运行时。",
+    "url": "/stories/deno/from-node-regrets-to-secure-runtime",
+    "date": "2026-03-03T00:00:00.000Z",
+    "products": [
+      "Deno"
+    ],
+    "tags": [
+      "Deno",
+      "Node.js",
+      "瑞安达尔",
+      "JavaScript",
+      "安全"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "elasticsearch/from-compass-to-search-revolution",
+    "title": "Elasticsearch 的诞生：从 Compass 到搜索革命",
+    "description": "当 Shay Banon 为妻子开发食谱应用时，他意外发现了一个改变搜索技术的契机...",
+    "url": "/stories/elasticsearch/from-compass-to-search-revolution",
+    "date": "2026-03-03T00:00:00.000Z",
+    "products": [
+      "Elasticsearch"
+    ],
+    "tags": [
+      "Elasticsearch",
+      "搜索技术",
+      "创业",
+      "转折点",
+      "开源"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "gitlab/open-source-accidental-empire",
+    "title": "GitLab：一个Hacker News帖子如何缔造开源帝国的奇迹",
+    "description": "2011年，乌克兰开发者Dmitriy Zaporozhets在一个Hacker News帖子中发布了自己业余时间开发的Git工具。没人想到，这个简单的开源项目会在十年后成为价值数十亿美元、拥有3000万用户的开发者平台帝国。",
+    "url": "/stories/gitlab/open-source-accidental-empire",
+    "date": "2026-03-02T00:00:00.000Z",
+    "products": [
+      "GitLab"
+    ],
+    "tags": [
+      "GitLab",
+      "开源",
+      "创业",
+      "远程工作",
+      "创始人故事"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "raycast/the-birth-of-raycast",
+    "title": "Raycast：两个前Facebook工程师如何重新定义Mac开发者生产力",
+    "description": "2019年，Thomas Paul Mann和Simon Støvring坐在哥本哈根的咖啡馆里，对现有的Mac生产力工具感到深深的沮丧。他们决定从零开始，打造一个既强大又美观、真正为现代开发者设计的工具。两年后，Raycast成为Mac开发者的必备神器。",
+    "url": "/stories/raycast/the-birth-of-raycast",
+    "date": "2026-03-02T00:00:00.000Z",
+    "products": [
+      "Raycast"
+    ],
+    "tags": [
+      "Raycast",
+      "开发者工具",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "rust/memory-safety-revolution",
+    "title": "Rust 的诞生：一个程序员对内存安全的执着追求",
+    "description": "当Graydon Hoare在车库开始这个项目时，他没想到会彻底改变系统编程的安全范式...",
+    "url": "/stories/rust/memory-safety-revolution",
+    "date": "2026-03-02T00:00:00.000Z",
+    "products": [
+      "Rust"
+    ],
+    "tags": [
+      "Rust",
+      "系统编程",
+      "内存安全",
+      "创始人故事"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "sentry/from-open-source-to-error-monitoring-giant",
+    "title": "Sentry：从DISQUS工程师的个人项目到错误监控帝国",
+    "description": "2011年，David Cramer在DISQUS工作时遭遇了糟糕的错误追踪体验。他决定自己动手解决这个问题。这个为解决个人痛点而创建的小工具，最终成长为估值超过10亿美元、每天处理数万亿事件的应用性能监控巨头。",
+    "url": "/stories/sentry/from-open-source-to-error-monitoring-giant",
+    "date": "2026-03-02T00:00:00.000Z",
+    "products": [
+      "Sentry"
+    ],
+    "tags": [
+      "Sentry",
+      "开源",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "twilio/api-revolution",
+    "title": "Twilio：API革命如何让每个开发者都能发送短信",
+    "description": "2008年，杰夫·劳森在一家初创公司苦苦挣扎，无法找到简单的方法集成电话功能。无数次与传统电信供应商的挫败交流后，他决定创建一个让编程通信变得简单的平台——让每个开发者都能通过几行代码发送短信。",
+    "url": "/stories/twilio/api-revolution",
+    "date": "2026-03-01T00:00:00.000Z",
+    "products": [
+      "Twilio"
+    ],
+    "tags": [
+      "Twilio",
+      "API",
+      "通信",
+      "杰夫劳森",
+      "平台"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "basecamp/desperate-necessity",
+    "title": "Basecamp 的绝境重生：从尴尬的设计公司到项目管理巨头",
+    "description": "当设计公司因项目管理混乱而频频在客户面前出丑时，他们被迫创造了一个改变行业的工具...",
+    "url": "/stories/basecamp/desperate-necessity",
+    "date": "2026-02-28T00:00:00.000Z",
+    "products": [
+      "Basecamp"
+    ],
+    "tags": [
+      "Basecamp",
+      "创业",
+      "转折点",
+      "项目管理",
+      "37signals"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "clickup/all-in-one-vision",
+    "title": "ClickUp的全能愿景：一个人对工作碎片化的反击",
+    "description": "当Zeb Evans面对12个不同的工作工具时，他决定创造一个能统一所有工作流程的平台...",
+    "url": "/stories/clickup/all-in-one-vision",
+    "date": "2026-02-28T00:00:00.000Z",
+    "products": [
+      "ClickUp"
+    ],
+    "tags": [
+      "ClickUp",
+      "生产力",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "monday-com/founding-vision",
+    "title": "Monday.com 的诞生：从公寓创业到工作操作系统",
+    "description": "两位创始人在特拉维夫的废弃公寓中，为解决团队协作痛点而创建了 Monday.com，最终打造了全球超过 25 万客户使用的工作操作系统。",
+    "url": "/stories/monday-com/founding-vision",
+    "date": "2026-02-28T00:00:00.000Z",
+    "products": [
+      "Monday.com"
+    ],
+    "tags": [
+      "Monday.com",
+      "创业",
+      "协作工具",
+      "创始人故事"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "trello/from-five-things-to-trello",
+    "title": "从'五件事'到Trello：一个简单想法如何改变团队协作",
+    "description": "当Joel Spolsky发现团队成员同时处理太多任务时，他提出了'五件事'的极限理念，这个简单的约束最终演变成了全球数千万用户使用的Trello。",
+    "url": "/stories/trello/from-five-things-to-trello",
+    "date": "2026-02-28T00:00:00.000Z",
+    "products": [
+      "Trello"
+    ],
+    "tags": [
+      "Trello",
+      "创业",
+      "产品设计",
+      "转折点",
+      "项目管理"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "asana/from-facebook-to-flow",
+    "title": "Asana 的诞生：从 Facebook 内部工具到改变团队协作的革命",
+    "description": "当 Facebook 联合创始人厌倦了邮件混乱，他和同事创造了一个内部工具，最终改变了全球团队的工作方式...",
+    "url": "/stories/asana/from-facebook-to-flow",
+    "date": "2026-02-27T00:00:00.000Z",
+    "products": [
+      "Asana"
+    ],
+    "tags": [
+      "Asana",
+      "Dustin Moskovitz",
+      "Justin Rosenstein",
+      "团队协作",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "github-copilot/ai-pair-programmer-revolution",
+    "title": "GitHub Copilot：AI如何成为每个开发者的编程伙伴",
+    "description": "2021年6月，GitHub宣布推出Copilot——一个能实时生成代码的AI助手。当时，没人能预料到这个产品会在短短几年内改变数百万开发者的编程方式。Copilot不仅是技术的突破，更是人机协作新时代的序幕。",
+    "url": "/stories/github-copilot/ai-pair-programmer-revolution",
+    "date": "2026-02-27T00:00:00.000Z",
+    "products": [
+      "GitHub Copilot"
+    ],
+    "tags": [
+      "GitHub Copilot",
+      "AI",
+      "编程",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "jira/two-students-10k-revolution",
+    "title": "Jira：两个大学生如何用1万美元改变软件开发",
+    "description": "2002年，两个澳大利亚大学生用1万美元信用卡额度创办Atlassian，创造了改变软件开发行业的Jira。",
+    "url": "/stories/jira/two-students-10k-revolution",
+    "date": "2026-02-27T00:00:00.000Z",
+    "products": [
+      "Jira"
+    ],
+    "tags": [
+      "Jira",
+      "创业",
+      "软件开发",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "replit/from-browser-dream-to-ai-revolution",
+    "title": "Replit：从浏览器IDE梦想到AI编程革命的十年征程",
+    "description": "2009年，Amjad Masad凝视着Google Docs，心中萌生了一个疯狂的想法：为什么编程不能像文档协作一样简单？十年后，这个梦想演变成了AI驱动的编程革命。从浏览器IDE到AI代理，Replit正在重新定义软件开发的未来。",
+    "url": "/stories/replit/from-browser-dream-to-ai-revolution",
+    "date": "2026-02-27T00:00:00.000Z",
+    "products": [
+      "Replit"
+    ],
+    "tags": [
+      "Replit",
+      "AI",
+      "编程",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "webflow/from-near-bankruptcy-to-no-code-revolution",
+    "title": "Webflow 的绝境重生：从濒临破产到无代码革命",
+    "description": "当 Webflow 创始人第四次尝试创业时，信用卡债务压得他们喘不过气，Kickstarter 筹款失败，公司濒临破产...",
+    "url": "/stories/webflow/from-near-bankruptcy-to-no-code-revolution",
+    "date": "2026-02-27T00:00:00.000Z",
+    "products": [
+      "Webflow"
+    ],
+    "tags": [
+      "Webflow",
+      "无代码",
+      "创业",
+      "转折点",
+      "Y Combinator"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "framer/from-prototyping-to-platform",
+    "title": "Framer：从原型工具到20亿美元设计平台的绝境重生",
+    "description": "2016年，当Framer Studio遇到增长瓶颈、收入停滞在400万美元时，Jorn van Dijk用一年时间深入用户，发现设计师最大的痛点不是原型设计，而是'重复构建'。这个洞察让Framer从原型工具转型为网站构建平台，最终估值达到20亿美元。",
+    "url": "/stories/framer/from-prototyping-to-platform",
+    "date": "2026-02-26T00:00:00.000Z",
+    "products": [
+      "Framer"
+    ],
+    "tags": [
+      "Framer",
+      "设计工具",
+      "无代码",
+      "转型",
+      "创业"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "tesla/electric-dream-becomes-reality",
+    "title": "Tesla：破产边缘的4000万美元豪赌",
+    "description": "2008年金融危机期间，特斯拉账上仅剩900万美元现金，面临破产。埃隆·马斯克押上全部身家4000万美元，亲自睡在工厂地板上，最终在圣诞节前夜完成量产，挽救了这家改变汽车行业的公司。",
+    "url": "/stories/tesla/electric-dream-becomes-reality",
+    "date": "2026-02-26T00:00:00.000Z",
+    "products": [
+      "Tesla"
+    ],
+    "tags": [
+      "Tesla",
+      "电动汽车",
+      "马斯克",
+      "金融危机",
+      "创业"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "aws/from-retail-to-cloud-giant",
+    "title": "AWS 的意外诞生：从电商后台到云巨头的惊人转身",
+    "description": "当亚马逊内部工程师为解决扩展性问题而构建基础设施时，没人想到这会成为价值千亿美元的云业务...",
+    "url": "/stories/aws/from-retail-to-cloud-giant",
+    "date": "2026-02-25T00:00:00.000Z",
+    "products": [
+      "AWS"
+    ],
+    "tags": [
+      "AWS",
+      "云计算",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "github-actions/the-ci-cd-revolution",
+    "title": "GitHub Actions：微软如何重写CI/CD规则的游戏",
+    "description": "2018年，被微软收购仅五个月后，GitHub宣布推出自己的CI/CD服务。这个决定直接挑战了Travis CI、CircleCI等已有玩家，震惊了整个开发者社区。不到一年时间，GitHub Actions就成为最受欢迎的CI/CD服务之一，重新定义了现代软件开发的工作流。",
+    "url": "/stories/github-actions/the-ci-cd-revolution",
+    "date": "2026-02-25T00:00:00.000Z",
+    "products": [
+      "GitHub Actions"
+    ],
+    "tags": [
+      "GitHub Actions",
+      "CI/CD",
+      "DevOps",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "jenkins/from-hudson-to-jenkins",
+    "title": "Jenkins：从商标危机到开源CI/CD革命的传奇分裂",
+    "description": "2010年，Oracle收购Sun Microsystems后，一个关键的开源项目面临商标危机。Kohsuke Kawaguchi和核心开发者们在邮件列表中发起投票：是继续与Oracle协商，还是创建一个全新的分支？75%的人投票支持分叉，Jenkins项目就此诞生。",
+    "url": "/stories/jenkins/from-hudson-to-jenkins",
+    "date": "2026-02-25T00:00:00.000Z",
+    "products": [
+      "Jenkins"
+    ],
+    "tags": [
+      "Jenkins",
+      "CI/CD",
+      "开源",
+      "转折点",
+      "Kohsuke Kawaguchi"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "redis/from-startup-to-open-source",
+    "title": "Redis 的意外开源：一个意大利程序员的个人项目如何改变数据库世界",
+    "description": "当意大利程序员萨尔瓦托雷·桑菲利波为自己的创业公司开发实时分析工具时，他没想到这个个人项目会成为全球最受欢迎的内存数据库。",
+    "url": "/stories/redis/from-startup-to-open-source",
+    "date": "2026-02-25T00:00:00.000Z",
+    "products": [
+      "Redis"
+    ],
+    "tags": [
+      "Redis",
+      "开源",
+      "数据库",
+      "创始人故事"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "kubernetes/from-borg-to-kubernetes",
+    "title": "Kubernetes：谷歌秘密武器如何成为云原生时代的基础设施",
+    "description": "2014年，谷歌决定将其内部最核心的容器管理系统Borg开源。这个决定震惊了整个技术界——谷歌正在免费分享其最具竞争力的技术优势。从Borg到Kubernetes，谷歌不仅开源了一个项目，更开启了一场云原生革命。",
+    "url": "/stories/kubernetes/from-borg-to-kubernetes",
+    "date": "2026-02-24T00:00:00.000Z",
+    "products": [
+      "Kubernetes"
+    ],
+    "tags": [
+      "Kubernetes",
+      "Google",
+      "容器",
+      "开源",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "mongodb/the-humongous-database-revolution",
+    "title": "MongoDB 的诞生：从 DoubleClick 的数据库困境到 NoSQL 革命",
+    "description": "当三位前 DoubleClick 工程师对传统关系型数据库感到绝望时，他们决定创造一个能处理'海量'数据的全新数据库...",
+    "url": "/stories/mongodb/the-humongous-database-revolution",
+    "date": "2026-02-24T00:00:00.000Z",
+    "products": [
+      "MongoDB"
+    ],
+    "tags": [
+      "MongoDB",
+      "NoSQL",
+      "数据库",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "postgres/berkeley-database-revolution",
+    "title": "PostgreSQL 的诞生：伯克利实验室的数据库革命",
+    "description": "当关系型数据库还处于早期阶段时，一位教授在伯克利实验室开启了一场静默的革命...",
+    "url": "/stories/postgres/berkeley-database-revolution",
+    "date": "2026-02-24T00:00:00.000Z",
+    "products": [
+      "PostgreSQL"
+    ],
+    "tags": [
+      "PostgreSQL",
+      "数据库",
+      "开源",
+      "创始人故事",
+      "伯克利"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "vscode/from-eclipse-to-vscode",
+    "title": "VS Code：Eclipse之父如何为微软打造开发者神器",
+    "description": "2011年，Eclipse的创始人Erich Gamma对自己创造的IDE感到困惑。当微软邀请他领导一个新项目时，他没想到这个决定将彻底改变代码编辑器的市场格局，让微软重新赢得开发者的心。",
+    "url": "/stories/vscode/from-eclipse-to-vscode",
+    "date": "2026-02-24T00:00:00.000Z",
+    "products": [
+      "VS Code"
+    ],
+    "tags": [
+      "VS Code",
+      "Microsoft",
+      "代码编辑器",
+      "开发者工具",
+      "创始人故事"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "canva/university-idea-to-design-empire",
+    "title": "Canva：被拒100次后，一个大学生如何让设计民主化",
+    "description": "2006年，19岁的梅兰妮·帕金斯发现学生要花一学期才能学会Photoshop，而社会上数百万人需要设计却被复杂的软件拒之门外。她不会写代码，没有创业经验，融资时被拒超过100次。直到2012年遇到谷歌地图联合创始人，才拿到第一轮300万美元投资。如今Canva估值超过260亿美元，拥有1.75亿月活用户。",
+    "url": "/stories/canva/university-idea-to-design-empire",
+    "date": "2026-02-23T00:00:00.000Z",
+    "products": [
+      "Canva"
+    ],
+    "tags": [
+      "Canva",
+      "设计",
+      "梅兰妮帕金斯",
+      "创业",
+      "设计民主化"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "cursor/pivot-from-cad-to-ai-code",
+    "title": "Cursor：四个MIT毕业生的惊天逆转——从CAD失败到AI编程革命",
+    "description": "2022年，四个刚从MIT毕业的年轻人本想用AI颠覆机械设计软件。GPT-4的一次惊艳表现让他们意识到：真正的机会在编程工具本身。六个月内，他们抛弃了六个月的CAD工作，打造出了让全球程序员惊叹的AI原生编辑器。",
+    "url": "/stories/cursor/pivot-from-cad-to-ai-code",
+    "date": "2026-02-23T00:00:00.000Z",
+    "products": [
+      "Cursor"
+    ],
+    "tags": [
+      "Cursor",
+      "转折点",
+      "AI",
+      "编程工具",
+      "创业"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "docker/from-paas-to-containers",
+    "title": "Docker：一个失败PaaS公司的容器革命传奇",
+    "description": "2013年，所罗门·海克斯的PaaS公司dotCloud濒临破产。在一次内部演示中，他们为解决自身问题而开发的容器技术意外引发了轰动。这个原本打算用于内部优化的工具，最终催生了云计算领域最具影响力的技术革命。",
+    "url": "/stories/docker/from-paas-to-containers",
+    "date": "2026-02-23T00:00:00.000Z",
+    "products": [
+      "Docker"
+    ],
+    "tags": [
+      "Docker",
+      "转型",
+      "开源",
+      "转折点",
+      "容器"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "supabase/open-source-firebase-challenge",
+    "title": "Supabase：当 Postgres 遇见开源野心",
+    "description": "一个澳洲团队如何用开源 Postgres 挑战 Firebase 帝国，在 2020 年的 YC 中一鸣惊人",
+    "url": "/stories/supabase/open-source-firebase-challenge",
+    "date": "2026-02-23T00:00:00.000Z",
+    "products": [
+      "Supabase"
+    ],
+    "tags": [
+      "Supabase",
+      "开源",
+      "Firebase",
+      "Postgres",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "tiktok/musical-ly-acquisition",
+    "title": "TikTok：50亿美元豪赌如何征服全球短视频市场",
+    "description": "当TikTok在中国以外市场陷入僵局，张一鸣如何用一场惊天豪赌，以50亿美元收购Musical.ly，在18个月内将用户从1亿推向5亿，最终征服全球短视频市场。",
+    "url": "/stories/tiktok/musical-ly-acquisition",
+    "date": "2026-02-23T00:00:00.000Z",
+    "products": [
+      "TikTok"
+    ],
+    "tags": [
+      "TikTok",
+      "字节跳动",
+      "短视频",
+      "收购",
+      "张一鸣"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "vercel/from-socket-to-frontend-cloud",
+    "title": "Vercel：从Socket.IO少年到前端云帝国的十年征途",
+    "description": "19岁的Guillermo Rauch创造了Socket.IO，却在部署自己的网站时感到深深挫败。这个痛点点燃了他打造'前端云'的野心。十年间，他从开源贡献者蜕变为独角兽创始人，用Next.js和Vercel重新定义了前端开发的未来。",
+    "url": "/stories/vercel/from-socket-to-frontend-cloud",
+    "date": "2026-02-23T00:00:00.000Z",
+    "products": [
+      "Vercel"
+    ],
+    "tags": [
+      "Vercel",
+      "Next.js",
+      "开发者工具",
+      "开源",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "figma/browser-impossible",
+    "title": "Figma：浏览器里的设计工具，如何颠覆Adobe的帝国",
+    "description": "22岁的辍学生，用5年时间证明了浏览器不仅能做设计工具，还能颠覆整个行业。Figma的故事是关于技术突破、平台转移和设计民主化的传奇。",
+    "url": "/stories/figma/browser-impossible",
+    "date": "2026-02-22T00:00:00.000Z",
+    "products": [
+      "Figma"
+    ],
+    "tags": [
+      "Figma",
+      "设计工具",
+      "浏览器技术",
+      "WebGL",
+      "SaaS",
+      "协作工具"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "netflix/late-fee-empire",
+    "title": "Netflix：40美元滞纳金催生的流媒体帝国",
+    "description": "1997年，里德·哈斯廷斯因为40美元录像带滞纳金创办了Netflix。从DVD邮寄租赁到流媒体巨头，再到原创内容制作商，Netflix两次颠覆自己，最终成为市值超2000亿美元的娱乐帝国。",
+    "url": "/stories/netflix/late-fee-empire",
+    "date": "2026-02-22T00:00:00.000Z",
+    "products": [
+      "Netflix"
+    ],
+    "tags": [
+      "Netflix",
+      "流媒体",
+      "娱乐产业",
+      "转型",
+      "创始人故事"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "shopify/snowboard-frustration",
+    "title": "Shopify：两个滑雪爱好者打造的电商帝国",
+    "description": "2004年，托比亚斯·吕特克因为找不到满意的电商平台卖滑雪板，决定自己写一个。这个简单的解决方案最终成为支撑全球数百万商家的电商基础设施，市值超过2000亿美元。",
+    "url": "/stories/shopify/snowboard-frustration",
+    "date": "2026-02-22T00:00:00.000Z",
+    "products": [
+      "Shopify"
+    ],
+    "tags": [
+      "Shopify",
+      "电商",
+      "SaaS",
+      "创始人故事",
+      "创业"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "spotify/pirate-inspiration",
+    "title": "Spotify：当海盗成为灵感，如何用0.2秒征服音乐产业",
+    "description": "23岁的丹尼尔·埃克面对猖獗的音乐盗版，没有诉诸法律，而是选择了一场技术豪赌：如果能比盗版更快、更好用，人们就会选择合法。这个疯狂的赌注最终改变了整个音乐产业。",
+    "url": "/stories/spotify/pirate-inspiration",
+    "date": "2026-02-22T00:00:00.000Z",
+    "products": [
+      "Spotify"
+    ],
+    "tags": [
+      "Spotify",
+      "音乐流媒体",
+      "盗版",
+      "丹尼尔埃克",
+      "瑞典创业"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "uber/snowy-paris-night",
+    "title": "Uber：巴黎雪夜的抱怨如何催生千亿帝国",
+    "description": "2008年雪夜，卡拉尼克和坎普在巴黎街头等不到出租车，这个痛苦的瞬间点燃了改变人类出行方式的革命。从UberCab到全球70国、每天服务数千万乘客，这场从个人痛苦出发的创业，如何成为共享经济时代最具争议的巨头？",
+    "url": "/stories/uber/snowy-paris-night",
+    "date": "2026-02-22T00:00:00.000Z",
+    "products": [
+      "Uber"
+    ],
+    "tags": [
+      "Uber",
+      "共享经济",
+      "出行革命",
+      "特拉维斯卡拉尼克",
+      "平台经济"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "bolt-new/weekend-experiment",
+    "title": "Bolt.new：48小时的疯狂实验如何改变前端开发",
+    "description": "2024年3月，StackBlitz创始人Eric Simons做了个梦：一个界面，只要说一句话，整个应用就能出来。那个周末，团队没回家，用WebContainer技术+AI，在48小时内做出原型。一位不会编程的独立开发者用这个工具为妻子做了婚纱电商店铺，只用不到两小时。",
+    "url": "/stories/bolt-new/weekend-experiment",
+    "date": "2026-02-21T00:00:00.000Z",
+    "products": [
+      "Bolt.new"
+    ],
+    "tags": [
+      "Bolt.new",
+      "AI编程",
+      "WebContainer",
+      "StackBlitz",
+      "无代码"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "discord/pivot-to-community",
+    "title": "Discord：2000美元绝境中的孤注一掷",
+    "description": "当游戏语音工具陷入绝境、账上只剩2000美元时，一条用户建议拯救了Discord。从濒临倒闭到估值150亿美元，两个年轻人用一次孤注一掷的转型，证明了社区的力量。",
+    "url": "/stories/discord/pivot-to-community",
+    "date": "2026-02-21T00:00:00.000Z",
+    "products": [
+      "Discord"
+    ],
+    "tags": [
+      "Discord",
+      "游戏社区",
+      "语音聊天",
+      "转型",
+      "创业"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "dropbox/flash-drive-moment",
+    "title": "Dropbox：一个U盘噩梦催生的云存储帝国",
+    "description": "2007年，MIT学生德鲁·休斯顿因为一个U盘的丢失，决定打造一款让文件在任何设备上自动同步的产品。十年后，Dropbox成为价值百亿美元的云存储巨头，改变了人们存储和分享文件的方式。",
+    "url": "/stories/dropbox/flash-drive-moment",
+    "date": "2026-02-21T00:00:00.000Z",
+    "products": [
+      "Dropbox"
+    ],
+    "tags": [
+      "Dropbox",
+      "云存储",
+      "创始人故事",
+      "YC孵化",
+      "创业"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "notion/near-death-rebirth",
+    "title": "Notion 的濒死重生：从破产边缘到百亿估值",
+    "description": "当 Notion 烧光融资、团队只剩4人时，创始人带队搬去京都，用一年时间从零重写产品，最终改变了人们的工作方式",
+    "url": "/stories/notion/near-death-rebirth",
+    "date": "2026-02-21T00:00:00.000Z",
+    "products": [
+      "Notion"
+    ],
+    "tags": [
+      "Notion",
+      "创业",
+      "生产力工具",
+      "绝境重生",
+      "产品设计"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "stripe/collison-brothers",
+    "title": "Stripe：一行代码如何重塑全球互联网支付",
+    "description": "两个爱尔兰小镇少年如何用极简的开发者体验，打破了 PayPal 垄断，成为全球支付的底层基础设施。",
+    "url": "/stories/stripe/collison-brothers",
+    "date": "2026-02-21T00:00:00.000Z",
+    "products": [
+      "Stripe"
+    ],
+    "tags": [
+      "Stripe",
+      "支付",
+      "API经济",
+      "开发者工具",
+      "平台基础设施"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "telegram/privacy-rebellion",
+    "title": "Telegram：2亿美元买来的自由",
+    "description": "当俄罗斯政府要求关闭反对派页面时，帕维尔·杜罗夫选择公开羞辱他们。被迫离开祖国、出售公司以2亿美元换取自由后，他创造了全球最安全的通讯工具，用端到端加密守护9亿用户的隐私。",
+    "url": "/stories/telegram/privacy-rebellion",
+    "date": "2026-02-21T00:00:00.000Z",
+    "products": [
+      "Telegram"
+    ],
+    "tags": [
+      "Telegram",
+      "隐私",
+      "加密通讯",
+      "杜罗夫",
+      "俄罗斯"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "twitter/podcast-to-tweet",
+    "title": "Twitter：140个字符如何改变世界",
+    "description": "从一个濒临死亡的播客公司，到全球信息传播的核心枢纽，杰克·多西如何用140个字符的限制，重新定义了人类的表达方式，并在无意中改变了新闻、政治和社会运动的格局。",
+    "url": "/stories/twitter/podcast-to-tweet",
+    "date": "2026-02-21T00:00:00.000Z",
+    "products": [
+      "Twitter"
+    ],
+    "tags": [
+      "Twitter",
+      "微博客",
+      "社交媒体",
+      "杰克多西",
+      "信息传播"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "v0/ai-ui-generator",
+    "title": "v0：Vercel如何用AI重新定义前端开发",
+    "description": "2023年夏天，Vercel团队注意到越来越多开发者在ChatGPT里输入'帮我写一个登录页面'。他们意识到AI可以写逻辑代码，却不能生成美观、可用的UI。三个月后，v0诞生——让AI生成的代码直接就是可用的、漂亮的。",
+    "url": "/stories/v0/ai-ui-generator",
+    "date": "2026-02-21T00:00:00.000Z",
+    "products": [
+      "v0"
+    ],
+    "tags": [
+      "v0",
+      "Vercel",
+      "AI",
+      "前端开发",
+      "UI生成"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "whatsapp/read-receipt-rescue",
+    "title": "WhatsApp：已读回执如何拯救一个濒死应用",
+    "description": "2009年，库姆的聊天应用几乎无人问津，公司濒临倒闭。一个被遗忘的已读功能意外爆发，18个月内用户突破1亿，最终被Facebook以190亿美元收购。这个简单的蓝色勾选符号，如何创造了科技史上最大的收购奇迹？",
+    "url": "/stories/whatsapp/read-receipt-rescue",
+    "date": "2026-02-21T00:00:00.000Z",
+    "products": [
+      "WhatsApp"
+    ],
+    "tags": [
+      "WhatsApp",
+      "即时通讯",
+      "Jan Koum",
+      "已读回执",
+      "收购"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "youtube/dating-site-pivot",
+    "title": "YouTube：从约会网站废墟到视频帝国的绝境重生",
+    "description": "当约会网站创意遭遇惨败，三位PayPal前员工如何在绝望中发现真正的机会，用18个月打造出价值16.5亿美元的视频帝国。",
+    "url": "/stories/youtube/dating-site-pivot",
+    "date": "2026-02-21T00:00:00.000Z",
+    "products": [
+      "YouTube"
+    ],
+    "tags": [
+      "YouTube",
+      "视频分享",
+      "转型",
+      "内容创作",
+      "Web 2.0"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "zoom/simplicity-engineer",
+    "title": "被视频会议折磨的工程师，创造了最简单的会议工具",
+    "description": "从 WebEx 的痛苦用户体验出发，一位工程师决定打造每个人都能轻松使用的视频会议。",
+    "url": "/stories/zoom/simplicity-engineer",
+    "date": "2026-02-21T00:00:00.000Z",
+    "products": [
+      "Zoom"
+    ],
+    "tags": [
+      "Zoom",
+      "创始人",
+      "用户体验",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "cloudflare/birth-from-spam-crisis",
+    "title": "Cloudflare 的诞生：三个年轻人如何用两周解决垃圾邮件危机",
+    "description": "2009年，Matthew Prince 发现博客被黑客攻击，却意外催生了一个保护全球互联网安全的想法...",
+    "url": "/stories/cloudflare/birth-from-spam-crisis",
+    "date": "2025-02-24T00:00:00.000Z",
+    "products": [
+      "Cloudflare"
+    ],
+    "tags": [
+      "Cloudflare",
+      "网络安全",
+      "创业",
+      "转折点"
+    ],
+    "author": "Claude"
+  },
+  {
     "slug": "slack/from-game-to-workplace",
-    "title": "Slack 的绝境重生：一个游戏公司的意外转型",
-    "description": "当游戏公司 Tiny Speck 濒临破产时，他们意外发现内部工具的价值，最终成就了市值百亿的 Slack。",
+    "title": "Slack：一个失败游戏公司的意外转型传奇",
+    "description": "当游戏公司 Tiny Speck 濒临破产时，他们意外发现内部工具的价值，最终成就了市值百亿的 Slack。这是一个关于失败、洞察和平台转型的经典案例。",
     "url": "/stories/slack/from-game-to-workplace",
     "date": "2025-02-21T00:00:00.000Z",
     "products": [
@@ -10,16 +1460,18 @@
     ],
     "tags": [
       "Slack",
+      "企业协作",
+      "SaaS",
       "转型",
-      "创业",
-      "转折点"
+      "B2B",
+      "游戏失败"
     ],
     "author": "Claude"
   },
   {
     "slug": "instagram/x-pro-ii-filter-secret",
-    "title": "Instagram X-Pro II 滤镜的诞生：一次意外的色彩实验",
-    "description": "Instagram 最受欢迎的滤镜之一 X-Pro II，竟源于一位工程师的咖啡渍意外。",
+    "title": "Instagram：从旧金山码头到十亿用户的视觉帝国",
+    "description": "凯文·斯特罗姆如何用一款简单的照片分享应用，抓住了智能手机时代的视觉表达革命，并最终以10亿美元被Facebook收购。",
     "url": "/stories/instagram/x-pro-ii-filter-secret",
     "date": "2025-02-20T00:00:00.000Z",
     "products": [
@@ -27,16 +1479,17 @@
     ],
     "tags": [
       "Instagram",
-      "滤镜",
-      "设计轶事",
-      "幕后故事"
+      "照片分享",
+      "视觉社交",
+      "收购",
+      "移动应用"
     ],
     "author": "Claude"
   },
   {
     "slug": "airbnb/cereal-entrepreneur",
-    "title": "麦片救 Airbnb：创始人的绝境创意",
-    "description": "2008年金融危机中，Airbnb 创始人靠卖麦片筹集资金，用创意和坚持度过了创业最艰难的时刻。",
+    "title": "Airbnb：从充气床垫到千亿估值的共享经济革命",
+    "description": "2008年金融危机中，两个付不起房租的设计师如何创造了全球最大的住宿平台，并重新定义了旅行、城市和信任。",
     "url": "/stories/airbnb/cereal-entrepreneur",
     "date": "2025-02-19T00:00:00.000Z",
     "products": [
@@ -44,9 +1497,10 @@
     ],
     "tags": [
       "Airbnb",
-      "创始人故事",
+      "共享经济",
       "创业",
-      "创意营销"
+      "平台经济",
+      "信任体系"
     ],
     "author": "Claude"
   }

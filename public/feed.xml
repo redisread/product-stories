@@ -5,9 +5,45 @@
     <link>https://product-stories.pages.dev</link>
     <description>探索产品背后的故事，从设计决策到用户旅程的完整记录</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 15 Mar 2026 17:59:15 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2026 17:46:01 GMT</lastBuildDate>
     <atom:link href="https://product-stories.pages.dev/feed.xml" rel="self" type="application/rss+xml"/>
     
+    <item>
+      <title><![CDATA[Perplexity AI：如何用「答案引擎」挑战 Google 搜索霸权]]></title>
+      <link>https://product-stories.pages.dev/stories/perplexity-ai/the-answer-engine</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/perplexity-ai/the-answer-engine</guid>
+      <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Perplexity AI</category>
+      <description><![CDATA[从学术论文到挑战 Google，一位印度裔创始人如何用「答案引擎」概念掀起搜索革命？]]></description>
+    </item>
+    <item>
+      <title><![CDATA[GitHub 收购拉锯战：75亿美元背后的开源江湖]]></title>
+      <link>https://product-stories.pages.dev/stories/github/microsoft-acquisition</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/github/microsoft-acquisition</guid>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>GitHub</category>
+      <description><![CDATA[2018年，微软宣布以75亿美元收购GitHub。这场历时数月的谈判充满了动摇、质疑和最终的历史性时刻——一个曾经最抵制微软的开源平台，如何成为科技巨头的子公司？]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Raycast：丹麦独立开发者的下一个目标]]></title>
+      <link>https://product-stories.pages.dev/stories/raycast/danish-developer-apple-acquisition</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/raycast/danish-developer-apple-acquisition</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Raycast</category>
+      <description><![CDATA[一个丹麦程序员独自写了5年开源插件，2023年拿到1800万美元融资——他的下一个目标是什么？]]></description>
+    </item>
+    <item>
+      <title><![CDATA[Netflix：DVD到流媒体的关键赌注]]></title>
+      <link>https://product-stories.pages.dev/stories/netflix/dvd-to-streaming-pivot</link>
+      <guid isPermaLink="true">https://product-stories.pages.dev/stories/netflix/dvd-to-streaming-pivot</guid>
+      <pubDate>Sun, 15 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Claude</author>
+      <category>Netflix</category>
+      <description><![CDATA[2007年，Netflix只是一个DVD租赁公司。当流媒体技术初现端倪时，CEO里德·哈斯廷斯做了一个疯狂的决定：把公司未来押在互联网上。15年后，这个决定价值超过2000亿美元。]]></description>
+    </item>
     <item>
       <title><![CDATA[Stripe：19岁兄弟的支付革命]]></title>
       <link>https://product-stories.pages.dev/stories/stripe/young-brothers-redefine-payments</link>
@@ -16,15 +52,6 @@
       <author>Claude</author>
       <category>Stripe</category>
       <description><![CDATA[一对爱尔兰兄弟19岁创业，如何用200行代码改变全球支付行业——从被投资人拒绝20次到估值950亿美元]]></description>
-    </item>
-    <item>
-      <title><![CDATA[卡片盒笔记法：构建你的第二大脑]]></title>
-      <link>https://product-stories.pages.dev/stories/zettelkasten-second-brain</link>
-      <guid isPermaLink="true">https://product-stories.pages.dev/stories/zettelkasten-second-brain</guid>
-      <pubDate>Sun, 15 Mar 2026 00:00:00 GMT</pubDate>
-      <author>Victor</author>
-      <category>notion, obsidian</category>
-      <description><![CDATA[]]></description>
     </item>
     <item>
       <title><![CDATA[Linear：一个被拒绝的设计如何意外改变了整个 Issue Tracking 行业]]></title>

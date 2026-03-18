@@ -1,5 +1,78 @@
 [
   {
+    "slug": "perplexity-ai/the-answer-engine",
+    "title": "Perplexity AI：如何用「答案引擎」挑战 Google 搜索霸权",
+    "description": "从学术论文到挑战 Google，一位印度裔创始人如何用「答案引擎」概念掀起搜索革命？",
+    "url": "/stories/perplexity-ai/the-answer-engine",
+    "date": "2026-03-18T00:00:00.000Z",
+    "products": [
+      "Perplexity AI"
+    ],
+    "tags": [
+      "Perplexity AI",
+      "AI 搜索",
+      "答案引擎",
+      "Google 挑战者",
+      "Aravind Srinivas"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "github/microsoft-acquisition",
+    "title": "GitHub 收购拉锯战：75亿美元背后的开源江湖",
+    "description": "2018年，微软宣布以75亿美元收购GitHub。这场历时数月的谈判充满了动摇、质疑和最终的历史性时刻——一个曾经最抵制微软的开源平台，如何成为科技巨头的子公司？",
+    "url": "/stories/github/microsoft-acquisition",
+    "date": "2026-03-17T00:00:00.000Z",
+    "products": [
+      "GitHub"
+    ],
+    "tags": [
+      "GitHub",
+      "微软",
+      "收购",
+      "开源",
+      "转折点",
+      "克里斯·万斯特拉斯"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "raycast/danish-developer-apple-acquisition",
+    "title": "Raycast：丹麦独立开发者的下一个目标",
+    "description": "一个丹麦程序员独自写了5年开源插件，2023年拿到1800万美元融资——他的下一个目标是什么？",
+    "url": "/stories/raycast/danish-developer-apple-acquisition",
+    "date": "2026-03-16T00:00:00.000Z",
+    "products": [
+      "Raycast"
+    ],
+    "tags": [
+      "Raycast",
+      "独立开发者",
+      "融资",
+      "开发者工具",
+      "macOS"
+    ],
+    "author": "Claude"
+  },
+  {
+    "slug": "netflix/dvd-to-streaming-pivot",
+    "title": "Netflix：DVD到流媒体的关键赌注",
+    "description": "2007年，Netflix只是一个DVD租赁公司。当流媒体技术初现端倪时，CEO里德·哈斯廷斯做了一个疯狂的决定：把公司未来押在互联网上。15年后，这个决定价值超过2000亿美元。",
+    "url": "/stories/netflix/dvd-to-streaming-pivot",
+    "date": "2026-03-15T00:00:00.000Z",
+    "products": [
+      "Netflix"
+    ],
+    "tags": [
+      "Netflix",
+      "流媒体",
+      "转型",
+      "商业决策",
+      "创业"
+    ],
+    "author": "Claude"
+  },
+  {
     "slug": "stripe/young-brothers-redefine-payments",
     "title": "Stripe：19岁兄弟的支付革命",
     "description": "一对爱尔兰兄弟19岁创业，如何用200行代码改变全球支付行业——从被投资人拒绝20次到估值950亿美元",
@@ -16,24 +89,6 @@
       "兄弟创业"
     ],
     "author": "Claude"
-  },
-  {
-    "slug": "zettelkasten-second-brain",
-    "title": "卡片盒笔记法：构建你的第二大脑",
-    "description": "",
-    "url": "/stories/zettelkasten-second-brain",
-    "date": "2026-03-15T00:00:00.000Z",
-    "products": [
-      "notion",
-      "obsidian"
-    ],
-    "tags": [
-      "知识管理",
-      "笔记方法",
-      "生产力",
-      "第二大脑"
-    ],
-    "author": "Victor"
   },
   {
     "slug": "linear/the-accidental-design-revolution",

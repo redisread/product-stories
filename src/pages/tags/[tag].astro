@@ -1,0 +1,90 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/layout/Navbar.astro';
+import Footer from '../../components/layout/Footer.astro';
+import StoryCard from '../../components/story/StoryCard.astro';
+import { slugify } from '../../lib/utils';
+
+export async function getStaticPaths() {
+  // 必须在此处内联 slugify，Astro getStaticPaths 作用域限制
+  function toSlug(tag: string): string {
+    return tag
+      .toLowerCase()
+      .replace(/[/\\]/g, '-')
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9\u4e00-\u9fa5-]/g, '')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+  }
+
+  const stories = await getCollection('stories', ({ data }) => !data.draft);
+  const tagMap = new Map<string, { tag: string; stories: typeof stories }>();
+
+  stories.forEach((s) => {
+    (s.data.tags ?? []).forEach((tag) => {
+      const slug = toSlug(tag);
+      if (!tagMap.has(slug)) {
+        tagMap.set(slug, { tag, stories: [] });
+      }
+      tagMap.get(slug)!.stories.push(s);
+    });
+  });
+
+  return [...tagMap.entries()].map(([slug, { tag, stories: tagStories }]) => ({
+    params: { tag: slug },
+    props: {
+      tagName: tag,
+      stories: tagStories.sort(
+        (a, b) => b.data.date.getTime() - a.data.date.getTime()
+      ),
+    },
+  }));
+}
+
+const { tagName, stories } = Astro.props;
+---
+
+<BaseLayout
+  title={`#${tagName} — 标签`}
+  description={`关于「${tagName}」的 ${stories.length} 篇产品故事`}
+>
+  <Navbar />
+
+  <main class="flex-1">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+
+      <!-- 页头 -->
+      <div class="mb-8">
+        <a
+          href="/stories"
+          class="inline-flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] mb-4 transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
+          </svg>
+          全部故事
+        </a>
+        <div class="flex items-center gap-3">
+          <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-sm font-medium">
+            #{tagName}
+          </span>
+          <span class="text-[var(--muted-foreground)] text-sm">{stories.length} 篇故事</span>
+        </div>
+        <h1 class="text-3xl font-bold tracking-tight text-[var(--foreground)] mt-3">
+          「{tagName}」相关故事
+        </h1>
+      </div>
+
+      <!-- 故事网格 -->
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {stories.map((story) => (
+          <StoryCard story={story} />
+        ))}
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,119 @@
+---
+// 无需 props，导航栏为全局固定内容
+---
+
+<header class="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-sm">
+  <nav
+    class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between"
+    aria-label="主导航"
+  >
+    <!-- Logo -->
+    <a
+      href="/"
+      class="flex items-center gap-2 font-semibold text-[var(--foreground)] hover:opacity-80 transition-opacity"
+      aria-label="Product Stories 首页"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        class="text-[var(--accent)]"
+      >
+        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+      </svg>
+      <span>Product Stories</span>
+    </a>
+
+    <!-- 导航链接 + 主题切换 -->
+    <div class="flex items-center gap-1 sm:gap-2">
+      <a
+        href="/stories"
+        class="hidden sm:inline-flex items-center px-3 py-1.5 rounded-md text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors"
+      >
+        全部故事
+      </a>
+      <a
+        href="/stories"
+        class="sm:hidden p-2 rounded-md text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors"
+        aria-label="全部故事"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/>
+          <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/>
+          <path d="M12 3v6"/>
+        </svg>
+      </a>
+
+      <!-- 暗黑模式切换 -->
+      <button
+        id="theme-toggle"
+        class="p-2 rounded-md text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:bg-[var(--muted)] transition-colors"
+        aria-label="切换暗黑模式"
+        title="切换暗黑模式"
+      >
+        <!-- 太阳（亮色模式显示） -->
+        <svg
+          id="icon-sun"
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          class="hidden"
+        >
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+        <!-- 月亮（暗色模式显示） -->
+        <svg
+          id="icon-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('theme-toggle');
+  const sun = document.getElementById('icon-sun');
+  const moon = document.getElementById('icon-moon');
+  const html = document.documentElement;
+
+  function syncIcons() {
+    const isDark = html.classList.contains('dark');
+    sun?.classList.toggle('hidden', !isDark);
+    moon?.classList.toggle('hidden', isDark);
+  }
+
+  syncIcons();
+
+  btn?.addEventListener('click', () => {
+    const isDark = html.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    syncIcons();
+  });
+</script>

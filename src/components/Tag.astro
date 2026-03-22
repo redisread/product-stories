@@ -1,0 +1,145 @@
+---
+interface Props {
+  label: string;
+  href?: string;
+  variant?: 'default' | 'product' | 'featured';
+  size?: 'sm' | 'md';
+  active?: boolean;
+}
+
+const {
+  label,
+  href,
+  variant = 'default',
+  size = 'sm',
+  active = false,
+} = Astro.props;
+
+const classes = [
+  'tag',
+  `tag--${variant}`,
+  `tag--${size}`,
+  active ? 'tag--active' : '',
+].filter(Boolean).join(' ');
+---
+
+{href ? (
+  <a href={href} class={classes}>
+    {variant === 'default' && <span class="tag-hash" aria-hidden="true">#</span>}{label}
+  </a>
+) : (
+  <span class={classes}>
+    {variant === 'default' && <span class="tag-hash" aria-hidden="true">#</span>}{label}
+  </span>
+)}
+
+<style>
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    font-weight: 500;
+    white-space: nowrap;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast),
+      border-color var(--transition-fast),
+      box-shadow var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  /* ── 尺寸 ── */
+  .tag--sm {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+  }
+
+  .tag--md {
+    font-size: 0.8125rem;
+    padding: 5px 14px;
+  }
+
+  /* ── 默认变体（主题标签） ── */
+  .tag--default {
+    background: var(--bg-muted);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-default);
+  }
+
+  .tag-hash {
+    color: var(--color-brand);
+    opacity: 0.55;
+    font-weight: 600;
+    transition: opacity var(--transition-fast);
+  }
+
+  .dark .tag-hash {
+    color: var(--color-brand-accent);
+  }
+
+  .tag--default:is(a):hover .tag-hash,
+  .tag--default.tag--active .tag-hash {
+    opacity: 1;
+  }
+
+  .tag--default:is(a):hover,
+  .tag--default.tag--active {
+    background: var(--color-brand-muted);
+    color: var(--color-brand);
+    border-color: rgba(194, 98, 10, 0.25);
+    box-shadow: 0 1px 4px rgba(194, 98, 10, 0.1);
+    transform: translateY(-1px);
+  }
+
+  .dark .tag--default:is(a):hover,
+  .dark .tag--default.tag--active {
+    background: rgba(245, 158, 11, 0.12);
+    color: var(--color-brand-accent);
+    border-color: rgba(245, 158, 11, 0.3);
+    box-shadow: 0 1px 4px rgba(245, 158, 11, 0.15);
+  }
+
+  /* ── 产品变体（品牌色实心） ── */
+  .tag--product {
+    background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-light) 100%);
+    color: #fff;
+    border: 1px solid transparent;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    box-shadow: 0 1px 6px rgba(194, 98, 10, 0.25);
+  }
+
+  .dark .tag--product {
+    background: linear-gradient(135deg, var(--color-brand-dark) 0%, var(--color-brand-accent) 100%);
+    color: #1a1614;
+    box-shadow: 0 1px 6px rgba(245, 158, 11, 0.2);
+  }
+
+  .tag--product:is(a):hover {
+    background: linear-gradient(135deg, var(--color-brand-light) 0%, var(--color-brand-accent) 100%);
+    box-shadow: 0 2px 10px rgba(194, 98, 10, 0.35);
+    transform: translateY(-1px);
+  }
+
+  /* ── 精选变体（暖金色） ── */
+  .tag--featured {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+    font-weight: 600;
+  }
+
+  .dark .tag--featured {
+    background: rgba(120, 53, 15, 0.3);
+    color: #fde68a;
+    border-color: rgba(120, 53, 15, 0.6);
+  }
+
+  .tag--featured:is(a):hover {
+    background: #fde68a;
+    border-color: #f59e0b;
+    transform: translateY(-1px);
+  }
+</style>

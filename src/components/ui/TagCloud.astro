@@ -1,0 +1,34 @@
+---
+interface Props {
+  tags: { name: string; count: number }[];
+  limit?: number;
+}
+
+const { tags, limit = 20 } = Astro.props;
+const displayed = tags.slice(0, limit);
+
+function toSlug(tag: string): string {
+  return tag
+    .toLowerCase()
+    .replace(/[/\\]/g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9\u4e00-\u9fa5-]/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+---
+
+<div class="flex flex-wrap gap-2">
+  {displayed.map(({ name, count }) => (
+    <a
+      href={`/tags/${toSlug(name)}`}
+      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm
+             bg-[var(--muted)] text-[var(--muted-foreground)]
+             hover:bg-[var(--accent)] hover:text-white
+             transition-colors font-medium"
+    >
+      {name}
+      <span class="text-xs opacity-70">({count})</span>
+    </a>
+  ))}
+</div>

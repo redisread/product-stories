@@ -1,0 +1,222 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import { countTags, getUniqueProducts } from '../../utils/helpers';
+
+const allStories = (await getCollection('stories', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const tagCounts = countTags(allStories);
+const topTags = Array.from(tagCounts.entries())
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 30);
+const products = getUniqueProducts(allStories);
+---
+
+<BaseLayout
+  title="故事库"
+  description={`浏览全部 ${allStories.length} 个产品故事，探索改变世界的产品诞生历程。`}
+>
+  <Navbar />
+
+  <main class="stories-page">
+    <div class="container">
+      <header class="page-header">
+        <h1 class="page-title">故事库</h1>
+        <p class="page-desc">
+          共 <strong>{allStories.length}</strong> 个产品故事，
+          涵盖 <strong>{products.length}</strong> 个产品
+        </p>
+      </header>
+
+      <!-- 标签筛选栏 -->
+      <div class="filter-bar" id="filter-bar">
+        <div class="filter-tags" role="list" aria-label="标签筛选">
+          <button class="filter-tag filter-tag--active" data-tag="" role="listitem">全部</button>
+          {topTags.slice(0, 18).map(([tag, count]) => (
+            <button class="filter-tag" data-tag={tag} role="listitem">
+              #{tag}
+              <span class="filter-tag-count">{count}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- 故事网格 -->
+      <div class="stories-grid" id="stories-grid">
+        {allStories.map((story) => (
+          <div
+            class="story-item"
+            data-tags={JSON.stringify(story.data.tags || [])}
+          >
+            <StoryCard story={story} loading="lazy" />
+          </div>
+        ))}
+      </div>
+
+      <!-- 空状态 -->
+      <div class="empty-state" id="empty-state" hidden>
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+          <path d="M16 24h16M24 16v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+        </svg>
+        <p>没有找到相关故事</p>
+        <button class="btn-reset" id="reset-filter">清除筛选</button>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-tag');
+  const storyItems = document.querySelectorAll<HTMLElement>('.story-item');
+  const emptyState = document.getElementById('empty-state');
+  const resetBtn = document.getElementById('reset-filter');
+
+  function filterStories(tag: string) {
+    filterBtns.forEach((btn) => {
+      btn.classList.toggle('filter-tag--active', btn.dataset.tag === tag);
+    });
+
+    let visibleCount = 0;
+    storyItems.forEach((item) => {
+      const tags: string[] = JSON.parse(item.dataset.tags || '[]');
+      const show = !tag || tags.includes(tag);
+      item.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+
+    if (emptyState) emptyState.hidden = visibleCount > 0;
+
+    const url = new URL(window.location.href);
+    if (tag) {
+      url.searchParams.set('tag', tag);
+    } else {
+      url.searchParams.delete('tag');
+    }
+    window.history.replaceState({}, '', url.toString());
+  }
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => filterStories(btn.dataset.tag || ''));
+  });
+
+  resetBtn?.addEventListener('click', () => filterStories(''));
+
+  const urlTag = new URL(window.location.href).searchParams.get('tag');
+  if (urlTag) filterStories(urlTag);
+</script>
+
+<style>
+  .stories-page {
+    padding-top: calc(var(--nav-height) + 48px);
+    padding-bottom: 80px;
+    min-height: 100vh;
+  }
+  .page-header {
+    margin-bottom: 40px;
+  }
+  .page-title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+  .page-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+  }
+  .page-desc strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+  .filter-bar {
+    margin-bottom: 32px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-tags {
+    display: flex;
+    gap: 8px;
+    min-width: max-content;
+  }
+  .filter-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+    white-space: nowrap;
+  }
+  .filter-tag:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+  }
+  .filter-tag--active {
+    background: var(--color-brand);
+    color: #fff;
+    border-color: var(--color-brand);
+  }
+  .filter-tag--active:hover {
+    background: var(--color-brand-light);
+    border-color: var(--color-brand-light);
+  }
+  .filter-tag-count {
+    font-size: 0.6875rem;
+    opacity: 0.7;
+    background: rgba(255,255,255,0.2);
+    padding: 1px 5px;
+    border-radius: var(--radius-full);
+  }
+  .filter-tag:not(.filter-tag--active) .filter-tag-count {
+    background: var(--bg-muted);
+    color: var(--text-muted);
+    opacity: 1;
+  }
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .empty-state {
+    text-align: center;
+    padding: 80px 0;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .btn-reset {
+    padding: 8px 20px;
+    background: var(--color-brand);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+  }
+  .btn-reset:hover { background: var(--color-brand-light); }
+  @media (max-width: 640px) {
+    .stories-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,467 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: '首页' },
+  { href: '/stories', label: '故事库' },
+];
+---
+
+<header class="navbar" role="banner">
+  <div class="navbar-inner container">
+    <!-- Logo -->
+    <a href="/" class="navbar-logo" aria-label="Product Stories 首页">
+      <div class="logo-mark" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </svg>
+      </div>
+      <div class="logo-text-group">
+        <span class="logo-title">Product Stories</span>
+        <span class="logo-tagline">产品背后的故事</span>
+      </div>
+    </a>
+
+    <!-- 导航链接 -->
+    <nav class="navbar-nav" aria-label="主导航">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class={`nav-link ${currentPath === link.href ? 'nav-link--active' : ''}`}
+          aria-current={currentPath === link.href ? 'page' : undefined}
+        >
+          {link.label}
+          {currentPath === link.href && (
+            <span class="nav-active-dot" aria-hidden="true"></span>
+          )}
+        </a>
+      ))}
+    </nav>
+
+    <!-- 右侧操作区 -->
+    <div class="navbar-actions">
+      <!-- 搜索按钮（占位，可后续扩展） -->
+      <a href="/stories" class="navbar-search-hint" aria-label="搜索故事" title="浏览故事">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+      </a>
+
+      <!-- 暗黑模式切换 -->
+      <button
+        id="theme-toggle"
+        class="theme-btn"
+        aria-label="切换暗黑模式"
+        title="切换主题"
+      >
+        <!-- 太阳（暗色模式下显示） -->
+        <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- 月亮（亮色模式下显示） -->
+        <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+
+      <!-- 移动端菜单按钮 -->
+      <button
+        id="mobile-menu-btn"
+        class="mobile-menu-btn"
+        aria-label="打开菜单"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="hamburger-line hamburger-line--1"></span>
+        <span class="hamburger-line hamburger-line--2"></span>
+        <span class="hamburger-line hamburger-line--3"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 移动端菜单 -->
+  <div id="mobile-menu" class="mobile-menu" role="dialog" aria-label="移动端导航菜单" hidden>
+    <nav class="mobile-nav">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class={`mobile-nav-link ${currentPath === link.href ? 'mobile-nav-link--active' : ''}`}
+        >
+          <span>{link.label}</span>
+          {currentPath === link.href && (
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          )}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  // 暗黑模式切换（带动画）
+  const themeToggle = document.getElementById('theme-toggle');
+  themeToggle?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+    // 触发图标切换动画
+    themeToggle.classList.add('theme-btn--animating');
+    setTimeout(() => themeToggle.classList.remove('theme-btn--animating'), 300);
+  });
+
+  // 移动端菜单（带动画）
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.hidden === false;
+    if (mobileMenu) mobileMenu.hidden = isOpen;
+    mobileMenuBtn.setAttribute('aria-expanded', String(!isOpen));
+    mobileMenuBtn.setAttribute('aria-label', isOpen ? '打开菜单' : '关闭菜单');
+    mobileMenuBtn.classList.toggle('is-open', !isOpen);
+  });
+
+  // 滚动时 Navbar 样式变化
+  const navbar = document.querySelector('.navbar') as HTMLElement;
+  let lastScrollY = 0;
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+
+    if (scrollY > 10) {
+      navbar?.classList.add('navbar--scrolled');
+    } else {
+      navbar?.classList.remove('navbar--scrolled');
+    }
+
+    // 向下滚动超过 100px 时隐藏，向上滚动时显示
+    if (scrollY > lastScrollY && scrollY > 100) {
+      navbar?.classList.add('navbar--hidden');
+    } else {
+      navbar?.classList.remove('navbar--hidden');
+    }
+
+    lastScrollY = scrollY;
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+</script>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: var(--nav-height);
+    background: rgba(250, 249, 246, 0.88);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid transparent;
+    transition:
+      border-color var(--transition-normal),
+      box-shadow var(--transition-normal),
+      background var(--transition-normal),
+      transform var(--transition-normal);
+  }
+
+  .dark .navbar {
+    background: rgba(20, 18, 16, 0.9);
+  }
+
+  .navbar--scrolled {
+    border-color: var(--border-default);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* 向下滚动时隐藏 Navbar */
+  .navbar--hidden {
+    transform: translateY(-100%);
+  }
+
+  .navbar-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  /* ═══ Logo ═══ */
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+  }
+
+  .navbar-logo:hover {
+    opacity: 0.8;
+  }
+
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: linear-gradient(135deg, var(--color-brand) 0%, var(--color-brand-accent) 100%);
+    color: #fff;
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 8px rgba(194, 98, 10, 0.3);
+    flex-shrink: 0;
+    transition: transform var(--transition-spring), box-shadow var(--transition-fast);
+  }
+
+  .navbar-logo:hover .logo-mark {
+    transform: rotate(-5deg) scale(1.05);
+    box-shadow: 0 4px 12px rgba(194, 98, 10, 0.4);
+  }
+
+  .dark .logo-mark {
+    background: linear-gradient(135deg, var(--color-brand-dark) 0%, var(--color-brand-accent) 100%);
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);
+  }
+
+  .logo-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .logo-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  .logo-tagline {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+  }
+
+  /* ═══ 导航链接 ═══ */
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .nav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 13px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: color var(--transition-fast), background var(--transition-fast);
+    letter-spacing: -0.01em;
+  }
+
+  .nav-link:hover {
+    color: var(--text-primary);
+    background: var(--bg-hover);
+  }
+
+  .nav-link--active {
+    color: var(--text-primary);
+    font-weight: 600;
+    background: var(--bg-muted);
+  }
+
+  .nav-active-dot {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 3px;
+    background: var(--color-brand);
+    border-radius: 50%;
+  }
+
+  .dark .nav-active-dot {
+    background: var(--color-brand-accent);
+  }
+
+  /* ═══ 操作区 ═══ */
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* 搜索按钮 */
+  .navbar-search-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .navbar-search-hint:hover {
+    color: var(--text-primary);
+    background: var(--bg-hover);
+  }
+
+  /* 主题切换按钮 */
+  .theme-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    border-radius: var(--radius-md);
+    transition:
+      color var(--transition-fast),
+      background var(--transition-fast),
+      transform var(--transition-spring);
+  }
+
+  .theme-btn:hover {
+    color: var(--text-primary);
+    background: var(--bg-hover);
+  }
+
+  .theme-btn--animating {
+    transform: rotate(20deg) scale(0.9);
+  }
+
+  /* 亮色模式：显示月亮，暗色模式：显示太阳 */
+  .icon-sun { display: none; }
+  .icon-moon { display: block; }
+  .dark .icon-sun { display: block; }
+  .dark .icon-moon { display: none; }
+
+  /* ═══ 移动端菜单按钮 ═══ */
+  .mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+  }
+
+  .mobile-menu-btn:hover {
+    background: var(--bg-hover);
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: transform var(--transition-normal), opacity var(--transition-normal);
+    transform-origin: center;
+  }
+
+  /* 汉堡变 X 动画 */
+  .mobile-menu-btn.is-open .hamburger-line--1 {
+    transform: translateY(5.5px) rotate(45deg);
+  }
+
+  .mobile-menu-btn.is-open .hamburger-line--2 {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .mobile-menu-btn.is-open .hamburger-line--3 {
+    transform: translateY(-5.5px) rotate(-45deg);
+  }
+
+  /* ═══ 移动端菜单 ═══ */
+  .mobile-menu {
+    background: var(--bg-page);
+    border-top: 1px solid var(--border-default);
+    padding: 8px 0 16px;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .mobile-nav-link:hover {
+    color: var(--text-primary);
+    background: var(--bg-hover);
+  }
+
+  .mobile-nav-link--active {
+    color: var(--color-brand);
+    font-weight: 600;
+  }
+
+  .dark .mobile-nav-link--active {
+    color: var(--color-brand-accent);
+  }
+
+  /* ═══ 响应式 ═══ */
+  @media (max-width: 767px) {
+    .navbar-nav,
+    .navbar-search-hint {
+      display: none;
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+    }
+
+    .logo-tagline {
+      display: none;
+    }
+  }
+</style>

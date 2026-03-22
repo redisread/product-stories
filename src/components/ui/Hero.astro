@@ -1,0 +1,46 @@
+---
+interface Props {
+  totalStories: number;
+  totalProducts: number;
+}
+
+const { totalStories, totalProducts } = Astro.props;
+---
+
+<section class="border-b border-[var(--border)] bg-[var(--muted)]/30">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+    <div class="max-w-2xl">
+      <p class="text-sm font-medium text-[var(--accent)] mb-3 tracking-wide uppercase">
+        Product Stories
+      </p>
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight leading-tight text-[var(--foreground)] mb-4">
+        每款产品背后<br />都有一个故事
+      </h1>
+      <p class="text-lg text-[var(--muted-foreground)] leading-relaxed mb-8">
+        探索改变世界的产品是如何诞生的——从最初的灵感到颠覆行业的时刻，
+        记录那些塑造了我们今天所用工具的决策与转折。
+      </p>
+      <div class="flex flex-wrap items-center gap-6">
+        <a
+          href="/stories"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--foreground)] text-[var(--background)] font-medium text-sm hover:opacity-90 transition-opacity"
+        >
+          浏览全部故事
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+        <div class="flex items-center gap-6 text-sm text-[var(--muted-foreground)]">
+          <span>
+            <strong class="text-[var(--foreground)] font-semibold text-xl">{totalStories}</strong>
+            <span class="ml-1">篇故事</span>
+          </span>
+          <span>
+            <strong class="text-[var(--foreground)] font-semibold text-xl">{totalProducts}</strong>
+            <span class="ml-1">个产品</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

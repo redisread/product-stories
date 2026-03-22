@@ -1,0 +1,617 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ReadingProgress from '../../components/ReadingProgress.astro';
+import Tag from '../../components/Tag.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import { formatDate, getRelativeTime } from '../../utils/helpers';
+
+export async function getStaticPaths() {
+  const stories = await getCollection('stories', ({ data }) => !data.draft);
+  return stories.map((story) => ({
+    params: { slug: story.id },
+    props: { story },
+  }));
+}
+
+const { story } = Astro.props;
+const { Content } = await render(story);
+const { title, description, date, cover, readingTime, author, tags = [], products = [], featured } = story.data;
+
+// 相关推荐
+const allStories = await getCollection('stories', ({ data }) => !data.draft);
+const related = allStories
+  .filter((s) => s.id !== story.id)
+  .filter((s) => {
+    const sameProduct = s.data.products?.some((p) => products.includes(p));
+    const sameTag = s.data.tags?.some((t) => tags.includes(t));
+    return sameProduct || sameTag;
+  })
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={cover}
+  ogType="article"
+  publishedTime={date.toISOString()}
+  author={author}
+>
+  <ReadingProgress />
+  <Navbar />
+
+  <article class="story-article" id="story-content">
+
+    <!-- ══════════════════════════════
+         文章头部
+         Visual Designer: 暖渐变光晕背景 + 精致排版
+         ══════════════════════════════ -->
+    <header class="story-header">
+      <!-- 背景装饰 -->
+      <div class="story-header-bg" aria-hidden="true">
+        <div class="header-glow header-glow--1"></div>
+        <div class="header-glow header-glow--2"></div>
+      </div>
+
+      <div class="container-article">
+
+        <!-- 面包屑 -->
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="/" class="bc-link">首页</a>
+          <svg class="bc-sep" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <a href="/stories" class="bc-link">故事库</a>
+          {products.length > 0 && (
+            <>
+              <svg class="bc-sep" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="bc-current">{products[0]}</span>
+            </>
+          )}
+        </nav>
+
+        <!-- 标签行 -->
+        {(products.length > 0 || tags.length > 0 || featured) && (
+          <div class="story-tags">
+            {products.map((p) => (
+              <Tag label={p} variant="product" href={`/stories?product=${encodeURIComponent(p)}`} />
+            ))}
+            {tags.slice(0, 4).map((tag) => (
+              <Tag label={tag} href={`/tags/${encodeURIComponent(tag)}`} />
+            ))}
+            {featured && <Tag label="精选" variant="featured" />}
+          </div>
+        )}
+
+        <!-- 标题 -->
+        <h1 class="story-title">{title}</h1>
+
+        <!-- 描述 -->
+        {description && (
+          <p class="story-description">{description}</p>
+        )}
+
+        <!-- 元信息 -->
+        <div class="story-meta">
+          <time datetime={date.toISOString()} class="meta-item" title={formatDate(date)}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            {formatDate(date)}
+          </time>
+          {readingTime && (
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              {readingTime}
+            </span>
+          )}
+          {author && (
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              {author}
+            </span>
+          )}
+        </div>
+
+        <!-- 封面图 -->
+        {cover && (
+          <figure class="story-cover">
+            <img
+              src={cover}
+              alt={title}
+              loading="eager"
+              decoding="async"
+              class="story-cover-img"
+            />
+          </figure>
+        )}
+      </div>
+    </header>
+
+    <!-- ══════════════════════════════
+         正文
+         Design Director: 暖色 prose 系统
+         ══════════════════════════════ -->
+    <div class="story-body">
+      <div class="container-article prose-story">
+        <Content />
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+         文章底部
+         ══════════════════════════════ -->
+    <footer class="story-footer">
+      <div class="container-article">
+
+        <!-- 底部标签 -->
+        {tags.length > 0 && (
+          <div class="footer-tags">
+            <span class="footer-tags-label">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                <line x1="7" y1="7" x2="7.01" y2="7"/>
+              </svg>
+              标签
+            </span>
+            <div class="footer-tags-list">
+              {tags.map((tag) => (
+                <Tag label={tag} href={`/tags/${encodeURIComponent(tag)}`} size="md" />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- 相关推荐 -->
+        {related.length > 0 && (
+          <div class="related-stories">
+            <div class="related-header">
+              <h2 class="related-title">相关故事</h2>
+              <a href="/stories" class="related-more">
+                更多故事
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+            <div class="related-grid">
+              {related.map((s) => (
+                <StoryCard story={s} variant="compact" loading="lazy" />
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- 返回按钮 -->
+        <div class="story-back">
+          <a href="/stories" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            返回全部故事
+          </a>
+        </div>
+
+      </div>
+    </footer>
+  </article>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  /* ══════════════════════════════
+     布局基础
+     ══════════════════════════════ */
+  .story-article {
+    padding-top: calc(var(--nav-height) + 48px);
+    padding-bottom: 96px;
+  }
+
+  /* 文章宽度容器 — overflow:visible 确保 h2::before 装饰线不被裁剪 */
+  .container-article {
+    width: 100%;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    overflow: visible;
+  }
+
+  /* ══════════════════════════════
+     文章头部
+     Visual Designer: 暖渐变背景 + 精致细节
+     ══════════════════════════════ */
+  .story-header {
+    position: relative;
+    padding-bottom: 48px;
+    margin-bottom: 0;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  /* 头部背景光晕 */
+  .story-header-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .header-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  .header-glow--1 {
+    width: 500px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+    top: -80px;
+    left: 50%;
+    transform: translateX(-30%);
+  }
+
+  .header-glow--2 {
+    width: 300px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(225, 29, 72, 0.06) 0%, transparent 70%);
+    top: 0;
+    right: 10%;
+  }
+
+  .dark .header-glow--1 {
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+  }
+
+  /* ── 面包屑 ── */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+
+  .bc-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+  }
+
+  .bc-link:hover {
+    color: var(--color-brand);
+  }
+
+  .dark .bc-link:hover {
+    color: var(--color-brand-accent);
+  }
+
+  .bc-sep {
+    color: var(--border-strong);
+    flex-shrink: 0;
+  }
+
+  .bc-current {
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  /* ── 标签行 ── */
+  .story-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  /* ── 标题 ── */
+  .story-title {
+    font-size: clamp(1.875rem, 4.5vw, 2.875rem);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    font-family: var(--font-display);
+  }
+
+  /* ── 描述 ── */
+  .story-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 28px;
+    padding-left: 16px;
+    border-left: 3px solid var(--color-brand-accent);
+    font-style: italic;
+  }
+
+  .dark .story-description {
+    border-left-color: var(--color-brand-accent);
+    color: var(--text-secondary);
+  }
+
+  /* ── 元信息 ── */
+  .story-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 20px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    padding: 12px 16px;
+    background: var(--bg-muted);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+  }
+
+  .meta-item svg {
+    color: var(--color-brand);
+    opacity: 0.7;
+    flex-shrink: 0;
+  }
+
+  .dark .meta-item svg {
+    color: var(--color-brand-accent);
+  }
+
+  /* ── 封面图 ── */
+  .story-cover {
+    margin: 0;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    aspect-ratio: 2 / 1;
+    background: var(--bg-muted);
+    /* 精致边框 + 阴影 */
+    border: 1px solid var(--border-default);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .story-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
+  }
+
+  .story-cover:hover .story-cover-img {
+    transform: scale(1.02);
+  }
+
+  /* ══════════════════════════════
+     正文区
+     prose-story 样式已移入 globals.css（全局生效，避免 scoped :global() 失效）
+     ══════════════════════════════ */
+  .story-body {
+    margin-bottom: 0;
+  }
+
+  /* 只保留间距，其余样式由 globals.css 的 .prose-story 规则控制 */
+  .prose-story {
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+
+  /* ══════════════════════════════
+     文章底部
+     ══════════════════════════════ */
+  .story-footer {
+    padding-top: 56px;
+    border-top: 1px solid var(--border-default);
+    position: relative;
+  }
+
+  .story-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-brand), var(--color-brand-accent));
+    border-radius: var(--radius-full);
+    margin-top: -1.5px;
+  }
+
+  /* ── 底部标签 ── */
+  .footer-tags {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+    padding: 16px 20px;
+    background: var(--bg-muted);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .footer-tags-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .footer-tags-label svg {
+    color: var(--color-brand);
+    opacity: 0.7;
+  }
+
+  .dark .footer-tags-label svg {
+    color: var(--color-brand-accent);
+  }
+
+  .footer-tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ── 相关推荐 ── */
+  .related-stories {
+    margin-bottom: 56px;
+  }
+
+  .related-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 12px;
+  }
+
+  .related-title {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .related-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 16px;
+    background: linear-gradient(to bottom, var(--color-brand), var(--color-brand-accent));
+    border-radius: var(--radius-full);
+  }
+
+  .related-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-brand);
+    text-decoration: none;
+    transition: gap var(--transition-fast), color var(--transition-fast);
+  }
+
+  .related-more:hover {
+    color: var(--color-brand-light);
+    gap: 7px;
+  }
+
+  .dark .related-more {
+    color: var(--color-brand-accent);
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  /* ── 返回按钮 ── */
+  .story-back {
+    padding-top: 24px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-default);
+    background: var(--bg-card);
+    transition:
+      color var(--transition-fast),
+      background var(--transition-fast),
+      border-color var(--transition-fast),
+      transform var(--transition-spring);
+  }
+
+  .back-link:hover {
+    color: var(--color-brand);
+    background: var(--color-brand-muted);
+    border-color: rgba(194, 98, 10, 0.25);
+    transform: translateX(-2px);
+  }
+
+  .dark .back-link:hover {
+    color: var(--color-brand-accent);
+    background: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.2);
+  }
+
+  /* ══════════════════════════════
+     响应式
+     ══════════════════════════════ */
+  @media (max-width: 767px) {
+    .story-article {
+      padding-top: calc(var(--nav-height) + 32px);
+      padding-bottom: 64px;
+    }
+
+    .story-title {
+      font-size: 1.75rem;
+    }
+
+    .story-description {
+      font-size: 1rem;
+    }
+
+    .prose-story {
+      font-size: 1rem;
+      padding-top: 32px;
+      padding-bottom: 48px;
+    }
+
+    .story-footer {
+      padding-top: 40px;
+    }
+
+    .footer-tags {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

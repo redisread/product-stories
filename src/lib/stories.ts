@@ -5,9 +5,7 @@ export type Story = CollectionEntry<'stories'>;
 /** 获取全部非草稿故事，按日期倒序 */
 export async function getAllStories(): Promise<Story[]> {
   const stories = await getCollection('stories', ({ data }) => !data.draft);
-  return stories.sort(
-    (a, b) => b.data.date.getTime() - a.data.date.getTime()
-  );
+  return stories.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 }
 
 /** 获取精选故事 */
@@ -47,11 +45,7 @@ export async function getAllProducts(): Promise<string[]> {
 export async function getRelatedStories(current: Story, limit = 3): Promise<Story[]> {
   const stories = await getAllStories();
   return stories
-    .filter(
-      (s) =>
-        s.id !== current.id &&
-        s.data.tags?.some((t) => current.data.tags?.includes(t))
-    )
+    .filter((s) => s.id !== current.id && s.data.tags?.some((t) => current.data.tags?.includes(t)))
     .slice(0, limit);
 }
 

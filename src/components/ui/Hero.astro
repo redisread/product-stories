@@ -13,7 +13,9 @@ const { totalStories, totalProducts } = Astro.props;
       <p class="text-sm font-medium text-[var(--accent)] mb-3 tracking-wide uppercase">
         Product Stories
       </p>
-      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight leading-tight text-[var(--foreground)] mb-4">
+      <h1
+        class="text-4xl sm:text-5xl font-bold tracking-tight leading-tight text-[var(--foreground)] mb-4"
+      >
         每款产品背后<br />都有一个故事
       </h1>
       <p class="text-lg text-[var(--muted-foreground)] leading-relaxed mb-8">
@@ -26,8 +28,19 @@ const { totalStories, totalProducts } = Astro.props;
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--foreground)] text-[var(--background)] font-medium text-sm hover:opacity-90 transition-opacity"
         >
           浏览全部故事
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
           </svg>
         </a>
         <div class="flex items-center gap-6 text-sm text-[var(--muted-foreground)]">

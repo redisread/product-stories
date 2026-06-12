@@ -19,16 +19,18 @@ function toSlug(tag: string): string {
 ---
 
 <div class="flex flex-wrap gap-2">
-  {displayed.map(({ name, count }) => (
-    <a
-      href={`/tags/${toSlug(name)}`}
-      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm
+  {
+    displayed.map(({ name, count }) => (
+      <a
+        href={`/tags/${toSlug(name)}`}
+        class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm
              bg-[var(--muted)] text-[var(--muted-foreground)]
              hover:bg-[var(--accent)] hover:text-white
              transition-colors font-medium"
-    >
-      {name}
-      <span class="text-xs opacity-70">({count})</span>
-    </a>
-  ))}
+      >
+        {name}
+        <span class="text-xs opacity-70">({count})</span>
+      </a>
+    ))
+  }
 </div>

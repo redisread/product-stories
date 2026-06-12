@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&display=swap');
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
 /* ===========================
@@ -9,32 +9,32 @@
    =========================== */
 :root {
   /* === 背景层次 === */
-  --bg-page: #faf9f6;          /* 温暖奶油白 */
+  --bg-page: #faf9f6; /* 温暖奶油白 */
   --bg-card: #ffffff;
-  --bg-muted: #f5f3ef;         /* 暖米色 */
+  --bg-muted: #f5f3ef; /* 暖米色 */
   --bg-hover: #f0ede8;
   --bg-elevated: #ffffff;
 
   /* === 文字层次 === */
-  --text-primary: #1a1614;     /* 深暖棕，比纯黑更有温度 */
+  --text-primary: #1a1614; /* 深暖棕，比纯黑更有温度 */
   --text-secondary: #4a4540;
   --text-muted: #8a8078;
   --text-placeholder: #b5aea6;
 
   /* === 品牌色：琥珀橙金 === */
-  --color-brand: #c2620a;         /* 琥珀橙，主品牌色 */
-  --color-brand-light: #d4740f;   /* 悬停态 */
-  --color-brand-dark: #9e4d07;    /* 按下态 */
-  --color-brand-muted: #fdf3e8;   /* 品牌浅背景 */
-  --color-brand-accent: #f59e0b;  /* 亮金色强调 */
+  --color-brand: #c2620a; /* 琥珀橙，主品牌色 */
+  --color-brand-light: #d4740f; /* 悬停态 */
+  --color-brand-dark: #9e4d07; /* 按下态 */
+  --color-brand-muted: #fdf3e8; /* 品牌浅背景 */
+  --color-brand-accent: #f59e0b; /* 亮金色强调 */
   --color-brand-glow: rgba(194, 98, 10, 0.15);
 
   /* === 辅助色 === */
-  --color-rose: #e11d48;          /* 玫瑰红，用于精选标签 */
+  --color-rose: #e11d48; /* 玫瑰红，用于精选标签 */
   --color-rose-muted: #fff1f2;
-  --color-sage: #4a7c59;          /* 鼠尾草绿，用于标签 */
+  --color-sage: #4a7c59; /* 鼠尾草绿，用于标签 */
   --color-sage-muted: #f0f7f2;
-  --color-indigo: #4f46e5;        /* 靛蓝，用于链接 */
+  --color-indigo: #4f46e5; /* 靛蓝，用于链接 */
   --color-sky: #0369a1;
 
   /* === 边框 === */
@@ -312,8 +312,12 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideInLeft {
@@ -339,23 +343,46 @@ body {
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 @keyframes pulse-warm {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(194, 98, 10, 0.3); }
-  50% { opacity: 0.85; box-shadow: 0 0 0 6px rgba(194, 98, 10, 0); }
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(194, 98, 10, 0.3);
+  }
+  50% {
+    opacity: 0.85;
+    box-shadow: 0 0 0 6px rgba(194, 98, 10, 0);
+  }
 }
 
 .dark @keyframes pulse-warm {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.3); }
-  50% { opacity: 0.85; box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); }
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    opacity: 0.85;
+    box-shadow: 0 0 0 6px rgba(245, 158, 11, 0);
+  }
 }
 
 /* 入场动画工具类 */
@@ -372,11 +399,21 @@ body {
 }
 
 /* 延迟工具类 */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
+.delay-100 {
+  animation-delay: 100ms;
+}
+.delay-200 {
+  animation-delay: 200ms;
+}
+.delay-300 {
+  animation-delay: 300ms;
+}
+.delay-400 {
+  animation-delay: 400ms;
+}
+.delay-500 {
+  animation-delay: 500ms;
+}
 
 /* ===========================
    Intersection Observer 动画触发
@@ -384,7 +421,9 @@ body {
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 }
 
 .reveal.is-visible {
@@ -392,11 +431,21 @@ body {
   transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+.reveal-delay-5 {
+  transition-delay: 0.5s;
+}
 
 /* ===========================
    减少动效（无障碍）
@@ -496,7 +545,9 @@ body {
   text-decoration-color: rgba(194, 98, 10, 0.35);
   text-underline-offset: 3px;
   font-weight: 500;
-  transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    text-decoration-color var(--transition-fast);
 }
 .prose-story a:hover {
   color: var(--color-brand-light);
@@ -570,16 +621,31 @@ body {
 }
 
 /* 列表标记 */
-.prose-story ul > li::marker { color: var(--color-brand); }
-.dark .prose-story ul > li::marker { color: var(--color-brand-accent); }
-.prose-story ol > li::marker { color: var(--color-brand); font-weight: 700; }
-.dark .prose-story ol > li::marker { color: var(--color-brand-accent); }
+.prose-story ul > li::marker {
+  color: var(--color-brand);
+}
+.dark .prose-story ul > li::marker {
+  color: var(--color-brand-accent);
+}
+.prose-story ol > li::marker {
+  color: var(--color-brand);
+  font-weight: 700;
+}
+.dark .prose-story ol > li::marker {
+  color: var(--color-brand-accent);
+}
 
 /* 分割线 */
 .prose-story hr {
   border: none;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-default) 20%, var(--border-default) 80%, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border-default) 20%,
+    var(--border-default) 80%,
+    transparent
+  );
   margin: 3em 0;
 }
 
@@ -591,7 +657,11 @@ body {
 }
 
 /* 表格 */
-.prose-story table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; }
+.prose-story table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9375rem;
+}
 .prose-story th {
   background: var(--bg-muted);
   color: var(--text-primary);
@@ -605,4 +675,6 @@ body {
   border: 1px solid var(--border-subtle);
   color: var(--text-secondary);
 }
-.prose-story tr:nth-child(even) td { background: var(--bg-muted); }
+.prose-story tr:nth-child(even) td {
+  background: var(--bg-muted);
+}

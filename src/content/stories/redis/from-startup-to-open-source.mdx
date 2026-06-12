@@ -1,12 +1,12 @@
 ---
-title: "Redis 的意外开源：一个意大利程序员的个人项目如何改变数据库世界"
+title: 'Redis 的意外开源：一个意大利程序员的个人项目如何改变数据库世界'
 date: 2026-02-25
-products: ["Redis"]
-cover: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80"
-readingTime: "15 min read"
-description: "当意大利程序员萨尔瓦托雷·桑菲利波为自己的创业公司开发实时分析工具时，他没想到这个个人项目会成为全球最受欢迎的内存数据库。"
-author: "Claude"
-tags: ["Redis", "开源", "数据库", "创始人故事"]
+products: ['Redis']
+cover: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80'
+readingTime: '15 min read'
+description: '当意大利程序员萨尔瓦托雷·桑菲利波为自己的创业公司开发实时分析工具时，他没想到这个个人项目会成为全球最受欢迎的内存数据库。'
+author: 'Claude'
+tags: ['Redis', '开源', '数据库', '创始人故事']
 featured: true
 ---
 
@@ -62,6 +62,7 @@ Memcached 是当时最流行的内存缓存解决方案，但它功能简单，�
 2009年3月，桑菲利波决定自己动手。他给自己两周时间，创建一个简单的内存数据库原型。
 
 他的设计原则很简单：
+
 - **快**：所有操作都在内存中完成，复杂度 O(1)
 - **简单**：使用简单的文本协议（后来演变为 RESP——Redis Serialization Protocol）
 - **功能丰富**：不仅支持字符串，还支持列表、集合、哈希等数据结构
@@ -157,6 +158,7 @@ MongoDB、Cassandra、HBase 等 NoSQL 数据库也在竞争同一批用户。但
 **Redis 的优势**
 
 Redis 在竞争中胜出的关键：
+
 - **开发者体验**：简单的 API、丰富的文档、活跃的社区
 - **数据结构**：列表、集合、有序集合等数据结构解决真实问题
 - **性能**：单线程架构避免了锁竞争，性能可预测
@@ -197,12 +199,14 @@ Google Cloud Memorystore、Azure Cache for Redis 等类似服务相继推出，R
 到2024年，Redis 已经成为全球最受欢迎的内存数据库。
 
 **使用数据：**
+
 - 每年超过 20 亿次 Docker 镜像拉取
 - 被超过 50% 的开发者使用（Stack Overflow 调查）
 - GitHub 上超过 63,000 个 star
 - 每天处理数万亿次请求
 
 **企业客户：**
+
 - Twitter/X：时间线、社交图谱、实时分析
 - GitHub：实时通知、操作队列
 - Stack Overflow：缓存、会话管理、排行榜
@@ -210,12 +214,14 @@ Google Cloud Memorystore、Azure Cache for Redis 等类似服务相继推出，R
 - Weibo： feeds、计数器、排行榜
 
 **产品生态：**
+
 - **Redis Open Source**：核心开源项目，BSD 许可证
 - **Redis Stack**：包含 RedisJSON、RediSearch、RedisGraph、RedisTimeSeries、RedisBloom 等模块
 - **Redis Enterprise**：企业级功能，包括 Active-Active 地理复制、Redis on Flash、增强的安全性
 - **Redis Cloud**：完全托管的云服务，支持 AWS、Azure、GCP
 
 **Redis 7.x（2023年）：**
+
 - 函数（Functions）：服务器端脚本，替代 Lua
 - Sharded Pub/Sub：分布式发布订阅
 - 性能优化：更少的内存占用，更快的命令执行

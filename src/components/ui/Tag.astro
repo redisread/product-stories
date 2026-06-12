@@ -15,8 +15,12 @@ const classes = [
 ].join(' ');
 ---
 
-{href ? (
-  <a href={href} class={classes}>{name}</a>
-) : (
-  <span class={classes}>{name}</span>
-)}
+{
+  href ? (
+    <a href={href} class={classes}>
+      {name}
+    </a>
+  ) : (
+    <span class={classes}>{name}</span>
+  )
+}

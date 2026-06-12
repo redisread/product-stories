@@ -6,8 +6,9 @@ import Footer from '../../components/Footer.astro';
 import StoryCard from '../../components/StoryCard.astro';
 import { countTags, getUniqueProducts } from '../../utils/helpers';
 
-const allStories = (await getCollection('stories', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const allStories = (await getCollection('stories', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
 
 const tagCounts = countTags(allStories);
 const topTags = Array.from(tagCounts.entries())
@@ -27,8 +28,9 @@ const products = getUniqueProducts(allStories);
       <header class="page-header">
         <h1 class="page-title">故事库</h1>
         <p class="page-desc">
-          共 <strong>{allStories.length}</strong> 个产品故事，
-          涵盖 <strong>{products.length}</strong> 个产品
+          共 <strong>{allStories.length}</strong> 个产品故事， 涵盖 <strong
+            >{products.length}</strong
+          > 个产品
         </p>
       </header>
 
@@ -36,32 +38,39 @@ const products = getUniqueProducts(allStories);
       <div class="filter-bar" id="filter-bar">
         <div class="filter-tags" role="list" aria-label="标签筛选">
           <button class="filter-tag filter-tag--active" data-tag="" role="listitem">全部</button>
-          {topTags.slice(0, 18).map(([tag, count]) => (
-            <button class="filter-tag" data-tag={tag} role="listitem">
-              #{tag}
-              <span class="filter-tag-count">{count}</span>
-            </button>
-          ))}
+          {
+            topTags.slice(0, 18).map(([tag, count]) => (
+              <button class="filter-tag" data-tag={tag} role="listitem">
+                #{tag}
+                <span class="filter-tag-count">{count}</span>
+              </button>
+            ))
+          }
         </div>
       </div>
 
       <!-- 故事网格 -->
       <div class="stories-grid" id="stories-grid">
-        {allStories.map((story) => (
-          <div
-            class="story-item"
-            data-tags={JSON.stringify(story.data.tags || [])}
-          >
-            <StoryCard story={story} loading="lazy" />
-          </div>
-        ))}
+        {
+          allStories.map((story) => (
+            <div class="story-item" data-tags={JSON.stringify(story.data.tags || [])}>
+              <StoryCard story={story} loading="lazy" />
+            </div>
+          ))
+        }
       </div>
 
       <!-- 空状态 -->
       <div class="empty-state" id="empty-state" hidden>
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-          <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" opacity="0.3"/>
-          <path d="M16 24h16M24 16v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+          <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" opacity="0.3"
+          ></circle>
+          <path
+            d="M16 24h16M24 16v16"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            opacity="0.3"></path>
         </svg>
         <p>没有找到相关故事</p>
         <button class="btn-reset" id="reset-filter">清除筛选</button>
@@ -143,7 +152,9 @@ const products = getUniqueProducts(allStories);
     scrollbar-width: none;
     padding-bottom: 4px;
   }
-  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
   .filter-tags {
     display: flex;
     gap: 8px;
@@ -161,7 +172,10 @@ const products = getUniqueProducts(allStories);
     border: 1px solid var(--border-default);
     border-radius: var(--radius-full);
     cursor: pointer;
-    transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast),
+      border-color var(--transition-fast);
     white-space: nowrap;
   }
   .filter-tag:hover {
@@ -181,7 +195,7 @@ const products = getUniqueProducts(allStories);
   .filter-tag-count {
     font-size: 0.6875rem;
     opacity: 0.7;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     padding: 1px 5px;
     border-radius: var(--radius-full);
   }
@@ -215,8 +229,12 @@ const products = getUniqueProducts(allStories);
     cursor: pointer;
     transition: background var(--transition-fast);
   }
-  .btn-reset:hover { background: var(--color-brand-light); }
+  .btn-reset:hover {
+    background: var(--color-brand-light);
+  }
   @media (max-width: 640px) {
-    .stories-grid { grid-template-columns: 1fr; }
+    .stories-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

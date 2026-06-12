@@ -1,12 +1,12 @@
 ---
-title: "从女儿的名字到数据库革命：MySQL的诞生故事"
+title: '从女儿的名字到数据库革命：MySQL的诞生故事'
 date: 2026-03-06
-products: ["MySQL"]
-cover: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80"
-readingTime: "15 min read"
-description: "当瑞典程序员蒙蒂·维德纽斯用女儿的名字命名他的数据库项目时，他没想到这会成为开源数据库革命的起点..."
-author: "Claude"
-tags: ["MySQL", "数据库", "开源", "创始人故事"]
+products: ['MySQL']
+cover: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80'
+readingTime: '15 min read'
+description: '当瑞典程序员蒙蒂·维德纽斯用女儿的名字命名他的数据库项目时，他没想到这会成为开源数据库革命的起点...'
+author: 'Claude'
+tags: ['MySQL', '数据库', '开源', '创始人故事']
 featured: true
 ---
 
@@ -23,6 +23,7 @@ featured: true
 **商业数据库的统治**
 
 1994年，数据库市场被商业巨头统治：
+
 - **Oracle**：企业级数据库的霸主，功能强大但价格昂贵（数万美元起步）
 - **Microsoft SQL Server**：捆绑 Windows 生态，主要面向中小企业
 - **IBM DB2**：大型机和企业市场的选择
@@ -40,12 +41,14 @@ featured: true
 1994年，Mosaic 浏览器发布，互联网开始从学术界走向大众。网站需要数据库来存储内容、用户信息、日志。
 
 但当时的网站开发者面临困境：
+
 - 商业数据库太贵（一个初创公司买不起 Oracle）
 - 开源数据库选择很少（PostgreSQL 还很复杂，mSQL 功能有限）
 
 **LAMP 栈的孕育**
 
 1994年前后，Web 开发的"LAMP"栈正在孕育：
+
 - **Linux**：操作系统
 - **Apache**：Web 服务器
 - **MySQL**：数据库（即将诞生）
@@ -56,6 +59,7 @@ LAMP 栈将定义接下来20年的 Web 开发。
 **mSQL 的局限**
 
 David Hughes 开发的 mSQL（mini SQL）是当时最流行的开源数据库。但它有严重局限：
+
 - 不支持 JOIN（SQL 连接）
 - 不支持事务
 - 性能问题
@@ -89,6 +93,7 @@ UNIREG 是他最常用的工具，但它是一个终端应用，不适合 Web �
 Widenius 决定自己动手。他基于 UNIREG 的 ISAM（Indexed Sequential Access Method）存储引擎，编写了一个支持 SQL 的数据库服务器。
 
 他的目标是：
+
 - 支持标准 SQL
 - 性能优于 mSQL
 - 易于使用和部署
@@ -117,6 +122,7 @@ MySQL 的第一个突破，来自于1995年的正式发布和双重许可策略�
 **1995年5月23日：MySQL 首次公开发布**
 
 Widenius 在 comp.databases.mysql 新闻组发布了 MySQL 3.11.1 版本。它支持：
+
 - 完整的 SQL 子集
 - 多线程
 - 多用户
@@ -131,6 +137,7 @@ MySQL 采用 GPL（GNU General Public License）开源许可证发布，这意�
 但同时，MySQL AB（后来成立的公司）提供商业许可证。如果你的应用不想开源，可以购买商业许可证。
 
 这个模式的逻辑是：
+
 - 个人开发者、开源项目、内部使用：免费（GPL）
 - 商业应用、不想开源的产品：付费（商业许可）
 
@@ -139,6 +146,7 @@ MySQL 采用 GPL（GNU General Public License）开源许可证发布，这意�
 **Linux 发行版的采纳**
 
 1990年代末，Linux 发行版开始包含 MySQL：
+
 - Red Hat Linux
 - Debian
 - SuSE
@@ -172,6 +180,7 @@ PHP 语言在1990年代末快速崛起。PHP 与 MySQL 的组合（通过 mysql 
 **产品演进**
 
 MySQL 3.2x 和 4.0 版本带来了重要功能：
+
 - InnoDB 存储引擎（支持事务、外键、行级锁）
 - 复制（Replication）
 - 子查询
@@ -181,6 +190,7 @@ MySQL 3.2x 和 4.0 版本带来了重要功能：
 **标志性用户**
 
 2000年代，MySQL 成为互联网公司的首选数据库：
+
 - **Yahoo!**：大量内部系统
 - **Google**：AdWords 早期版本
 - **Facebook**：2004年成立时选择 MySQL，至今仍大量使用
@@ -208,11 +218,13 @@ MySQL 的崛起，引来了竞争。
 PostgreSQL 是 MySQL 的主要开源竞争对手。PostgreSQL 功能更丰富（存储过程、复杂查询、扩展性），但学习曲线更陡峭。
 
 PostgreSQL 的优势：
+
 - 更标准兼容
 - 更复杂的数据类型
 - 更好的扩展性
 
 MySQL 的优势：
+
 - 更简单、更快
 - 更好的复制
 - 更广泛的 Web 托管支持
@@ -222,6 +234,7 @@ MySQL 的优势：
 **商业数据库**
 
 Oracle、SQL Server、DB2 继续统治企业市场。它们的特点是：
+
 - 功能更全面（存储过程、复杂事务、高级安全）
 - 更好的技术支持
 - 企业采购偏好
@@ -235,6 +248,7 @@ MySQL 的定位是：互联网应用、Web 开发、中小企业。
 InnoDB 是 MySQL 最重要的存储引擎，提供事务支持。如果 Oracle 停止开发 InnoDB，MySQL 将受到重创。
 
 Widenius 的应对：
+
 1. 开发替代存储引擎（Falcon，后来是 Maria 的 Aria）
 2. 与 Oracle 谈判，确保 InnoDB 继续开源
 3. 开始规划 MySQL 的"B 计划"（后来成为 MariaDB）
@@ -254,6 +268,7 @@ MySQL 的关键转折点出现在2008年至2010年。
 这是开源软件历史上最大的收购之一。MySQL 的创始人、员工、投资者都获得了丰厚回报。
 
 Sun 的承诺：
+
 - 继续投资 MySQL 开发
 - 保持开源
 - 加强企业功能
@@ -265,6 +280,7 @@ Sun 的承诺：
 这引发了开源社区的担忧：Oracle 拥有 Oracle 数据库，它会不会扼杀 MySQL？
 
 欧盟反垄断机构介入调查，最终 Oracle 做出承诺：
+
 - 继续开发和维护 MySQL
 - 保持开源许可证至少 5 年
 - 投入更多资源（超过 Sun 的投入）
@@ -276,6 +292,7 @@ Sun 的承诺：
 2009年，他离开 Sun/Oracle，创立了 MariaDB 基金会和 MariaDB Corporation。MariaDB 是 MySQL 的分支，保持完全开源（GPL）。
 
 MariaDB 的初始版本与 MySQL 兼容，但逐渐添加自己的特性：
+
 - Aria 存储引擎
 - Galera 集群
 - 更多存储引擎选项
@@ -283,6 +300,7 @@ MariaDB 的初始版本与 MySQL 兼容，但逐渐添加自己的特性：
 **MySQL 5.5 和 5.6**
 
 在 Oracle 的管理下，MySQL 继续发展：
+
 - MySQL 5.5（2010）：默认 InnoDB 存储引擎，半同步复制
 - MySQL 5.6（2013）：GTID 复制，性能优化
 - MySQL 5.7（2015）：JSON 支持，GIS 增强
@@ -297,17 +315,20 @@ Oracle 确实投入了资源，MySQL 在性能、功能、可靠性上都有提�
 到2024年，MySQL 仍然是世界上最流行的数据库之一。
 
 **市场地位：**
+
 - DB-Engines 排名：第二（仅次于 Oracle）
 - 估计超过 1000 万安装实例
 - 支撑着数百万个网站和应用
 
 **产品生态：**
+
 - **MySQL Community Edition**：开源免费版本（GPL）
 - **MySQL Enterprise Edition**：商业版本，包含高级功能和支持
 - **MySQL Cluster**：分布式内存数据库
 - **MySQL HeatWave**：Oracle 云的托管 MySQL 服务，包含分析引擎
 
 **云托管服务：**
+
 - Amazon RDS MySQL
 - Google Cloud SQL
 - Azure Database for MySQL
@@ -315,6 +336,7 @@ Oracle 确实投入了资源，MySQL 在性能、功能、可靠性上都有提�
 - Alibaba Cloud RDS
 
 **MariaDB 的发展：**
+
 - MariaDB 成为许多 Linux 发行版的默认 MySQL 替代品
 - MariaDB Corporation 提供企业版和支持服务
 - MariaDB 在功能上逐渐与 MySQL 分化（虽然保持兼容）

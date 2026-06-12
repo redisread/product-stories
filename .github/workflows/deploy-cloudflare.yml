@@ -81,6 +81,42 @@ jobs:
           fi
           echo "Build size: $(du -sh dist | cut -f1)"
 
+      - name: Check bundle size
+        run: |
+          BUNDLE_SIZE=$(du -sm dist | cut -f1)
+          WARN_SIZE=5
+          FAIL_SIZE=10
+
+          echo "Bundle size: ${BUNDLE_SIZE}MB"
+          echo "Warning threshold: ${WARN_SIZE}MB"
+          echo "Failure threshold: ${FAIL_SIZE}MB"
+
+          if [ "$BUNDLE_SIZE" -ge "$FAIL_SIZE" ]; then
+            echo "❌ ERROR: Bundle size exceeds failure threshold!"
+            exit 1
+          elif [ "$BUNDLE_SIZE" -ge "$WARN_SIZE" ]; then
+            echo "⚠️ WARNING: Bundle size exceeds warning threshold"
+            echo "::warning file=dist,title=Bundle Size::Bundle size is ${BUNDLE_SIZE}MB, exceeds warning threshold of ${WARN_SIZE}MB"
+          else
+            echo "✅ Bundle size is within acceptable limits"
+          fi
+
+          # Output for GitHub Actions summary
+          echo "## 📦 Bundle Size Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Total Size | ${BUNDLE_SIZE}MB |" >> $GITHUB_STEP_SUMMARY
+          echo "| Warning Threshold | ${WARN_SIZE}MB |" >> $GITHUB_STEP_SUMMARY
+          echo "| Failure Threshold | ${FAIL_SIZE}MB |" >> $GITHUB_STEP_SUMMARY
+
+          # List top 10 largest files
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Top 10 Largest Files" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          find dist -type f -exec du -k {} + | sort -nr | head -10 | awk '{printf "%.2fMB\t%s\n", $1/1024, $2}' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
       - name: Deploy to Cloudflare Pages
         id: deploy
         uses: cloudflare/pages-action@v1

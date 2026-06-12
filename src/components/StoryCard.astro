@@ -10,8 +10,8 @@ interface Props {
 }
 
 const { story, variant = 'default', loading = 'lazy' } = Astro.props;
-const { title, data } = story;
-const { description, date, readingTime, cover, tags = [], featured, products = [] } = data;
+const { data } = story;
+const { title, description, date, readingTime, cover, tags = [], featured, products = [] } = data;
 
 const storyUrl = `/stories/${story.id}`;
 

@@ -16,7 +16,8 @@
     "lint:fix": "eslint src --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,astro,css,md,mdx}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,astro,css,md,mdx}\"",
-    "lighthouse": "npm run build && lighthouse-ci autorun"
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.2",
@@ -34,9 +35,8 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
     "@eslint/js": "^10.0.1",
-    "@lhci/cli": "^0.14.0",
+    "@playwright/test": "^1.60.0",
     "eslint": "^10.4.1",
     "eslint-plugin-astro": "^1.7.0",
     "prettier": "^3.8.4",

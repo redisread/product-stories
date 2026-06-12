@@ -31,70 +31,85 @@ function toSlug(tag: string): string {
   ]}
 >
   <!-- 封面图 -->
-  {cover && (
-    <a
-      href={url}
-      class:list={[
-        'block overflow-hidden bg-[var(--muted)] shrink-0',
-        featured ? 'sm:w-64 h-48 sm:h-auto' : 'h-48',
-      ]}
-      tabindex="-1"
-      aria-hidden="true"
-    >
-      <img
-        src={cover}
-        alt={title}
-        width={400}
-        height={225}
-        loading="lazy"
-        decoding="async"
-        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-      />
-    </a>
-  )}
+  {
+    cover && (
+      <a
+        href={url}
+        class:list={[
+          'block overflow-hidden bg-[var(--muted)] shrink-0',
+          featured ? 'sm:w-64 h-48 sm:h-auto' : 'h-48',
+        ]}
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <img
+          src={cover}
+          alt={title}
+          width={400}
+          height={225}
+          loading="lazy"
+          decoding="async"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+        />
+      </a>
+    )
+  }
 
   <!-- 内容 -->
   <div class="p-5 flex flex-col gap-3 flex-1 min-w-0">
     <!-- 标签 -->
-    {tags && tags.length > 0 && (
-      <div class="flex flex-wrap gap-1.5">
-        {tags.slice(0, 3).map((tag) => (
-          <Tag name={tag} href={`/tags/${toSlug(tag)}`} />
-        ))}
-      </div>
-    )}
+    {
+      tags && tags.length > 0 && (
+        <div class="flex flex-wrap gap-1.5">
+          {tags.slice(0, 3).map((tag) => (
+            <Tag name={tag} href={`/tags/${toSlug(tag)}`} />
+          ))}
+        </div>
+      )
+    }
 
     <!-- 标题 -->
-    <h2 class:list={[
-      'font-semibold leading-snug text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors',
-      featured ? 'text-xl sm:text-2xl' : 'text-base sm:text-lg',
-    ]}>
-      <a href={url} class="stretched-link focus-visible:outline-2 focus-visible:outline-[var(--accent)]">
+    <h2
+      class:list={[
+        'font-semibold leading-snug text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors',
+        featured ? 'text-xl sm:text-2xl' : 'text-base sm:text-lg',
+      ]}
+    >
+      <a
+        href={url}
+        class="stretched-link focus-visible:outline-2 focus-visible:outline-[var(--accent)]"
+      >
         {title}
       </a>
     </h2>
 
-    {description && (
-      <p class="text-sm text-[var(--muted-foreground)] line-clamp-2 leading-relaxed">
-        {description}
-      </p>
-    )}
+    {
+      description && (
+        <p class="text-sm text-[var(--muted-foreground)] line-clamp-2 leading-relaxed">
+          {description}
+        </p>
+      )
+    }
 
     <!-- 元信息 -->
     <div class="flex items-center gap-3 text-xs text-[var(--muted-foreground)] mt-auto pt-1">
       <time datetime={date.toISOString()}>{formatDate(date)}</time>
-      {readingTime && (
-        <>
-          <span aria-hidden="true">·</span>
-          <span>{readingTime}</span>
-        </>
-      )}
-      {products && products.length > 0 && (
-        <>
-          <span aria-hidden="true">·</span>
-          <span class="capitalize">{products[0]}</span>
-        </>
-      )}
+      {
+        readingTime && (
+          <>
+            <span aria-hidden="true">·</span>
+            <span>{readingTime}</span>
+          </>
+        )
+      }
+      {
+        products && products.length > 0 && (
+          <>
+            <span aria-hidden="true">·</span>
+            <span class="capitalize">{products[0]}</span>
+          </>
+        )
+      }
     </div>
   </div>
 </article>

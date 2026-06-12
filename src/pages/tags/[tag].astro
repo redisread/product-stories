@@ -34,9 +34,7 @@ export async function getStaticPaths() {
     params: { tag: slug },
     props: {
       tagName: tag,
-      stories: tagStories.sort(
-        (a, b) => b.data.date.getTime() - a.data.date.getTime()
-      ),
+      stories: tagStories.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
     },
   }));
 }
@@ -52,20 +50,32 @@ const { tagName, stories } = Astro.props;
 
   <main class="flex-1">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10">
-
       <!-- 页头 -->
       <div class="mb-8">
         <a
           href="/stories"
           class="inline-flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] mb-4 transition-colors"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path>
           </svg>
           全部故事
         </a>
         <div class="flex items-center gap-3">
-          <span class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-sm font-medium">
+          <span
+            class="px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-sm font-medium"
+          >
             #{tagName}
           </span>
           <span class="text-[var(--muted-foreground)] text-sm">{stories.length} 篇故事</span>
@@ -77,11 +87,8 @@ const { tagName, stories } = Astro.props;
 
       <!-- 故事网格 -->
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {stories.map((story) => (
-          <StoryCard story={story} />
-        ))}
+        {stories.map((story) => <StoryCard story={story} />)}
       </div>
-
     </div>
   </main>
 

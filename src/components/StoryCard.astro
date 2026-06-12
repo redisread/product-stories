@@ -10,8 +10,8 @@ interface Props {
 }
 
 const { story, variant = 'default', loading = 'lazy' } = Astro.props;
-const { title, data } = story;
-const { description, date, readingTime, cover, tags = [], featured, products = [] } = data;
+const { data } = story;
+const { title, description, date, readingTime, cover, tags = [], featured, products = [] } = data;
 
 const storyUrl = `/stories/${story.id}`;
 
@@ -41,106 +41,120 @@ const placeholderColor = darkGradients[gradientIndex];
 
 <article class={`story-card story-card--${variant}`}>
   <a href={storyUrl} class="story-card-link" aria-label={`阅读故事：${title}`}>
-
     <!-- 封面图区域 -->
-    {!isCompact && (
-      <div class="story-card-cover">
-        {cover ? (
-          <img
-            src={cover}
-            alt={title}
-            loading={loading}
-            decoding="async"
-            class="story-card-cover-img"
-          />
-        ) : (
-          <div
-            class="story-card-cover-placeholder"
-            style={`--placeholder-color: ${placeholderColor}`}
-            aria-hidden="true"
-          >
-            <!-- 装饰性背景图案 -->
-            <div class="placeholder-pattern" aria-hidden="true"></div>
-            <span class="placeholder-letter">
-              {products[0]?.charAt(0) || title.charAt(0)}
-            </span>
-          </div>
-        )}
+    {
+      !isCompact && (
+        <div class="story-card-cover">
+          {cover ? (
+            <img
+              src={cover}
+              alt={title}
+              loading={loading}
+              decoding="async"
+              class="story-card-cover-img"
+            />
+          ) : (
+            <div
+              class="story-card-cover-placeholder"
+              style={`--placeholder-color: ${placeholderColor}`}
+              aria-hidden="true"
+            >
+              {/* 装饰性背景图案 */}
+              <div class="placeholder-pattern" aria-hidden="true" />
+              <span class="placeholder-letter">{products[0]?.charAt(0) || title.charAt(0)}</span>
+            </div>
+          )}
 
-        <!-- 精选标签 -->
-        {featured && (
-          <div class="story-card-badge">
-            <span class="featured-badge">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              精选
-            </span>
-          </div>
-        )}
+          {/* 精选标签 */}
+          {featured && (
+            <div class="story-card-badge">
+              <span class="featured-badge">
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+                精选
+              </span>
+            </div>
+          )}
 
-        <!-- 悬停时显示的渐变遮罩 -->
-        <div class="cover-overlay" aria-hidden="true"></div>
-      </div>
-    )}
+          {/* 悬停时显示的渐变遮罩 */}
+          <div class="cover-overlay" aria-hidden="true" />
+        </div>
+      )
+    }
 
     <!-- 内容区 -->
     <div class="story-card-body">
-
       <!-- 产品标签 -->
-      {!isCompact && products.length > 0 && (
-        <div class="story-card-products">
-          {products.slice(0, 2).map((p) => (
-            <span class="story-product-label">{p}</span>
-          ))}
-        </div>
-      )}
+      {
+        !isCompact && products.length > 0 && (
+          <div class="story-card-products">
+            {products.slice(0, 2).map((p) => (
+              <span class="story-product-label">{p}</span>
+            ))}
+          </div>
+        )
+      }
 
       <!-- 标题 -->
       <h3 class="story-card-title">{title}</h3>
 
       <!-- 描述 -->
-      {!isCompact && description && (
-        <p class="story-card-desc">{description}</p>
-      )}
+      {!isCompact && description && <p class="story-card-desc">{description}</p>}
 
       <!-- 底部元信息行 -->
       <div class="story-card-footer">
         <div class="story-card-meta">
-          <time
-            datetime={date.toISOString()}
-            class="meta-date"
-            title={formatDate(date)}
-          >
+          <time datetime={date.toISOString()} class="meta-date" title={formatDate(date)}>
             {getRelativeTime(date)}
           </time>
 
-          {readingTime && (
-            <>
-              <span class="meta-sep" aria-hidden="true">·</span>
-              <span class="meta-reading-time">{readingTime}</span>
-            </>
-          )}
+          {
+            readingTime && (
+              <>
+                <span class="meta-sep" aria-hidden="true">
+                  ·
+                </span>
+                <span class="meta-reading-time">{readingTime}</span>
+              </>
+            )
+          }
         </div>
 
         <!-- 阅读箭头 -->
-        {!isCompact && (
-          <div class="story-card-arrow" aria-hidden="true">
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        )}
+        {
+          !isCompact && (
+            <div class="story-card-arrow" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 8H13M13 8L9 4M13 8L9 12"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          )
+        }
       </div>
 
       <!-- 标签（紧凑模式） -->
-      {isCompact && tags.length > 0 && (
-        <div class="story-card-tags">
-          {tags.slice(0, 3).map((tag) => (
-            <Tag label={tag} />
-          ))}
-        </div>
-      )}
+      {
+        isCompact && tags.length > 0 && (
+          <div class="story-card-tags">
+            {tags.slice(0, 3).map((tag) => (
+              <Tag label={tag} />
+            ))}
+          </div>
+        )
+      }
     </div>
   </a>
 </article>
@@ -161,21 +175,29 @@ const placeholderColor = darkGradients[gradientIndex];
       border-color 200ms ease;
     height: 100%;
     /* 微妙的内部光晕 */
-    box-shadow: var(--shadow-xs), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    box-shadow:
+      var(--shadow-xs),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
   }
 
   .dark .story-card {
-    box-shadow: var(--shadow-xs), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    box-shadow:
+      var(--shadow-xs),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 
   .story-card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-card-hover), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    box-shadow:
+      var(--shadow-card-hover),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
     border-color: var(--border-strong);
   }
 
   .dark .story-card:hover {
-    box-shadow: var(--shadow-card-hover), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    box-shadow:
+      var(--shadow-card-hover),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
     border-color: var(--border-strong);
   }
 
@@ -223,11 +245,7 @@ const placeholderColor = darkGradients[gradientIndex];
   .cover-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent 50%,
-      rgba(26, 22, 20, 0.15) 100%
-    );
+    background: linear-gradient(to bottom, transparent 50%, rgba(26, 22, 20, 0.15) 100%);
     opacity: 0;
     transition: opacity 250ms ease;
   }
@@ -243,11 +261,7 @@ const placeholderColor = darkGradients[gradientIndex];
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(
-      135deg,
-      var(--color-brand-muted) 0%,
-      var(--bg-muted) 100%
-    );
+    background: linear-gradient(135deg, var(--color-brand-muted) 0%, var(--bg-muted) 100%);
     overflow: hidden;
   }
 
@@ -256,8 +270,16 @@ const placeholderColor = darkGradients[gradientIndex];
     position: absolute;
     inset: 0;
     background-image:
-      radial-gradient(circle at 20% 30%, var(--placeholder-color, rgba(194,98,10,0.2)) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, var(--placeholder-color, rgba(194,98,10,0.1)) 0%, transparent 50%);
+      radial-gradient(
+        circle at 20% 30%,
+        var(--placeholder-color, rgba(194, 98, 10, 0.2)) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 70%,
+        var(--placeholder-color, rgba(194, 98, 10, 0.1)) 0%,
+        transparent 50%
+      );
   }
 
   .placeholder-letter {

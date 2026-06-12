@@ -50,9 +50,7 @@ const ogImageURL = new URL(ogImage, Astro.site ?? Astro.url.origin).href;
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content="zh_CN" />
-    {publishDate && (
-      <meta property="article:published_time" content={publishDate.toISOString()} />
-    )}
+    {publishDate && <meta property="article:published_time" content={publishDate.toISOString()} />}
     {author && <meta property="article:author" content={author} />}
 
     <!-- Twitter Card -->
@@ -62,12 +60,7 @@ const ogImageURL = new URL(ogImage, Astro.site ?? Astro.url.origin).href;
     <meta name="twitter:image" content={ogImageURL} />
 
     <!-- RSS -->
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title={siteName}
-      href="/rss.xml"
-    />
+    <link rel="alternate" type="application/rss+xml" title={siteName} href="/rss.xml" />
 
     <!-- 暗黑模式初始化脚本（防止闪烁，放 head 中同步执行） -->
     <script is:inline>

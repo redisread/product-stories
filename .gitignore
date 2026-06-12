@@ -49,3 +49,9 @@ next-env.d.ts
 .source/
 public/feed.xml
 public/search-index.json
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/

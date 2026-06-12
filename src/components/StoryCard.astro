@@ -15,9 +15,7 @@ const { description, date, readingTime, cover, tags = [], featured, products = [
 
 const storyUrl = `/stories/${story.id}`;
 
-const isFeatured = variant === 'featured';
 const isCompact = variant === 'compact';
-const isHorizontal = variant === 'horizontal';
 
 // 为无封面卡片生成渐变色（基于产品名哈希）
 const productName = products[0] || title;

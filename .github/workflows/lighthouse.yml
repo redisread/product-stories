@@ -40,32 +40,19 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const fs = require('fs');
-            const results = JSON.parse(fs.readFileSync('.lighthouseci/results.json', 'utf8'));
-
-            const perfScore = Math.round(results[0].scores.performance * 100);
-            const a11yScore = Math.round(results[0].scores.accessibility * 100);
-            const seoScore = Math.round(results[0].scores.seo * 100);
-            const bcpScore = Math.round(results[0].scores['best-practices'] * 100);
-
-            const metrics = results[0].auditResults.find(a => a.id === 'metrics')?.details?.items[0] || {};
+            const links = `${{ steps.lighthouse.outputs.links }}`.trim();
+            const reportLinks = links
+              ? links
+                  .split(/\s+/)
+                  .map((link, index) => `- [Report ${index + 1}](${link})`)
+                  .join('\n')
+              : '- Lighthouse reports are available in the workflow artifacts.';
 
             const comment = `## 🔦 Lighthouse Report
 
-            | Category | Score |
-            |----------|-------|
-            | Performance | ${perfScore} |
-            | Accessibility | ${a11yScore} |
-            | SEO | ${seoScore} |
-            | Best Practices | ${bcpScore} |
+            Lighthouse CI completed. Assertions are enforced by the workflow; timing budgets are reported as warnings.
 
-            ### Key Metrics
-            - **FCP**: ${metrics.firstContentfulPaint ? (metrics.firstContentfulPaint / 1000).toFixed(2) + 's' : 'N/A'}
-            - **LCP**: ${metrics.largestContentfulPaint ? (metrics.largestContentfulPaint / 1000).toFixed(2) + 's' : 'N/A'}
-            - **CLS**: ${metrics.cumulativeLayoutShift?.toFixed(3) || 'N/A'}
-            - **TBT**: ${metrics.totalBlockingTime ? Math.round(metrics.totalBlockingTime) + 'ms' : 'N/A'}
-
-            [View full report](${{ steps.lighthouse.outputs.links }})`;
+            ${reportLinks}`;
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,

@@ -6,6 +6,7 @@ import sitemap from '@astrojs/sitemap';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import sentry from '@sentry/astro';
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,6 +14,11 @@ export default defineConfig({
   output: 'static',
 
   integrations: [
+    sentry({
+      dsn: import.meta.env.SENTRY_DSN,
+      environment: import.meta.env.MODE || 'production',
+      enabled: !!import.meta.env.SENTRY_DSN,
+    }),
     mdx({
       syntaxHighlight: 'shiki',
       shikiConfig: {

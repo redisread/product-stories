@@ -30,13 +30,16 @@ export async function getStaticPaths() {
     });
   });
 
-  return [...tagMap.entries()].map(([slug, { tag, stories: tagStories }]) => ({
-    params: { tag: slug },
-    props: {
-      tagName: tag,
-      stories: tagStories.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
-    },
-  }));
+  // 只生成有 2+ 故事的标签页，减少构建产物大小
+  return [...tagMap.entries()]
+    .filter(([_, { stories: tagStories }]) => tagStories.length >= 2)
+    .map(([slug, { tag, stories: tagStories }]) => ({
+      params: { tag: slug },
+      props: {
+        tagName: tag,
+        stories: tagStories.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+      },
+    }));
 }
 
 const { tagName, stories } = Astro.props;

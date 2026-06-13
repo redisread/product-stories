@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main]
 
+# 并发控制：同一分支的新推送自动取消旧运行
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # 代码质量检查（PR 和 push 都执行）
   quality:
@@ -29,6 +34,14 @@ jobs:
 
       - name: Format check
         run: npm run format:check
+
+      - name: Lighthouse CI
+        if: github.event_name == 'pull_request'
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: '.lighthouserc.json'
+          uploadArtifacts: true
+          temporaryPublicStorage: true
 
   # 安全扫描
   security:
@@ -139,5 +152,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `🚀 Preview deployment ready!\n\n**Preview URL:** ${{ steps.deploy.outputs.url }}`
+              body: ` Preview deployment ready!\n\n**Preview URL:** ${{ steps.deploy.outputs.url }}`
             })

@@ -12,9 +12,9 @@ Product Stories 是一个静态网站，讲述知名科技产品（如 Stripe、
 
 - 🚀 **静态生成** - 使用 Astro 框架，构建为纯静态站点
 - 📱 **响应式设计** - 适配桌面、平板、手机
-- 🔍 **全文搜索** - 基于 Fuse.js 的客户端搜索
+-  **全文搜索** - 基于 Fuse.js 的客户端搜索
 - 📰 **RSS 订阅** - 支持 RSS/Atom 订阅
-- 🏷️ **标签系统** - 按产品和主题分类浏览
+- ️ **标签系统** - 按产品和主题分类浏览
 - ⚡ **高性能** - Cloudflare Pages 全球 CDN 加速
 - 🧪 **自动化测试** - Playwright E2E 测试 + Lighthouse CI
 - 🔒 **安全监控** - Sentry 错误监控 + 依赖漏洞扫描
@@ -87,7 +87,7 @@ npm run preview
 
 ---
 
-##  项目结构
+## 📁 项目结构
 
 ```
 product-stories/
@@ -102,8 +102,8 @@ product-stories/
 │   ├── layouts/             # 页面布局
 │   ├── pages/               # 页面路由
 │   ├── styles/              # 全局样式
-│   ── utils/               # 工具函数
-── tests/e2e/               # E2E 测试
+│   └── utils/               # 工具函数
+├── tests/e2e/               # E2E 测试
 ├── astro.config.mjs         # Astro 配置
 ├── package.json
 ├── playwright.config.ts     # Playwright 配置
@@ -114,7 +114,7 @@ product-stories/
 
 ---
 
-##  新增故事
+## ✍️ 新增故事
 
 详见 [docs/ADDING_STORIES.md](docs/ADDING_STORIES.md)
 
@@ -168,7 +168,7 @@ wrangler pages deploy dist --project-name=product-stories
 
 ---
 
-##  测试
+## 🧪 测试
 
 ### E2E 测试
 

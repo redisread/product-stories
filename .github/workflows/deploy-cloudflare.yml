@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main]
 
+# 并发控制：同一分支的新推送自动取消旧运行
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # 代码质量检查（PR 和 push 都执行）
   quality:
@@ -29,6 +34,53 @@ jobs:
 
       - name: Format check
         run: npm run format:check
+
+      # Lighthouse CI（仅 PR 时执行）
+      - name: Lighthouse CI
+        if: github.event_name == 'pull_request'
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: '.lighthouserc.json'
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Comment PR with Lighthouse results
+        if: github.event_name == 'pull_request' && steps.lighthouse.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const results = JSON.parse(fs.readFileSync('.lighthouseci/results.json', 'utf8'));
+
+            const perfScore = Math.round(results[0].scores.performance * 100);
+            const a11yScore = Math.round(results[0].scores.accessibility * 100);
+            const seoScore = Math.round(results[0].scores.seo * 100);
+            const bcpScore = Math.round(results[0].scores['best-practices'] * 100);
+
+            const metrics = results[0].auditResults.find(a => a.id === 'metrics')?.details?.items[0] || {};
+
+            const comment = `## 🔦 Lighthouse Report
+
+            | Category | Score |
+            |----------|-------|
+            | Performance | ${perfScore} |
+            | Accessibility | ${a11yScore} |
+            | SEO | ${seoScore} |
+            | Best Practices | ${bcpScore} |
+
+            ### Key Metrics
+            - **FCP**: ${metrics.firstContentfulPaint ? (metrics.firstContentfulPaint / 1000).toFixed(2) + 's' : 'N/A'}
+            - **LCP**: ${metrics.largestContentfulPaint ? (metrics.largestContentfulPaint / 1000).toFixed(2) + 's' : 'N/A'}
+            - **CLS**: ${metrics.cumulativeLayoutShift?.toFixed(3) || 'N/A'}
+            - **TBT**: ${metrics.totalBlockingTime ? Math.round(metrics.totalBlockingTime) + 'ms' : 'N/A'}`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
 
   # 安全扫描
   security:
@@ -96,7 +148,7 @@ jobs:
             echo "❌ ERROR: Bundle size exceeds failure threshold!"
             exit 1
           elif [ "$BUNDLE_SIZE" -ge "$WARN_SIZE" ]; then
-            echo "⚠️ WARNING: Bundle size exceeds warning threshold"
+            echo "️ WARNING: Bundle size exceeds warning threshold"
             echo "::warning file=dist,title=Bundle Size::Bundle size is ${BUNDLE_SIZE}MB, exceeds warning threshold of ${WARN_SIZE}MB"
           else
             echo "✅ Bundle size is within acceptable limits"

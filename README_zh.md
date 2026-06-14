@@ -192,25 +192,47 @@ npm run lighthouse
 
 ## 📊 监控
 
+### Cloudflare-first 监控体系
 
-配置 DSN 环境变量：
+本项目采用 Cloudflare 原生监控方案：
 
-```bash
-# .env 或 Cloudflare Pages 环境变量
-PUBLIC_SENTRY_DSN=https://xxx@xxx.ingest.sentry.io/xxx
-```
+**1. Cloudflare Web Analytics（自动注入）**
+- 在 Cloudflare Pages Dashboard 启用
+- 自动收集页面浏览、性能指标
+- 无需手动添加代码
 
-### 健康检查
+**2. GitHub Actions 质量门禁**
+- 每次 PR 自动运行：
+  - ESLint 代码检查
+  - TypeScript 类型检查
+  - Lighthouse 性能测试
+  - Playwright E2E 测试
+  - 依赖安全审计（npm audit）
+  - Bundle 大小检查
+
+**3. 健康检查端点**
 
 访问 `/health.json` 查看站点状态：
 
 ```json
 {
   "status": "healthy",
-  "buildTime": "2026-06-13T00:00:00Z",
+  "buildTime": "2026-06-14T00:00:00Z",
   "version": "1.0.0"
 }
 ```
+
+**4. 部署观测**
+
+- Cloudflare Pages Dashboard 查看部署历史
+- GitHub Actions 查看 CI/CD 运行状态
+- 部署失败自动通知（可配置 webhook）
+
+**5. 未来升级路径**
+
+如需更高级监控（边缘计算、API 监控），可迁移到：
+- Cloudflare Workers Observability
+- Cloudflare RUM（Real User Monitoring）
 
 ---
 

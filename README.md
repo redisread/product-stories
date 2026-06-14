@@ -190,27 +190,49 @@ npm run lighthouse
 
 ---
 
-## 📊 监控
+##  Monitoring
 
+### Cloudflare-first Monitoring
 
-配置 DSN 环境变量：
+This project uses Cloudflare-native monitoring:
 
-```bash
-# .env 或 Cloudflare Pages 环境变量
-PUBLIC_SENTRY_DSN=https://xxx@xxx.ingest.sentry.io/xxx
-```
+**1. Cloudflare Web Analytics (Auto-injected)**
+- Enable in Cloudflare Pages Dashboard
+- Automatically collects page views and performance metrics
+- No manual code required
 
-### 健康检查
+**2. GitHub Actions Quality Gates**
+- Automatically runs on every PR:
+  - ESLint code check
+  - TypeScript type check
+  - Lighthouse performance test
+  - Playwright E2E test
+  - Dependency security audit (npm audit)
+  - Bundle size check
 
-访问 `/health.json` 查看站点状态：
+**3. Health Check Endpoint**
+
+Visit `/health.json` to check site status:
 
 ```json
 {
   "status": "healthy",
-  "buildTime": "2026-06-13T00:00:00Z",
+  "buildTime": "2026-06-14T00:00:00Z",
   "version": "1.0.0"
 }
 ```
+
+**4. Deployment Observability**
+
+- Cloudflare Pages Dashboard for deployment history
+- GitHub Actions for CI/CD status
+- Deploy failure notifications (configurable webhook)
+
+**5. Future Upgrade Path**
+
+For advanced monitoring (edge computing, API monitoring), migrate to:
+- Cloudflare Workers Observability
+- Cloudflare RUM (Real User Monitoring)
 
 ---
 

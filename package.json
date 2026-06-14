@@ -17,7 +17,9 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,astro,css,md,mdx}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,astro,css,md,mdx}\"",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui"
+    "test:e2e:ui": "playwright test --ui",
+    "validate:content": "node scripts/validate-content.mjs",
+    "spell:check": "cspell --no-progress"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.2",
@@ -37,6 +39,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.60.0",
+    "cspell": "^10.0.1",
     "eslint": "^10.4.1",
     "eslint-plugin-astro": "^1.7.0",
     "prettier": "^3.8.4",

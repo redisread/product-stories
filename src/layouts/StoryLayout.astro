@@ -52,7 +52,10 @@ const breadcrumbJsonLd = {
       '@type': 'ListItem',
       position: 3,
       name: product,
-      item: new URL(`/stories?product=${encodeURIComponent(product)}`, Astro.site ?? Astro.url.origin).href,
+      item: new URL(
+        `/stories?product=${encodeURIComponent(product)}`,
+        Astro.site ?? Astro.url.origin
+      ).href,
     },
     {
       '@type': 'ListItem',

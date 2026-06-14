@@ -111,35 +111,38 @@ featured: true
 
 ## Frontmatter 字段说明
 
+> 校验由 Astro Content Collections + Zod 实现，违规会在 `npm run build` / `astro check` 阶段直接报错。
+
 ### 必填字段
 
-| 字段 | 类型 | 说明 | 示例 |
+| 字段 | 类型 | 校验规则 | 示例 |
 |------|------|------|------|
-| `title` | string | 文章标题 | `"Design Tokens 实践"` |
-| `date` | string | 发布日期 | `"2025-02-20"` |
-| `products` | array | 关联产品 | `["Design System", "Web"]` |
+| `title` | string | 1–80 字符 | `"Design Tokens 实践"` |
+| `date` | string | `YYYY-MM-DD`，2000-01-01 ≤ date ≤ 今日 + 1 天容差 | `"2025-02-20"` |
+| `products` | array | 至少 1 个，每项非空字符串 | `["Design System", "Web"]` |
 
 ### 可选字段
 
-| 字段 | 类型 | 说明 | 示例 |
+| 字段 | 类型 | 校验规则 | 示例 |
 |------|------|------|------|
-| `cover` | string | 封面图 URL | Unsplash 图片链接 |
-| `readingTime` | string | 阅读时长 | `"8 min read"` |
-| `description` | string | 文章摘要 | `"一句话描述..."` |
-| `author` | string | 作者名 | `"张三"` |
-| `tags` | array | 标签 | `["design", "css"]` |
-| `featured` | boolean | 是否精选 | `true` / `false` |
-| `draft` | boolean | 是否草稿 | `true` / `false` |
+| `cover` | string | 必须是合法 URL | Unsplash 图片链接 |
+| `readingTime` | string | — | `"8 min read"` |
+| `description` | string | — | `"一句话描述..."` |
+| `author` | string | — | `"张三"` |
+| `tags` | array | 最多 8 个，每项非空字符串 | `["design", "css"]` |
+| `featured` | boolean | 默认 false | `true` / `false` |
+| `draft` | boolean | 默认 false | `true` / `false` |
 
 ### 字段详解
 
 #### title
 - 文章标题，显示在卡片和详情页
-- 建议控制在 30 字以内
+- 建议控制在 30 字以内（schema 上限 80 字符）
 
 #### date
 - 发布日期，格式：`YYYY-MM-DD`
 - 影响文章排序（最新优先）
+- 校验区间：2000-01-01 ≤ date ≤ 今日 + 1 天（防止误填未来或过早日期）
 
 #### products
 - 关联的产品列表，支持多个
@@ -156,16 +159,14 @@ products: ["Web Platform", "Mobile App"]
 
 #### cover
 - 封面图片 URL
+- **必须是合法 URL**（不支持本地相对路径，如需本地图请用 `/images/...` 形式的绝对路径）
 - **推荐：** 使用 Unsplash 图片（免费、高质量）
 - 图片比例建议 2:1 或 16:9
 - 尺寸建议 800px 宽度
 
 ```yaml
 # Unsplash 图片（推荐）
-cover: "https://images.unsplash.com/photo-xxx?w=800&q=80"
-
-# 本地图片
-cover: "/images/stories/my-image.jpg"
+cover: 'https://images.unsplash.com/photo-xxx?w=800&q=80'
 ```
 
 #### readingTime
@@ -174,14 +175,14 @@ cover: "/images/stories/my-image.jpg"
 
 #### description
 - 文章摘要，显示在卡片和 SEO 元数据中
-- 建议 100-150 字
+- 建议 100-150 字（schema 不强制，但偏短的会单独治理）
 
 #### author
 - 作者名，显示在文章头部
 
 #### tags
 - 文章标签，用于内容分类
-- 建议 2-5 个标签
+- 建议 2-5 个标签（schema 上限 8 个）
 
 #### featured
 - 设为 `true` 会在首页精选区域展示

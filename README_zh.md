@@ -17,7 +17,6 @@ Product Stories 是一个静态网站，讲述知名科技产品（如 Stripe、
 - ️ **标签系统** - 按产品和主题分类浏览
 - ⚡ **高性能** - Cloudflare Pages 全球 CDN 加速
 - 🧪 **自动化测试** - Playwright E2E 测试 + Lighthouse CI
-- 🔒 **安全监控** - Sentry 错误监控 + 依赖漏洞扫描
 
 ---
 
@@ -32,7 +31,6 @@ Product Stories 是一个静态网站，讲述知名科技产品（如 Stripe、
 | 图标 | Lucide |
 | 部署 | Cloudflare Pages |
 | CI/CD | GitHub Actions |
-| 监控 | Sentry |
 | 测试 | Playwright |
 | 质量 | ESLint + Prettier |
 
@@ -107,8 +105,6 @@ product-stories/
 ├── astro.config.mjs         # Astro 配置
 ├── package.json
 ├── playwright.config.ts     # Playwright 配置
-├── sentry.client.config.js  # Sentry 客户端配置
-├── sentry.server.config.js  # Sentry 服务端配置
 └── wrangler.toml            # Cloudflare 配置
 ```
 
@@ -196,26 +192,47 @@ npm run lighthouse
 
 ## 📊 监控
 
-### Sentry 错误监控
+### Cloudflare-first 监控体系
 
-配置 DSN 环境变量：
+本项目采用 Cloudflare 原生监控方案：
 
-```bash
-# .env 或 Cloudflare Pages 环境变量
-PUBLIC_SENTRY_DSN=https://xxx@xxx.ingest.sentry.io/xxx
-```
+**1. Cloudflare Web Analytics（自动注入）**
+- 在 Cloudflare Pages Dashboard 启用
+- 自动收集页面浏览、性能指标
+- 无需手动添加代码
 
-### 健康检查
+**2. GitHub Actions 质量门禁**
+- 每次 PR 自动运行：
+  - ESLint 代码检查
+  - TypeScript 类型检查
+  - Lighthouse 性能测试
+  - Playwright E2E 测试
+  - 依赖安全审计（npm audit）
+  - Bundle 大小检查
+
+**3. 健康检查端点**
 
 访问 `/health.json` 查看站点状态：
 
 ```json
 {
   "status": "healthy",
-  "buildTime": "2026-06-13T00:00:00Z",
+  "buildTime": "2026-06-14T00:00:00Z",
   "version": "1.0.0"
 }
 ```
+
+**4. 部署观测**
+
+- Cloudflare Pages Dashboard 查看部署历史
+- GitHub Actions 查看 CI/CD 运行状态
+- 部署失败自动通知（可配置 webhook）
+
+**5. 未来升级路径**
+
+如需更高级监控（边缘计算、API 监控），可迁移到：
+- Cloudflare Workers Observability
+- Cloudflare RUM（Real User Monitoring）
 
 ---
 
@@ -241,5 +258,4 @@ MIT License
 
 - [Astro 文档](https://docs.astro.build)
 - [Cloudflare Pages](https://pages.cloudflare.com)
-- [Sentry](https://sentry.io)
 - [Playwright](https://playwright.dev)

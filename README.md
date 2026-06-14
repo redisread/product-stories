@@ -17,7 +17,6 @@ Product Stories 是一个静态网站，讲述知名科技产品（如 Stripe、
 - 🏷️ **标签系统** - 按产品和主题分类浏览
 - ⚡ **高性能** - Cloudflare Pages 全球 CDN 加速
 - 🧪 **自动化测试** - Playwright E2E 测试 + Lighthouse CI
-- 🔒 **安全监控** - Sentry 错误监控 + 依赖漏洞扫描
 
 ---
 
@@ -32,7 +31,6 @@ Product Stories 是一个静态网站，讲述知名科技产品（如 Stripe、
 | 图标 | Lucide |
 | 部署 | Cloudflare Pages |
 | CI/CD | GitHub Actions |
-| 监控 | Sentry |
 | 测试 | Playwright |
 | 质量 | ESLint + Prettier |
 
@@ -107,8 +105,6 @@ product-stories/
 ├── astro.config.mjs         # Astro 配置
 ├── package.json
 ├── playwright.config.ts     # Playwright 配置
-├── sentry.client.config.js  # Sentry 客户端配置
-├── sentry.server.config.js  # Sentry 服务端配置
 └── wrangler.toml            # Cloudflare 配置
 ```
 
@@ -194,28 +190,49 @@ npm run lighthouse
 
 ---
 
-## 📊 监控
+##  Monitoring
 
-### Sentry 错误监控
+### Cloudflare-first Monitoring
 
-配置 DSN 环境变量：
+This project uses Cloudflare-native monitoring:
 
-```bash
-# .env 或 Cloudflare Pages 环境变量
-PUBLIC_SENTRY_DSN=https://xxx@xxx.ingest.sentry.io/xxx
-```
+**1. Cloudflare Web Analytics (Auto-injected)**
+- Enable in Cloudflare Pages Dashboard
+- Automatically collects page views and performance metrics
+- No manual code required
 
-### 健康检查
+**2. GitHub Actions Quality Gates**
+- Automatically runs on every PR:
+  - ESLint code check
+  - TypeScript type check
+  - Lighthouse performance test
+  - Playwright E2E test
+  - Dependency security audit (npm audit)
+  - Bundle size check
 
-访问 `/health.json` 查看站点状态：
+**3. Health Check Endpoint**
+
+Visit `/health.json` to check site status:
 
 ```json
 {
   "status": "healthy",
-  "buildTime": "2026-06-13T00:00:00Z",
+  "buildTime": "2026-06-14T00:00:00Z",
   "version": "1.0.0"
 }
 ```
+
+**4. Deployment Observability**
+
+- Cloudflare Pages Dashboard for deployment history
+- GitHub Actions for CI/CD status
+- Deploy failure notifications (configurable webhook)
+
+**5. Future Upgrade Path**
+
+For advanced monitoring (edge computing, API monitoring), migrate to:
+- Cloudflare Workers Observability
+- Cloudflare RUM (Real User Monitoring)
 
 ---
 
@@ -241,5 +258,4 @@ MIT License
 
 - [Astro 文档](https://docs.astro.build)
 - [Cloudflare Pages](https://pages.cloudflare.com)
-- [Sentry](https://sentry.io)
 - [Playwright](https://playwright.dev)

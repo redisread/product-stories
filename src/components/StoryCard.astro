@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import Tag from './Tag.astro';
-import { formatDate, getRelativeTime } from '../utils/helpers';
+import { formatDate, getRelativeTime } from '../lib/utils';
 
 interface Props {
   story: CollectionEntry<'stories'>;

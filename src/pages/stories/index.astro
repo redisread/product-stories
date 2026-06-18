@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import StoryCard from '../../components/StoryCard.astro';
-import { countTags, getUniqueProducts } from '../../utils/helpers';
+import { countTags, getUniqueProducts } from '../../lib/utils';
 
 const allStories = (await getCollection('stories', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()

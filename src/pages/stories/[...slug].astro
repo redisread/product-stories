@@ -30,6 +30,9 @@ const {
   featured,
 } = story.data;
 
+// 封面图 alt：带产品上下文，便于屏幕阅读器识别
+const coverAlt = products[0] ? `${products[0]} · ${title}` : title;
+
 // 相关推荐
 const allStories = await getCollection('stories', ({ data }) => !data.draft);
 const related = allStories
@@ -51,7 +54,7 @@ const related = allStories
   publishDate={date}
   author={author}
 >
-  <ReadingProgress />
+  <ReadingProgress readingTime={readingTime} />
   <Navbar />
 
   <article class="story-article" id="story-content">
@@ -207,7 +210,7 @@ const related = allStories
             <figure class="story-cover">
               <img
                 src={cover}
-                alt={title}
+                alt={coverAlt}
                 loading="eager"
                 decoding="async"
                 class="story-cover-img"

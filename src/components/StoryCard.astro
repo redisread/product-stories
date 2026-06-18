@@ -15,6 +15,9 @@ const { title, description, date, readingTime, cover, tags = [], featured, produ
 
 const storyUrl = `/stories/${story.id}`;
 
+// 封面图 alt：带产品上下文，便于屏幕阅读器识别
+const coverAlt = products[0] ? `${products[0]} · ${title}` : title;
+
 const isCompact = variant === 'compact';
 
 // 为无封面卡片生成渐变色（基于产品名哈希）
@@ -48,7 +51,7 @@ const placeholderColor = darkGradients[gradientIndex];
           {cover ? (
             <img
               src={cover}
-              alt={title}
+              alt={coverAlt}
               loading={loading}
               decoding="async"
               class="story-card-cover-img"

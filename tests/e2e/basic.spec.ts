@@ -13,12 +13,12 @@ test.describe('首页', () => {
     await expect(articles.first()).toBeVisible({ timeout: 10000 });
   });
 
-  // 健康检查端点测试暂时跳过，等待 PR #10 (Sentry) 合并后启用
-  test.skip('健康检查端点应该返回正确状态', async ({ request }) => {
+  // 健康检查端点测试
+  test('健康检查端点应该返回正确状态', async ({ request }) => {
     const response = await request.get('/health.json');
     expect(response.ok()).toBeTruthy();
     const data = await response.json();
-    expect(data.status).toBe('ok');
+    expect(data.status).toBe('healthy');
   });
 });
 

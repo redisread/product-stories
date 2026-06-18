@@ -1,6 +1,0 @@
-id: mongodb
-name: MongoDB
-description: 引领 NoSQL 革命，为现代应用而生的文档数据库
-color: "#47a248"
-icon: Database
-order: 27

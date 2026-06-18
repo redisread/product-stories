@@ -1,6 +1,0 @@
-id: kubernetes
-name: Kubernetes
-description: 谷歌 Borg 系统的开源化，容器编排的行业标准
-color: "#326ce5"
-icon: Container
-order: 26

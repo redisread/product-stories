@@ -1,6 +1,0 @@
-id: postgres
-name: PostgreSQL
-description: 从伯克利大学诞生的开源关系型数据库先驱
-color: "#336791"
-icon: Database
-order: 28

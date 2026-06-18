@@ -1,6 +1,0 @@
-id: docker
-name: Docker
-description: 从 PaaS 到容器化革命，改变软件交付方式
-color: "#2496ed"
-icon: Container
-order: 33

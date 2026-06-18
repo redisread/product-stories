@@ -229,7 +229,7 @@ const placeholderColor = darkGradients[gradientIndex];
 
   .story-card--horizontal .story-card-cover {
     aspect-ratio: 1 / 1;
-    width: 200px;
+    width: clamp(140px, 30%, 200px);
     flex-shrink: 0;
   }
 
@@ -495,6 +495,14 @@ const placeholderColor = darkGradients[gradientIndex];
     .story-card--horizontal .story-card-cover {
       width: 100%;
       aspect-ratio: 2 / 1;
+    }
+
+    .story-card-body {
+      padding: 16px;
+    }
+
+    .story-card--featured .story-card-body {
+      padding: 20px;
     }
   }
 </style>

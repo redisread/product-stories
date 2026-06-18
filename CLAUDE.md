@@ -111,16 +111,27 @@ curl -I https://product-stories.pages.dev/health.json
 
 用 `product-manager` Agent 做需求澄清和功能规划，输出结构化 PRD。
 
-### 2. 技术方案（fullstack-architect Agent）
+### 2. UI/UX 设计（ui-ux-designer Agent）
 
-PRD 确认后，用 `fullstack-architect` Agent 做技术设计，输出：
+PRD 确认后，用 `ui-ux-designer` Agent 做视觉和交互设计，输出：
+- 视觉规范（色彩、字体、间距、圆角、阴影）
+- 组件设计（状态、交互反馈、响应式适配）
+- 页面布局（信息架构、网格系统、导航结构）
+- 交互动效（转场、组件动效、参数）
+- 可访问性（对比度、焦点、键盘导航）
+
+该 Agent 拥有 `ui-ux-pro-max` 技能，提供 50+ 设计风格、161 色彩方案、57 字体组合、99 条 UX 准则。
+
+### 3. 技术方案（fullstack-architect Agent）
+
+PRD + 设计稿确认后，用 `fullstack-architect` Agent 做技术设计，输出：
 - 技术架构与关键决策
 - 模块划分与文件结构
 - 接口设计（内容模型、组件 Props、页面路由、辅助函数）
 
-### 3. 开发与交付
+### 4. 开发与交付
 
-- PRD + 技术设计都确认后，再拆开发任务
+- PRD + 设计稿 + 技术设计都确认后，再拆开发任务
 - 文档关联到对应的 PR 或 Issue，便于回溯
 
 ### 例外

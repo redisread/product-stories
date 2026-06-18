@@ -14,6 +14,13 @@ interface Props {
 const { story, product } = Astro.props;
 const { title, description, date, cover, author, tags, readingTime } = story.data;
 
+// 封面图 alt：带产品上下文，便于屏幕阅读器识别
+const coverAlt = product ? `${product} · ${title}` : title;
+
+// 阅读时间不足 1 分钟时，隐藏进度条
+const readingMinutes = readingTime ? parseFloat(readingTime) || 0 : 0;
+const showProgress = readingMinutes >= 1;
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -78,8 +85,8 @@ const breadcrumbJsonLd = {
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
 
-  <!-- 阅读进度条 -->
-  <div id="reading-progress" aria-hidden="true"></div>
+  <!-- 阅读进度条（短文章隐藏） -->
+  {showProgress && <div id="reading-progress" aria-hidden="true" />}
 
   <Navbar />
 
@@ -204,7 +211,7 @@ const breadcrumbJsonLd = {
         <div class="max-w-3xl mx-auto px-4 sm:px-6 -mt-0">
           <img
             src={cover}
-            alt={title}
+            alt={coverAlt}
             width={800}
             height={400}
             loading="eager"
@@ -254,19 +261,29 @@ const breadcrumbJsonLd = {
   <Footer />
 
   <!-- 阅读进度脚本 -->
-  <script>
-    const bar = document.getElementById('reading-progress');
-    const article = document.getElementById('article-content');
-    if (bar && article) {
+  <script data-show-progress={showProgress.toString()}>
+    (() => {
+      const currentScript = document.currentScript as HTMLScriptElement;
+      if (currentScript?.dataset.showProgress !== 'true') return;
+
+      const bar = document.getElementById('reading-progress');
+      const article = document.getElementById('article-content');
+      if (!bar || !article) return;
+
       const update = () => {
         const rect = article.getBoundingClientRect();
-        const total = article.offsetHeight - window.innerHeight;
+        const total = Math.max(article.offsetHeight - window.innerHeight, 1);
         const scrolled = Math.max(0, -rect.top);
-        const pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
+        const pct =
+          article.offsetHeight <= window.innerHeight
+            ? scrolled > 0
+              ? 100
+              : 0
+            : Math.min(100, (scrolled / total) * 100);
         bar.style.width = pct + '%';
       };
       window.addEventListener('scroll', update, { passive: true });
       update();
-    }
+    })();
   </script>
 </BaseLayout>

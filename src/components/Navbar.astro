@@ -50,24 +50,6 @@ const navLinks = [
 
     <!-- 右侧操作区 -->
     <div class="navbar-actions">
-      <!-- 搜索按钮（占位，可后续扩展） -->
-      <a href="/stories" class="navbar-search-hint" aria-label="搜索故事" title="浏览故事">
-        <svg
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <circle cx="11" cy="11" r="8"></circle>
-          <path d="m21 21-4.35-4.35"></path>
-        </svg>
-      </a>
-
       <!-- 暗黑模式切换 -->
       <button id="theme-toggle" class="theme-btn" aria-label="切换暗黑模式" title="切换主题">
         <!-- 太阳（暗色模式下显示） -->
@@ -363,26 +345,6 @@ const navLinks = [
     gap: 4px;
   }
 
-  /* 搜索按钮 */
-  .navbar-search-hint {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-md);
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition:
-      color var(--transition-fast),
-      background var(--transition-fast);
-  }
-
-  .navbar-search-hint:hover {
-    color: var(--text-primary);
-    background: var(--bg-hover);
-  }
-
   /* 主题切换按钮 */
   .theme-btn {
     display: flex;
@@ -513,8 +475,7 @@ const navLinks = [
 
   /* ═══ 响应式 ═══ */
   @media (max-width: 767px) {
-    .navbar-nav,
-    .navbar-search-hint {
+    .navbar-nav {
       display: none;
     }
 

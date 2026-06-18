@@ -36,11 +36,12 @@ const products = getUniqueProducts(allStories);
 
       <!-- 标签筛选栏 -->
       <div class="filter-bar" id="filter-bar">
-        <div class="filter-tags" role="list" aria-label="标签筛选">
-          <button class="filter-tag filter-tag--active" data-tag="" role="listitem">全部</button>
+        <div class="filter-tags" role="group" aria-label="按标签筛选故事">
+          <button class="filter-tag filter-tag--active" data-tag="" aria-pressed="true">全部</button
+          >
           {
             topTags.slice(0, 18).map(([tag, count]) => (
-              <button class="filter-tag" data-tag={tag} role="listitem">
+              <button class="filter-tag" data-tag={tag} aria-pressed="false">
                 #{tag}
                 <span class="filter-tag-count">{count}</span>
               </button>
@@ -89,7 +90,9 @@ const products = getUniqueProducts(allStories);
 
   function filterStories(tag: string, { animate = true } = {}) {
     filterBtns.forEach((btn) => {
-      btn.classList.toggle('filter-tag--active', btn.dataset.tag === tag);
+      const isActive = btn.dataset.tag === tag;
+      btn.classList.toggle('filter-tag--active', isActive);
+      btn.setAttribute('aria-pressed', String(isActive));
     });
 
     let visibleCount = 0;

@@ -87,7 +87,7 @@ const products = getUniqueProducts(allStories);
   const emptyState = document.getElementById('empty-state');
   const resetBtn = document.getElementById('reset-filter');
 
-  function filterStories(tag: string) {
+  function filterStories(tag: string, { animate = true } = {}) {
     filterBtns.forEach((btn) => {
       btn.classList.toggle('filter-tag--active', btn.dataset.tag === tag);
     });
@@ -96,8 +96,33 @@ const products = getUniqueProducts(allStories);
     storyItems.forEach((item) => {
       const tags: string[] = JSON.parse(item.dataset.tags || '[]');
       const show = !tag || tags.includes(tag);
-      item.style.display = show ? '' : 'none';
-      if (show) visibleCount++;
+      if (show) {
+        visibleCount++;
+        if (item.dataset.hidden === 'true') {
+          // Fade in: restore layout first, then remove hidden marker
+          item.style.display = '';
+          // Force reflow so the transition can run from hidden -> visible
+          void item.offsetHeight;
+          item.dataset.hidden = 'false';
+        }
+      } else {
+        if (item.dataset.hidden !== 'true') {
+          item.dataset.hidden = 'true';
+          if (!animate) {
+            item.style.display = 'none';
+            return;
+          }
+          const onEnd = (e: TransitionEvent) => {
+            if (e.propertyName !== 'opacity') return;
+            // Only hide if still marked hidden (could have been re-shown)
+            if (item.dataset.hidden === 'true') {
+              item.style.display = 'none';
+            }
+            item.removeEventListener('transitionend', onEnd);
+          };
+          item.addEventListener('transitionend', onEnd);
+        }
+      }
     });
 
     if (emptyState) emptyState.hidden = visibleCount > 0;
@@ -118,7 +143,7 @@ const products = getUniqueProducts(allStories);
   resetBtn?.addEventListener('click', () => filterStories(''));
 
   const urlTag = new URL(window.location.href).searchParams.get('tag');
-  if (urlTag) filterStories(urlTag);
+  if (urlTag) filterStories(urlTag, { animate: false });
 </script>
 
 <style>
@@ -208,6 +233,17 @@ const products = getUniqueProducts(allStories);
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
+  }
+  .story-item {
+    transition:
+      opacity 200ms ease,
+      transform 200ms ease;
+    will-change: opacity, transform;
+  }
+  .story-item[data-hidden='true'] {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
   }
   .empty-state {
     text-align: center;

@@ -18,7 +18,7 @@ function toSlug(tag: string): string {
 }
 ---
 
-<div class="flex flex-wrap gap-2">
+<div class="flex flex-wrap gap-2" role="group" aria-label="标签列表">
   {
     displayed.map(({ name, count }) => (
       <a

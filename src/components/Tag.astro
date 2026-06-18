@@ -11,6 +11,7 @@ interface Props {
 
 const { label, name, href, variant = 'default', size = 'sm', active = false } = Astro.props;
 const displayText = label ?? name ?? '';
+const ariaCurrent = active && href ? 'page' : undefined;
 
 const classes = ['tag', `tag--${variant}`, `tag--${size}`, active ? 'tag--active' : '']
   .filter(Boolean)
@@ -19,7 +20,7 @@ const classes = ['tag', `tag--${variant}`, `tag--${size}`, active ? 'tag--active
 
 {
   href ? (
-    <a href={href} class={classes}>
+    <a href={href} class={classes} aria-current={ariaCurrent}>
       {variant === 'default' && (
         <span class="tag-hash" aria-hidden="true">
           #

@@ -114,7 +114,7 @@ const related = allStories
         <!-- 标签行 -->
         {
           (products.length > 0 || tags.length > 0 || featured) && (
-            <div class="story-tags">
+            <div class="story-tags" role="group" aria-label="故事标签">
               {products.map((p) => (
                 <Tag
                   label={p}
@@ -252,7 +252,7 @@ const related = allStories
                 </svg>
                 标签
               </span>
-              <div class="footer-tags-list">
+              <div class="footer-tags-list" role="group" aria-label="故事标签">
                 {tags.map((tag) => (
                   <Tag label={tag} href={`/tags/${encodeURIComponent(tag)}`} size="md" />
                 ))}

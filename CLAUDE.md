@@ -38,6 +38,44 @@ Use Node from `package.json` engines: `>=22.12.0`.
 
 Do not recreate a Worker service named `product-stories`. This project has been converged to Pages-only deployment.
 
+## CI/CD 与部署约定
+
+### 修改工作流的规则
+
+修改 `.github/workflows/` 下的任何工作流前，必须说明：
+- **影响范围**：哪些 PR 或部署会受影响
+- **验证方式**：如何验证改动有效（本地测试、在功能分支测试）
+- **回滚方式**：如果出问题，如何快速恢复
+
+不要在工作流中引入不必要的复杂性。每个 step 都要有明确目的。
+
+### 部署验证
+
+部署到生产后，必须验证以下路径：
+- 首页能正常加载（`curl -I https://product-stories.pages.dev`）
+- 健康检查通过（`curl https://product-stories.pages.dev/health.json`）
+- 至少一个产品详情页能正常访问
+- 搜索 / 筛选功能正常（如果有）
+- Cloudflare Web Analytics 数据正常上报
+
+验证结果同步到对应的 PR 或 Issue。
+
+### 环境管理
+
+当前只有一个环境：
+- **生产**：`https://product-stories.pages.dev`，由 `main` 分支自动部署
+
+如果需要预发环境（preview deployments），使用 Cloudflare Pages 的 Pull Request 预览功能，不要创建额外的部署工作流。
+
+### 监控与告警
+
+- **部署状态**：GitHub Actions 工作流状态
+- **站点可用性**：Cloudflare Dashboard → Pages 项目
+- **Web Analytics**：Cloudflare Dashboard → Web Analytics（通过 Dashboard 注入，不要改代码）
+- **构建性能**：GitHub Actions 工作流日志中的 build time
+
+目前没有专门的告警系统。如果站点挂掉，依赖 Cloudflare 的状态监控或用户反馈。
+
 ## Content Model
 
 - Product stories are YAML files in `content/products/`
@@ -64,6 +102,41 @@ For deployment or monitoring changes, also verify:
 curl -I https://product-stories.pages.dev
 curl -I https://product-stories.pages.dev/health.json
 ```
+
+## 需求与功能规划
+
+新功能、新需求、内容模型变更在进入开发前，必须走以下流程：
+
+### 1. 需求澄清（product-manager Agent）
+
+用 `product-manager` Agent 做需求澄清和功能规划，输出结构化 PRD。
+
+### 2. 技术方案（fullstack-architect Agent）
+
+PRD 确认后，用 `fullstack-architect` Agent 做技术设计，输出：
+- 技术架构与关键决策
+- 模块划分与文件结构
+- 接口设计（内容模型、组件 Props、页面路由、辅助函数）
+
+### 3. 开发与交付
+
+- PRD + 技术设计都确认后，再拆开发任务
+- 文档关联到对应的 PR 或 Issue，便于回溯
+
+### 例外
+
+以下情况不需要走这个流程：
+- 临时 bug 修复
+- 文案调整、样式微调
+- 依赖升级、构建配置调整
+- 重构范围局限在单文件内
+
+### 技术优化与债务治理
+
+技术优化和技术债务治理由 `fullstack-architect` Agent 主导：
+- 每个大版本或重大功能前，做一轮债务评估
+- 治理计划按短期 / 中期 / 长期分阶段
+- 小债务顺手清，大债务排计划，不要把治理和交付对立
 
 ## PR / Review Rules
 

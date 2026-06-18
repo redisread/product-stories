@@ -1,13 +1,16 @@
 ---
 interface Props {
-  label: string;
+  /** 标签文本（`label` 与 `name` 二选一，`name` 为兼容别名） */
+  label?: string;
+  name?: string;
   href?: string;
   variant?: 'default' | 'product' | 'featured';
   size?: 'sm' | 'md';
   active?: boolean;
 }
 
-const { label, href, variant = 'default', size = 'sm', active = false } = Astro.props;
+const { label, name, href, variant = 'default', size = 'sm', active = false } = Astro.props;
+const displayText = label ?? name ?? '';
 
 const classes = ['tag', `tag--${variant}`, `tag--${size}`, active ? 'tag--active' : '']
   .filter(Boolean)
@@ -22,7 +25,7 @@ const classes = ['tag', `tag--${variant}`, `tag--${size}`, active ? 'tag--active
           #
         </span>
       )}
-      {label}
+      {displayText}
     </a>
   ) : (
     <span class={classes}>
@@ -31,7 +34,7 @@ const classes = ['tag', `tag--${variant}`, `tag--${size}`, active ? 'tag--active
           #
         </span>
       )}
-      {label}
+      {displayText}
     </span>
   )
 }

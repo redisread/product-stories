@@ -24,7 +24,7 @@
     "spell:check": "cspell --no-progress"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.2",
+    "@astrojs/mdx": "^7.0.0",
     "@astrojs/rss": "^4.0.17",
     "@astrojs/sitemap": "^3.7.1",
     "@tailwindcss/typography": "^0.5.19",

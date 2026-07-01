@@ -35,17 +35,28 @@ const {
 // 封面图 alt：带产品上下文，便于屏幕阅读器识别
 const coverAlt = products[0] ? `${products[0]} · ${title}` : title;
 
-// 相关推荐
+// 相关推荐 — 按相关度评分排序
+// 评分规则：同产品 3 分，同标签 1 分；featured 额外 +1；分高 + 时间近
 const allStories = await getCollection('stories', ({ data }) => !data.draft);
 const related = allStories
   .filter((s) => s.id !== story.id)
-  .filter((s) => {
-    const sameProduct = s.data.products?.some((p) => products.includes(p));
-    const sameTag = s.data.tags?.some((t) => tags.includes(t));
-    return sameProduct || sameTag;
+  .map((s) => {
+    const productMatches = s.data.products?.filter((p) => products.includes(p)).length ?? 0;
+    const tagMatches = s.data.tags?.filter((t) => tags.includes(t)).length ?? 0;
+    const score =
+      productMatches * 3 +
+      tagMatches +
+      (s.data.featured ? 1 : 0);
+    return { story: s, score };
   })
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 3);
+  .filter(({ score }) => score > 0)
+  .sort((a, b) => {
+    // 先按相关度，再按时间
+    if (b.score !== a.score) return b.score - a.score;
+    return b.story.data.date.getTime() - a.story.data.date.getTime();
+  })
+  .slice(0, 4)
+  .map(({ story: s }) => s);
 ---
 
 <BaseLayout

@@ -27,12 +27,12 @@ const { items } = Astro.props;
     <section class="turning-points" aria-labelledby="turning-points-title">
       <header class="turning-points-header">
         <h2 id="turning-points-title" class="turning-points-title">
-          <span class="turning-points-icon" aria-hidden="true">💡</span>
+          <span class="turning-points-icon" aria-hidden="true">
+            💡
+          </span>
           关键转折点
         </h2>
-        <p class="turning-points-subtitle">
-          这个产品故事中的关键决策和改变命运的瞬间
-        </p>
+        <p class="turning-points-subtitle">这个产品故事中的关键决策和改变命运的瞬间</p>
       </header>
 
       <ol class="turning-points-list" role="list">
@@ -61,11 +61,7 @@ const { items } = Astro.props;
   .turning-points {
     margin: 48px 0 64px;
     padding: 32px 28px;
-    background: linear-gradient(
-      135deg,
-      rgba(245, 158, 11, 0.04) 0%,
-      rgba(225, 29, 72, 0.03) 100%
-    );
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.04) 0%, rgba(225, 29, 72, 0.03) 100%);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-2xl);
   }
@@ -112,11 +108,7 @@ const { items } = Astro.props;
     top: 16px;
     bottom: 16px;
     width: 2px;
-    background: linear-gradient(
-      to bottom,
-      var(--color-brand),
-      var(--color-brand-accent)
-    );
+    background: linear-gradient(to bottom, var(--color-brand), var(--color-brand-accent));
     border-radius: 1px;
   }
 

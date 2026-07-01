@@ -24,7 +24,10 @@ interface Props {
 
 const { items } = Astro.props;
 
-const typeConfig: Record<NonNullable<TimelineItem['type']>, { label: string; color: string; icon: string }> = {
+const typeConfig: Record<
+  NonNullable<TimelineItem['type']>,
+  { label: string; color: string; icon: string }
+> = {
   milestone: { label: '里程碑', color: '#3b82f6', icon: '◆' },
   launch: { label: '发布', color: '#10b981', icon: '▲' },
   pivot: { label: '转型', color: '#f59e0b', icon: '◈' },
@@ -39,8 +42,12 @@ const sorted = [...items].sort((a, b) => a.date.localeCompare(b.date));
   sorted.length > 0 && (
     <section class="timeline" aria-labelledby="timeline-title">
       <header class="timeline-header">
-        <h2 id="timeline-title" class="timeline-title">产品发展时间轴</h2>
-        <p class="timeline-subtitle">从 {sorted[0].date} 到 {sorted[sorted.length - 1].date}</p>
+        <h2 id="timeline-title" class="timeline-title">
+          产品发展时间轴
+        </h2>
+        <p class="timeline-subtitle">
+          从 {sorted[0].date} 到 {sorted[sorted.length - 1].date}
+        </p>
       </header>
 
       <ol class="timeline-list" role="list">
@@ -48,20 +55,24 @@ const sorted = [...items].sort((a, b) => a.date.localeCompare(b.date));
           const cfg = typeConfig[item.type ?? 'milestone'];
           return (
             <li class="timeline-item" data-type={item.type ?? 'milestone'}>
-              <div class="timeline-marker" style={`--marker-color: ${cfg.color};`} aria-hidden="true">
+              <div
+                class="timeline-marker"
+                style={`--marker-color: ${cfg.color};`}
+                aria-hidden="true"
+              >
                 <span class="timeline-marker-icon">{cfg.icon}</span>
               </div>
               <div class="timeline-content">
                 <div class="timeline-meta">
-                  <time datetime={item.date} class="timeline-date">{item.date}</time>
+                  <time datetime={item.date} class="timeline-date">
+                    {item.date}
+                  </time>
                   <span class="timeline-type-badge" style={`--badge-color: ${cfg.color};`}>
                     {cfg.label}
                   </span>
                 </div>
                 <h3 class="timeline-item-title">{item.title}</h3>
-                {item.description && (
-                  <p class="timeline-item-description">{item.description}</p>
-                )}
+                {item.description && <p class="timeline-item-description">{item.description}</p>}
               </div>
             </li>
           );
@@ -196,7 +207,7 @@ const sorted = [...items].sort((a, b) => a.date.localeCompare(b.date));
   }
 
   /* Highlight pivot items with subtle background */
-  .timeline-item[data-type="pivot"] .timeline-content {
+  .timeline-item[data-type='pivot'] .timeline-content {
     padding: 12px 16px;
     background: rgba(245, 158, 11, 0.04);
     border-left: 2px solid var(--color-brand);

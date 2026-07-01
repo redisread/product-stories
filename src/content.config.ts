@@ -25,6 +25,18 @@ const stories = defineCollection({
       )
       .optional()
       .default([]),
+    // P1: 时间轴
+    timeline: z
+      .array(
+        z.object({
+          date: z.string(),
+          title: z.string(),
+          description: z.string().optional(),
+          type: z.enum(['milestone', 'launch', 'pivot', 'growth', 'other']).optional().default('milestone'),
+        })
+      )
+      .optional()
+      .default([]),
   }),
 });
 

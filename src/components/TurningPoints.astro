@@ -1,0 +1,203 @@
+---
+/**
+ * TurningPoints Component
+ *
+ * Renders the "💡 关键转折点" section for a product story.
+ * Displays turning points as a vertical timeline with subtle visual hierarchy.
+ *
+ * Props:
+ *   - items: Array of { title, description, date? } turning points
+ */
+
+interface TurningPoint {
+  title: string;
+  description: string;
+  date?: string;
+}
+
+interface Props {
+  items: TurningPoint[];
+}
+
+const { items } = Astro.props;
+---
+
+{
+  items.length > 0 && (
+    <section class="turning-points" aria-labelledby="turning-points-title">
+      <header class="turning-points-header">
+        <h2 id="turning-points-title" class="turning-points-title">
+          <span class="turning-points-icon" aria-hidden="true">💡</span>
+          关键转折点
+        </h2>
+        <p class="turning-points-subtitle">
+          这个产品故事中的关键决策和改变命运的瞬间
+        </p>
+      </header>
+
+      <ol class="turning-points-list" role="list">
+        {items.map((item, idx) => (
+          <li class="turning-point">
+            <div class="turning-point-marker" aria-hidden="true">
+              <span class="turning-point-number">{idx + 1}</span>
+            </div>
+            <div class="turning-point-content">
+              {item.date && (
+                <time class="turning-point-date" datetime={item.date}>
+                  {item.date}
+                </time>
+              )}
+              <h3 class="turning-point-title">{item.title}</h3>
+              <p class="turning-point-description">{item.description}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
+
+<style>
+  .turning-points {
+    margin: 48px 0 64px;
+    padding: 32px 28px;
+    background: linear-gradient(
+      135deg,
+      rgba(245, 158, 11, 0.04) 0%,
+      rgba(225, 29, 72, 0.03) 100%
+    );
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-2xl);
+  }
+
+  .turning-points-header {
+    margin-bottom: 28px;
+  }
+
+  .turning-points-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .turning-points-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .turning-points-subtitle {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin: 0;
+    padding-left: 34px;
+  }
+
+  .turning-points-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+
+  /* Timeline vertical line */
+  .turning-points-list::before {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 16px;
+    bottom: 16px;
+    width: 2px;
+    background: linear-gradient(
+      to bottom,
+      var(--color-brand),
+      var(--color-brand-accent)
+    );
+    border-radius: 1px;
+  }
+
+  .turning-point {
+    display: flex;
+    gap: 20px;
+    padding: 14px 0;
+    position: relative;
+  }
+
+  .turning-point-marker {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid var(--color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-brand);
+    font-weight: 700;
+    font-size: 0.875rem;
+    box-shadow: 0 0 0 4px var(--bg-card);
+    position: relative;
+    z-index: 1;
+  }
+
+  .dark .turning-point-marker {
+    background: var(--bg-card);
+    border-color: var(--color-brand-accent);
+    color: var(--color-brand-accent);
+  }
+
+  .turning-point-content {
+    flex: 1;
+    min-width: 0;
+    padding-top: 4px;
+  }
+
+  .turning-point-date {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .turning-point-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 6px;
+    line-height: 1.4;
+  }
+
+  .turning-point-description {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .turning-points {
+      padding: 24px 20px;
+    }
+
+    .turning-points-list::before {
+      left: 15px;
+    }
+
+    .turning-point-marker {
+      width: 32px;
+      height: 32px;
+      font-size: 0.8125rem;
+    }
+
+    .turning-point {
+      gap: 14px;
+    }
+  }
+</style>

@@ -6,6 +6,7 @@ import Footer from '../../components/Footer.astro';
 import ReadingProgress from '../../components/ReadingProgress.astro';
 import Tag from '../../components/Tag.astro';
 import StoryCard from '../../components/StoryCard.astro';
+import TurningPoints from '../../components/TurningPoints.astro';
 import { formatDate } from '../../lib/utils';
 
 export async function getStaticPaths() {
@@ -28,6 +29,7 @@ const {
   tags = [],
   products = [],
   featured,
+  turningPoints = [],
 } = story.data;
 
 // 封面图 alt：带产品上下文，便于屏幕阅读器识别
@@ -228,6 +230,7 @@ const related = allStories
     <div class="story-body">
       <div class="container-article prose-story">
         <Content />
+        {turningPoints.length > 0 && <TurningPoints items={turningPoints} />}
       </div>
     </div>
 

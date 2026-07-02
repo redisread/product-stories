@@ -1,0 +1,236 @@
+---
+/**
+ * Timeline Component
+ *
+ * Renders a vertical timeline of product milestones.
+ * Pure CSS implementation (no mermaid dependency) for fast rendering
+ * and full design control.
+ *
+ * Props:
+ *   - items: Array of { date, title, description?, type? }
+ *   - type: 'milestone' | 'launch' | 'pivot' | 'growth' | 'other'
+ */
+
+interface TimelineItem {
+  date: string;
+  title: string;
+  description?: string;
+  type?: 'milestone' | 'launch' | 'pivot' | 'growth' | 'other';
+}
+
+interface Props {
+  items: TimelineItem[];
+}
+
+const { items } = Astro.props;
+
+const typeConfig: Record<
+  NonNullable<TimelineItem['type']>,
+  { label: string; color: string; icon: string }
+> = {
+  milestone: { label: '里程碑', color: '#3b82f6', icon: '◆' },
+  launch: { label: '发布', color: '#10b981', icon: '▲' },
+  pivot: { label: '转型', color: '#f59e0b', icon: '◈' },
+  growth: { label: '增长', color: '#8b5cf6', icon: '●' },
+  other: { label: '其他', color: '#6b7280', icon: '○' },
+};
+
+const sorted = [...items].sort((a, b) => a.date.localeCompare(b.date));
+---
+
+{
+  sorted.length > 0 && (
+    <section class="timeline" aria-labelledby="timeline-title">
+      <header class="timeline-header">
+        <h2 id="timeline-title" class="timeline-title">
+          产品发展时间轴
+        </h2>
+        <p class="timeline-subtitle">
+          从 {sorted[0].date} 到 {sorted[sorted.length - 1].date}
+        </p>
+      </header>
+
+      <ol class="timeline-list" role="list">
+        {sorted.map((item) => {
+          const cfg = typeConfig[item.type ?? 'milestone'];
+          return (
+            <li class="timeline-item" data-type={item.type ?? 'milestone'}>
+              <div
+                class="timeline-marker"
+                style={`--marker-color: ${cfg.color};`}
+                aria-hidden="true"
+              >
+                <span class="timeline-marker-icon">{cfg.icon}</span>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-meta">
+                  <time datetime={item.date} class="timeline-date">
+                    {item.date}
+                  </time>
+                  <span class="timeline-type-badge" style={`--badge-color: ${cfg.color};`}>
+                    {cfg.label}
+                  </span>
+                </div>
+                <h3 class="timeline-item-title">{item.title}</h3>
+                {item.description && <p class="timeline-item-description">{item.description}</p>}
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+  )
+}
+
+<style>
+  .timeline {
+    margin: 56px 0;
+    padding: 32px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-2xl);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  }
+
+  .timeline-header {
+    margin-bottom: 28px;
+  }
+
+  .timeline-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .timeline-subtitle {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .timeline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+
+  /* Vertical line */
+  .timeline-list::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    background: var(--border-default);
+    border-radius: 1px;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 20px;
+    padding: 16px 0;
+    position: relative;
+  }
+
+  .timeline-marker {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid var(--marker-color, #6b7280);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--marker-color, #6b7280);
+    font-size: 0.75rem;
+    box-shadow: 0 0 0 4px var(--bg-card);
+    position: relative;
+    z-index: 1;
+  }
+
+  .timeline-marker-icon {
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .timeline-content {
+    flex: 1;
+    min-width: 0;
+    padding-top: 2px;
+  }
+
+  .timeline-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .timeline-date {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .timeline-type-badge {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    background: color-mix(in srgb, var(--badge-color, #6b7280) 12%, transparent);
+    color: var(--badge-color, #6b7280);
+  }
+
+  .timeline-item-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 4px;
+    line-height: 1.4;
+  }
+
+  .timeline-item-description {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Highlight pivot items with subtle background */
+  .timeline-item[data-type='pivot'] .timeline-content {
+    padding: 12px 16px;
+    background: rgba(245, 158, 11, 0.04);
+    border-left: 2px solid var(--color-brand);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  @media (max-width: 640px) {
+    .timeline {
+      padding: 24px 20px;
+    }
+
+    .timeline-list::before {
+      left: 11px;
+    }
+
+    .timeline-marker {
+      width: 24px;
+      height: 24px;
+      font-size: 0.625rem;
+    }
+
+    .timeline-item {
+      gap: 14px;
+    }
+  }
+</style>

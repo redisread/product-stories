@@ -207,6 +207,26 @@ turningPoints:
     date: '2019-09-10'
 ```
 
+#### timeline
+- 产品发展时间轴（P1 功能）
+- 渲染为详情页的可视化时间轴
+- 每项包含 `date`（必填，YYYY-MM-DD）、`title`（必填）、`description`（可选）、`type`（可选：milestone / launch / pivot / growth / other）
+
+```yaml
+timeline:
+  - date: '2012-01-01'
+    title: 公司成立
+    description: 两位创始人创立 Figma
+    type: milestone
+  - date: '2016-09-27'
+    title: 公开测试版发布
+    type: launch
+  - date: '2018-04-26'
+    title: 推出 Multiplayer
+    description: 多人实时协作编辑功能上线
+    type: growth
+```
+
 ---
 
 ## 内容编写

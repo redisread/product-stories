@@ -192,6 +192,21 @@ cover: 'https://images.unsplash.com/photo-xxx?w=800&q=80'
 - 设为 `true` 文章不会显示在列表中
 - 适用于未完成的内容
 
+#### turningPoints
+- 文章关键转折点列表（P0 功能）
+- 渲染为正文底部的时间轴样式「💡 关键转折点」板块
+- 每项包含 `title`（必填）、`description`（必填）、`date`（可选）
+
+```yaml
+turningPoints:
+  - title: 从工具到平台
+    description: Figma 决定将设计工具升级为协作平台
+    date: '2018-08-08'
+  - title: 开放 API
+    description: 上线 Figma API 让插件生态发展
+    date: '2019-09-10'
+```
+
 ---
 
 ## 内容编写

@@ -14,6 +14,17 @@ const stories = defineCollection({
     tags: z.array(z.string()).optional().default([]),
     featured: z.boolean().optional().default(false),
     draft: z.boolean().optional().default(false),
+    // P0: 关键转折点
+    turningPoints: z
+      .array(
+        z.object({
+          title: z.string(),
+          description: z.string(),
+          date: z.string().optional(),
+        })
+      )
+      .optional()
+      .default([]),
   }),
 });
 

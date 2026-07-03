@@ -45,10 +45,7 @@ const related = allStories
   .map((s) => {
     const productMatches = s.data.products?.filter((p) => products.includes(p)).length ?? 0;
     const tagMatches = s.data.tags?.filter((t) => tags.includes(t)).length ?? 0;
-    const score =
-      productMatches * 3 +
-      tagMatches +
-      (s.data.featured ? 1 : 0);
+    const score = productMatches * 3 + tagMatches + (s.data.featured ? 1 : 0);
     return { story: s, score };
   })
   .filter(({ score }) => score > 0)

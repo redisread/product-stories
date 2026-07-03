@@ -42,6 +42,61 @@
       "default": false,
       "type": "boolean"
     },
+    "turningPoints": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "description"
+        ]
+      }
+    },
+    "timeline": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "default": "milestone",
+            "type": "string",
+            "enum": [
+              "milestone",
+              "launch",
+              "pivot",
+              "growth",
+              "other"
+            ]
+          }
+        },
+        "required": [
+          "date",
+          "title"
+        ]
+      }
+    },
     "$schema": {
       "type": "string"
     }

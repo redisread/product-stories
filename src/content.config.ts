@@ -32,7 +32,10 @@ const stories = defineCollection({
           date: z.string(),
           title: z.string(),
           description: z.string().optional(),
-          type: z.enum(['milestone', 'launch', 'pivot', 'growth', 'other']).optional().default('milestone'),
+          type: z
+            .enum(['milestone', 'launch', 'pivot', 'growth', 'other'])
+            .optional()
+            .default('milestone'),
         })
       )
       .optional()
